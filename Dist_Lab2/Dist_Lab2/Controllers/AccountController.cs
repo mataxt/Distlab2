@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Dist_Lab2.ViewModels;
 using Dist_Lab2.Models;
 
 namespace Dist_Lab2.Controllers

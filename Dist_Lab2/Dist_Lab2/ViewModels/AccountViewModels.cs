@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Dist_Lab2.Models
+namespace Dist_Lab2.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -66,9 +68,14 @@ namespace Dist_Lab2.Models
     {
         [Required]
         [EmailAddress]
+        [Index(IsUnique = true)]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        [Required]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
+    
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
