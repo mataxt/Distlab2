@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dist_Lab2.Models
 {
+    //REMOVE PLS
     public class Message
     {
         [Key]
