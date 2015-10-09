@@ -15,7 +15,7 @@ namespace Dist_Lab2.Models
         //Navigation property
         public virtual ApplicationUser User { get; set; }
 
-        [Timestamp]
+        [Timestamp] 
         public byte[] LoggedAt { get; set; }
     }
 }
