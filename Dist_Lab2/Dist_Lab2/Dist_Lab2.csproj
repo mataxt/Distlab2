@@ -173,6 +173,46 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510080756045_InitialCreate.cs" />
+    <Compile Include="Migrations\201510080756045_InitialCreate.Designer.cs">
+      <DependentUpon>201510080756045_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081701489_start.cs" />
+    <Compile Include="Migrations\201510081701489_start.Designer.cs">
+      <DependentUpon>201510081701489_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081740115_FullName.cs" />
+    <Compile Include="Migrations\201510081740115_FullName.Designer.cs">
+      <DependentUpon>201510081740115_FullName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081748367_multiMessage.cs" />
+    <Compile Include="Migrations\201510081748367_multiMessage.Designer.cs">
+      <DependentUpon>201510081748367_multiMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081753371_messageREp.cs" />
+    <Compile Include="Migrations\201510081753371_messageREp.Designer.cs">
+      <DependentUpon>201510081753371_messageREp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081756525_messageMulti.cs" />
+    <Compile Include="Migrations\201510081756525_messageMulti.Designer.cs">
+      <DependentUpon>201510081756525_messageMulti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081810085_messageMulti1.cs" />
+    <Compile Include="Migrations\201510081810085_messageMulti1.Designer.cs">
+      <DependentUpon>201510081810085_messageMulti1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081900332_test.cs" />
+    <Compile Include="Migrations\201510081900332_test.Designer.cs">
+      <DependentUpon>201510081900332_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081904583_redo.cs" />
+    <Compile Include="Migrations\201510081904583_redo.Designer.cs">
+      <DependentUpon>201510081904583_redo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\UserLogs.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -245,6 +285,35 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510080756045_InitialCreate.resx">
+      <DependentUpon>201510080756045_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081701489_start.resx">
+      <DependentUpon>201510081701489_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081740115_FullName.resx">
+      <DependentUpon>201510081740115_FullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081748367_multiMessage.resx">
+      <DependentUpon>201510081748367_multiMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081753371_messageREp.resx">
+      <DependentUpon>201510081753371_messageREp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081756525_messageMulti.resx">
+      <DependentUpon>201510081756525_messageMulti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081810085_messageMulti1.resx">
+      <DependentUpon>201510081810085_messageMulti1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081900332_test.resx">
+      <DependentUpon>201510081900332_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081904583_redo.resx">
+      <DependentUpon>201510081904583_redo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
