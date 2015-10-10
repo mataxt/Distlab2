@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Dist_Lab2.Logic;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -80,6 +81,7 @@ namespace Dist_Lab2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    UserLog.MarkLog(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

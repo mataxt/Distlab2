@@ -9,13 +9,12 @@ namespace Dist_Lab2.Models
 {
     public class UserLogs
     {
-        [Key]
-        public int LogId { get; set; }
+
         [Required]
         //Navigation property
-        public virtual ApplicationUser User { get; set; }
-
-        [Timestamp] 
-        public byte[] LoggedAt { get; set; }
+        public virtual string UserEMail { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime LoggedAt { get; set; }
     }
 }

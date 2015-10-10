@@ -20,8 +20,8 @@ namespace Dist_Lab2.Models
             // Add custom user claims here
             return userIdentity;
         }
-        public virtual ICollection<Message> Messages { get; set; }
-        public virtual ICollection<UserLogs> UserLogs { get; set; }
+        public virtual ICollection<Message> UserMessages { get; set; }
+
     }
    
 }
