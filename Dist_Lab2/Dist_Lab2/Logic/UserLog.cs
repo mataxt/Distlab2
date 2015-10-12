@@ -11,7 +11,7 @@ namespace Dist_Lab2.Logic
         {
             using (var db = new ApplicationDbContext())
             {
-                var log = new UserLogs() { UserEMail = email, LoggedAt = DateTime.Now};
+                var log = new UserLogs() { UserEmail = email, LoggedAt = DateTime.Now};
                 db.UserLogs.Add(log);
                 db.SaveChanges();
             }
@@ -23,12 +23,12 @@ namespace Dist_Lab2.Logic
             using (var db = new ApplicationDbContext())
             {
                 var lastLogged =
-                    db.UserLogs.Where(l => l.UserEMail.Equals(email))
+                    db.UserLogs.Where(l => l.UserEmail.Equals(email))
                         .OrderByDescending(l => l.LoggedAt)
                         .Select(l => l.LoggedAt).ToList().Skip(1).FirstOrDefault();
 
-                //Record ONLY If it's NOT the users first time, and has no previous logs
-                if (lastLogged.ToString().Equals("0001-01-01 00:00:00"))
+                // Record ONLY If it's NOT the users first time, and has no previous logs
+                if (!lastLogged.ToString().Equals("0001-01-01 00:00:00"))
                 {
                     lastlog = lastLogged;    
                 }
@@ -43,7 +43,7 @@ namespace Dist_Lab2.Logic
             using (var db = new ApplicationDbContext())
             {
                 var amountLogged =
-                    db.UserLogs.Where(l => l.UserEMail.Equals(email)&& 
+                    db.UserLogs.Where(l => l.UserEmail.Equals(email)&& 
                         l.LoggedAt >= lastMonth)
                         .OrderByDescending(l => l.LoggedAt)
                         .Select(l => l.LoggedAt).Count();
