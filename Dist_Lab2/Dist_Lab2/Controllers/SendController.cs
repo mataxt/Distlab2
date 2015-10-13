@@ -1,90 +1,41 @@
-﻿using System;
+﻿
+using System.Collections;
+using System.Diagnostics;
+using System.Web.Mvc;
+using Dist_Lab2.Models;
+using Dist_Lab2.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 
 namespace Dist_Lab2.Controllers
 {
     [Authorize]
     public class SendController : Controller
     {
-        // GET: Send
+        // GET: Index
         public ActionResult Index()
         {
-            return View();
+            List<ApplicationUser> userList = UserLogic.GetAllUsers();
+            List<SelectListItem> selectListItems = userList.Select(usr => new SelectListItem
+            {
+                Text = usr.UserName, Value = usr.UserName
+            }).ToList();
+
+            return View(new SendViewModels { Sender = (string)Session["Username"], Receivers = selectListItems});
         }
 
-        // GET: Send/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Send/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Send/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(SendViewModels model)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            ApplicationUser sender = new ApplicationUser { UserName = (string)Session["Username"] };
+            List<ApplicationUser> receivers = model.Receivers.Select(rcv => new ApplicationUser { UserName = rcv.Value }).ToList();
+            Message msg = new Message { Sender = sender, Receivers = receivers, Title = model.Title, Body = model.Body };
+            MessageLogic.Send(msg);
+            return View(new SendViewModels());
         }
 
-        // GET: Send/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: Send/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Send/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Send/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

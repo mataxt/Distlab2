@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
-using Dist_Lab2.Models;
 
-namespace Dist_Lab2.Logic
+namespace Dist_Lab2.Models
 {
-    public class UserLog
+    public class UserLogLogic
     {
         public static void MarkLog(string email)
         {
             using (var db = new ApplicationDbContext())
             {
-                var log = new UserLogs() { UserEmail = email, LoggedAt = DateTime.Now};
+                var log = new UserLogs{ UserEmail = email, LoggedAt = DateTime.Now};
                 db.UserLogs.Add(log);
                 db.SaveChanges();
             }
@@ -38,7 +36,7 @@ namespace Dist_Lab2.Logic
 
         public static int LoggedLastMonth(string email)
         {
-            int amount = 1;
+            int amount;
             DateTime lastMonth = DateTime.Now.AddMonths(-1);
             using (var db = new ApplicationDbContext())
             {
@@ -49,7 +47,6 @@ namespace Dist_Lab2.Logic
                         .Select(l => l.LoggedAt).Count();
                 amount = amountLogged;
             }
-            Debug.WriteLine(amount);
             return amount;
         }
     }

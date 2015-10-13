@@ -13,8 +13,13 @@
     
     <div class="form-horizontal">
         <h4>Send messages here</h4>
-
         <hr />
+
+        <div class="form-group">
+            <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Sender, new { @class = "control-label col-md-2", @readonly = "readonly" })
+            </div>
+        </div>
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -23,9 +28,16 @@
                 https://agilewarrior.wordpress.com/2012/12/13/how-to-simple-html-dropdownlistfor-mvc-net/// Html.DropDownListFor()
             </div>
         </div>
-        
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Receivers, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(m => m.Receivers, Model.Receivers, new { @class = "control-label col-md-2" })
+                @Html.ValidationMessageFor(model => model.Receivers, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })

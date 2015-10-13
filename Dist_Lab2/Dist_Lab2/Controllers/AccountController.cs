@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Dist_Lab2.Logic;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -81,7 +80,8 @@ namespace Dist_Lab2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    UserLog.MarkLog(model.Email);
+                    Session["Username"] = model.Email;
+                    UserLogLogic.MarkLog(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -165,7 +165,7 @@ namespace Dist_Lab2.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    UserLog.MarkLog(model.Email);
+                    UserLogLogic.MarkLog(model.Email);
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

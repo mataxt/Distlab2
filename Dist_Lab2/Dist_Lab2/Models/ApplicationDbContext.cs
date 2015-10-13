@@ -33,7 +33,7 @@ namespace Dist_Lab2.Models
                 });
 
             modelBuilder.Entity<UserLogs>().HasKey(t => new { t.UserEmail, t.LoggedAt});
-           //modelBuilder.Entity<UserGroups>().HasKey(t => new { t.GroupId, t.GroupMembers});
+           modelBuilder.Entity<UserGroups>().HasKey(t => new { t.GroupId, t.GroupMembers});
         }
 
 

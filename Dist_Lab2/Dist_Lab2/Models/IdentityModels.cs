@@ -21,7 +21,6 @@ namespace Dist_Lab2.Models
             return userIdentity;
         }
         public virtual ICollection<Message> UserMessages { get; set; }
-
     }
    
 }
