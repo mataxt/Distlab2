@@ -15,18 +15,22 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
-        <h2>Last login</h2>
-        @Html.DisplayFor(m => m.LastLogin)
-    </div>
-    <div class="col-md-6">
-        <h2>Logins in the past month</h2>
-        @Html.DisplayFor(m => m.LoginAmount)
-    </div>
+    <center>
+        <div class="col-md-6">
+            <h3>Last login</h3>
+            @Html.DisplayFor(m => m.LastLogin)
+        </div>
+        <div class="col-md-6">
+            <h3>Logins in the past month</h3>
+            @Html.DisplayFor(m => m.LoginAmount)
+        </div>
+    </center> 
 </div>
 <div class="row">
     <div class="col-md-12">
-        <h2>Unread messages</h2>
-        @Html.DisplayFor(m => m.UnreadMessages)
+        <center>
+            <h3>Unread messages</h3>
+            @Html.DisplayFor(m => m.UnreadMessages)
+        </center>
     </div>
 </div>

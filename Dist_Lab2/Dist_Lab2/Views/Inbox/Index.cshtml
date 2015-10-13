@@ -1,47 +1,41 @@
-﻿@model IEnumerable<Dist_Lab2.Models.Message>
-
-@{
+﻿@{
     ViewBag.Title = "Inbox Page";
 }
 
-<h2>Inbox Page</h2>
-<h4>Check your inbox here!</h4>
+<h2>@ViewBag.Title.</h2>
+<h4>Check your inbox here</h4>
 
 <hr />
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            // Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Body)
+            // Html.DisplayNameFor(model => model.Body)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeSent)
+            // Html.DisplayNameFor(model => model.TimeSent)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+// foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            // Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Body)
+            // Html.DisplayFor(modelItem => item.Body)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeSent)
+            // Html.DisplayFor(modelItem => item.TimeSent)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MessageId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MessageId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MessageId })
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
         </td>
     </tr>
 }
