@@ -1,4 +1,5 @@
 ﻿using Dist_Lab2.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,7 +19,6 @@ namespace Dist_Lab2.ViewModels
             this.LastLogin = LastLogin;
             this.LoginAmount = LoginAmount;
             this.UnreadMessages = UnreadMessages;
-
         }
    }
 }
