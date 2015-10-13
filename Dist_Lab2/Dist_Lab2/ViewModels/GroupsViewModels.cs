@@ -11,7 +11,7 @@ namespace Dist_Lab2.ViewModels
     {
         public String GroupsName { get; set; }
         public String GroupsMember { get; set; }
-        
+
         public GroupsViewModels(String GroupsName, String GroupsMember)
         {
             this.GroupsName = GroupsName;
