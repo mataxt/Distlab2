@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -80,7 +77,7 @@ namespace Dist_Lab2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    Session["Username"] = model.Email;
+                    HttpContext.Session["Email"] = model.Email;
                     UserLogLogic.MarkLog(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

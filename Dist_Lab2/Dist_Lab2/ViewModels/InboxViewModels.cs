@@ -9,12 +9,12 @@ namespace Dist_Lab2.ViewModels
 {
     public class InboxViewModels
     {
-        public String Title { get; set; }
-        public String Body { get; set; }
-        public String ReceivedBy { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public string ReceivedBy { get; set; }
         public DateTime TimeSent { get; set; }
 
-        public InboxViewModels(String Title, String Body, String ReceivedBy, DateTime TimeSent)
+        public InboxViewModels(string Title, string Body, string ReceivedBy, DateTime TimeSent)
         {
             this.Title = Title;
             this.Body = Body;

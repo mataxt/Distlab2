@@ -1,8 +1,6 @@
-﻿
-using System.Collections;
+﻿using Dist_Lab2.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Dist_Lab2.Models;
 
 namespace Dist_Lab2.ViewModels
 {
@@ -12,6 +10,6 @@ namespace Dist_Lab2.ViewModels
         public IEnumerable<SelectListItem> Receivers { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-
+        public List<string> ReceiversSelected { get; set; }
     }
 }

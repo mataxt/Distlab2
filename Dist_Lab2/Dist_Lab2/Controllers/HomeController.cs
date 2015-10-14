@@ -1,6 +1,6 @@
-﻿using Dist_Lab2.ViewModels;
+﻿using Dist_Lab2.Models;
+using Dist_Lab2.ViewModels;
 using System.Web.Mvc;
-using Dist_Lab2.Models;
 
 namespace Dist_Lab2.Controllers
 {
@@ -9,7 +9,7 @@ namespace Dist_Lab2.Controllers
     {
         public ActionResult Index()
         {
-            return View(new HomeViewModels(UserLogLogic.LastLoggedIn((string)Session["Username"]), UserLogLogic.LoggedLastMonth((string)Session["Username"]), 0));
+            return View(new HomeViewModels(UserLogLogic.LastLoggedIn((string)Session["Email"]), UserLogLogic.LoggedLastMonth((string)Session["Email"]), 0));
         }
     }
 }
