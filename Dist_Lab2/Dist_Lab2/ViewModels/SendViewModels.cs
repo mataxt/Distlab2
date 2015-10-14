@@ -1,19 +1,18 @@
 ﻿using Dist_Lab2.Models;
-
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Mvc;
 
 namespace Dist_Lab2.ViewModels
 {
     public class SendViewModels
     {
-        public String Title { get; set; }
-        public String Body { get; set; }
-        public String SendTo { get; set; }
+        public string SentBy { get; set; }
+        public IEnumerable<SelectListItem> Receivers { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public string SendTo { get; set; }
 
-        public SendViewModels(String Title, String Body, String SendTo)
+        public SendViewModels(string Title, string Body, string SendTo)
         {
             this.Title = Title;
             this.Body = Body;

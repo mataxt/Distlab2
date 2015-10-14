@@ -9,10 +9,10 @@ namespace Dist_Lab2.ViewModels
 {
     public class GroupsViewModels
     {
-        public String GroupsName { get; set; }
-        public String GroupsMember { get; set; }
+        public string GroupsName { get; set; }
+        public string GroupsMember { get; set; }
 
-        public GroupsViewModels(String GroupsName, String GroupsMember)
+        public GroupsViewModels(string GroupsName, string GroupsMember)
         {
             this.GroupsName = GroupsName;
             this.GroupsMember = GroupsMember;
