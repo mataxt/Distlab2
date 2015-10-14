@@ -1,4 +1,4 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
 
 @model Dist_Lab2.ViewModels.SendViewModels
 @{
@@ -18,9 +18,19 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
+            @Html.LabelFor(model => model.Sender, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                Html.DropDownListFor()
-                https://agilewarrior.wordpress.com/2012/12/13/how-to-simple-html-dropdownlistfor-mvc-net/// Html.DropDownListFor()
+                <div class="form-control">
+                    @User.Identity.GetUserName()
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Receivers, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.ReceiversSelected, Model.Receivers, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Receivers, "", new { @class = "text-danger" })
             </div>
         </div>
         

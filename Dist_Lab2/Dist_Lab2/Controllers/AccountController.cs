@@ -77,6 +77,7 @@ namespace Dist_Lab2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    HttpContext.Session["Email"] = model.Email;
                     UserLogLogic.MarkLog(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

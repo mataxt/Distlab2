@@ -9,7 +9,7 @@ namespace Dist_Lab2.Controllers
     {
         public ActionResult Index()
         {
-            return View(new HomeViewModels(UserLogLogic.LastLoggedIn("mataxt@kth.se"), UserLogLogic.LoggedLastMonth("mataxt@kth.se"), 0));
+            return View(new HomeViewModels(UserLogLogic.LastLoggedIn((string)Session["Email"]), UserLogLogic.LoggedLastMonth((string)Session["Email"]), 0));
         }
     }
 }
