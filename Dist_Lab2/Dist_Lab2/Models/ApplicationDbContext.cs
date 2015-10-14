@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Diagnostics;
-using System.EnterpriseServices;
 
 namespace Dist_Lab2.Models
 {
@@ -14,7 +9,7 @@ namespace Dist_Lab2.Models
     {
 
 
-        public ApplicationDbContext() : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext() : base("DefaultConnection", false)
         {
 
         }
@@ -24,15 +19,15 @@ namespace Dist_Lab2.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Message>()
                 .HasMany(u => u.Receivers)
-                .WithMany()
+                .WithMany(c => c.UserMessages)
                 .Map(m =>
                 {
                     m.MapLeftKey("MessageId");
-                    m.MapRightKey("Id");
+                    m.MapRightKey("UserId");
                     m.ToTable("MessageUser");
                 });
 
-            modelBuilder.Entity<UserLogs>().HasKey(t => new { t.UserEmail, t.LoggedAt});
+           modelBuilder.Entity<UserLogs>().HasKey(t => new { t.UserEmail, t.LoggedAt});
            modelBuilder.Entity<UserGroups>().HasKey(t => new { t.GroupId, t.GroupMembers});
         }
 
@@ -42,8 +37,9 @@ namespace Dist_Lab2.Models
         {
             return new ApplicationDbContext();
         }
+
         public DbSet<Message> Messages { get; set; }
         public DbSet<UserLogs> UserLogs { get; set; }
-        //public DbSet<UserGroups> UserGroups { get; set; }
+        public DbSet<UserGroups> UserGroups { get; set; }
     }
 }

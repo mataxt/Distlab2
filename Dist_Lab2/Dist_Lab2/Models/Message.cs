@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.UI.WebControls;
 
 
 namespace Dist_Lab2.Models
@@ -20,8 +22,10 @@ namespace Dist_Lab2.Models
         public string Status { get; set; }
 
         //Navigation property
+        public string SenderId { get; set; }
         public virtual ApplicationUser Sender { get; set; }
         //Navigation property
+        public ICollection<string> ReceiversId { get; set; }
         public virtual ICollection<ApplicationUser> Receivers { get; set; }
     }
 }

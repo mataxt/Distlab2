@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-
+﻿
 @model Dist_Lab2.ViewModels.SendViewModels
 @{
     ViewBag.Title = "Send Page";
@@ -15,17 +14,11 @@
         <h4>Send messages here</h4>
         <hr />
 
-        <div class="form-group">
-            <div class="col-md-10">
-            @Html.TextBoxFor(model => model.Sender, new { @class = "control-label col-md-2", @readonly = "readonly" })
-            </div>
-        </div>
-
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Sender, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">     
-                <input id="Title" class="form-control text-box single-line" type="text" disabled="" value="@User.Identity.GetUserName()" name="Title">
+               @Html.TextBoxFor(model => model.Sender, new { @class = "control-label col-md-2", @readonly = "readonly" })
             </div>
         </div>
 
@@ -33,13 +26,6 @@
             @Html.LabelFor(model => model.Receivers, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.ListBoxFor(model => model.ReceiversSelected, Model.Receivers, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Receivers, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Receivers, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.ListBoxFor(m => m.Receivers, Model.Receivers, new { @class = "control-label col-md-2" })
                 @Html.ValidationMessageFor(model => model.Receivers, "", new { @class = "text-danger" })
             </div>
         </div>

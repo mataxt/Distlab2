@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace Dist_Lab2.Controllers
 {
@@ -14,10 +15,9 @@ namespace Dist_Lab2.Controllers
         {
             var users = UserLogic.GetAllUsers();
             var receivers = new SelectList(
-
-               users.ToList().Select(u => new SelectListItem{ Value = u, Text = u })
-            , "Value" , "Text");
-            SendViewModels vm = new SendViewModels { Sender = (string)Session["Email"], Receivers = receivers };
+               users.ToList().Select(u => new SelectListItem { Value = u, Text = u })
+            , "Value", "Text");
+            SendViewModels vm = new SendViewModels { Sender = User.Identity.GetUserName(), Receivers = receivers };
 
             return View(vm);
         }
@@ -25,13 +25,16 @@ namespace Dist_Lab2.Controllers
         [HttpPost]
         public ActionResult Index(SendViewModels vm)
         {
-
-                foreach (var r in vm.ReceiversSelected)
-                {
-                    Debug.WriteLine(r);
-                }
-
+            if (ModelState.IsValid)
+            {
                 
+                var msg = new Message {
+                    SenderId = User.Identity.GetUserName(),
+                    ReceiversId = vm.ReceiversSelected,
+                    Title = vm.Title,
+                    Body = vm.Body };
+                MessageLogic.Send(msg);
+            }
             return Index();
         }
 
