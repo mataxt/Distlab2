@@ -9,7 +9,7 @@ namespace Dist_Lab2.Models
     {
         public static List<string> GetAllUsers()
         {
-            var usernames = new List<string>();
+            List<string> usernames;
             using (var db = new ApplicationDbContext())
             {
                 usernames =

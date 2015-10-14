@@ -19,10 +19,8 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Sender, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="form-control">
-                    @User.Identity.GetUserName()
-                </div>
+            <div class="col-md-10">     
+                <input id="Title" class="form-control text-box single-line" type="text" disabled="" value="@User.Identity.GetUserName()" name="Title">
             </div>
         </div>
 

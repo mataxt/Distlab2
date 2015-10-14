@@ -10,6 +10,6 @@ namespace Dist_Lab2.ViewModels
         public IEnumerable<SelectListItem> Receivers { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-        public string ReceiversSelected { get; set; }
+        public List<string> ReceiversSelected { get; set; }
     }
 }
