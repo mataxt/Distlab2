@@ -1,6 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-
-@model Dist_Lab2.ViewModels.HomeViewModels
+﻿@model Dist_Lab2.ViewModels.HomeViewModels
 @{
     ViewBag.Title = "Home Page";
 }
@@ -8,9 +6,11 @@
 <div class="jumbotron">
     <center>
         <h1><strong>Home</strong></h1>
-        <p class="lead">Welcome back, <i>
-            @User.Identity.GetUserName()!
-        </i></p>
+        <p class="lead">Welcome back,
+            <i>
+                @Html.Label(model => model.LoggedInAs)!
+            </i>
+        </p>
     </center>
 </div>
 
@@ -18,11 +18,11 @@
     <center>
         <div class="col-md-6">
             <h3>Last login</h3>
-            @Html.DisplayFor(m => m.LastLogin)
+            @Html.DisplayFor(model => model.LastLogin)
         </div>
         <div class="col-md-6">
             <h3>Logins in the past month</h3>
-            @Html.DisplayFor(m => m.LoginAmount)
+            @Html.DisplayFor(model => model.LoginAmount)
         </div>
     </center> 
 </div>
@@ -30,7 +30,7 @@
     <div class="col-md-12">
         <center>
             <h3>Unread messages</h3>
-            @Html.DisplayFor(m => m.UnreadMessages)
+            @Html.DisplayFor(model => model.UnreadMessages)
         </center>
     </div>
 </div>
