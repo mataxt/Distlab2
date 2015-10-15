@@ -8,7 +8,7 @@
         <h1><strong>Home</strong></h1>
         <p class="lead">Welcome back,
             <i>
-                @Html.Label(model => model.LoggedInAs)!
+                @Html.DisplayFor(model => model.LoggedInAs, new { @class = "control-label col-md-2" })!
             </i>
         </p>
     </center>

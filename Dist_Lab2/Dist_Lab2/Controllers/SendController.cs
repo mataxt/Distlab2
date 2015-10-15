@@ -36,7 +36,7 @@ namespace Dist_Lab2.Controllers
             return Index();
         }
 
-        public ActionResult Successfull()
+        public ActionResult Successful()
         {
             return View();
         }
