@@ -1,4 +1,4 @@
-﻿@model Dist_Lab2.ViewModels.InboxViewModels
+﻿@model IEnumerable<Dist_Lab2.ViewModels.InboxViewModels>
 @{
     ViewBag.Title = "Inbox Page";
 }
@@ -11,27 +11,15 @@
 <table class="table">
     <tr>
         <th>
-            // Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            // Html.DisplayNameFor(model => model.Body)
-        </th>
-        <th>
-            // Html.DisplayNameFor(model => model.TimeSent)
+            Html.DisplayNameFor(model => model.Senders)
         </th>
         <th></th>
     </tr>
 
-// foreach (var item in Model) {
+foreach (var messages in ?) {
     <tr>
         <td>
-            // Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            // Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            // Html.DisplayFor(modelItem => item.TimeSent)
+            Html.DisplayFor(modelItem => messages.Senders)
         </td>
         <td>
             @Html.ActionLink("Details", "Details") |

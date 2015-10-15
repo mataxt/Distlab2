@@ -1,7 +1,5 @@
 ﻿using Dist_Lab2.Models;
 using Dist_Lab2.ViewModels;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -17,6 +15,7 @@ namespace Dist_Lab2.Controllers
             var receivers = new SelectList(
                users.ToList().Select(u => new SelectListItem { Value = u, Text = u })
             , "Value", "Text");
+
             SendViewModels vm = new SendViewModels { Sender = User.Identity.GetUserName(), Receivers = receivers };
 
             return View(vm);
@@ -27,7 +26,6 @@ namespace Dist_Lab2.Controllers
         {
             if (ModelState.IsValid)
             {
-                
                 var msg = new Message {
                     SenderId = User.Identity.GetUserName(),
                     ReceiversId = vm.ReceiversSelected,
@@ -38,7 +36,7 @@ namespace Dist_Lab2.Controllers
             return Index();
         }
 
-        public ActionResult Successfull()
+        public ActionResult Successful()
         {
             return View();
         }

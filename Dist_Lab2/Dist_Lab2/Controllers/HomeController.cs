@@ -1,6 +1,7 @@
 ﻿using Dist_Lab2.Models;
 using Dist_Lab2.ViewModels;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace Dist_Lab2.Controllers
 {
@@ -9,7 +10,14 @@ namespace Dist_Lab2.Controllers
     {
         public ActionResult Index()
         {
-            return View(new HomeViewModels(UserLogLogic.LastLoggedIn((string)Session["Email"]), UserLogLogic.LoggedLastMonth((string)Session["Email"]), 0));
+            HomeViewModels vm = new HomeViewModels {
+                LoggedInAs = User.Identity.GetUserName(),
+                LastLogin = UserLogLogic.LastLoggedIn(User.Identity.GetUserName()),
+                LoginAmount = UserLogLogic.LoggedLastMonth(User.Identity.GetUserName()),
+                UnreadMessages = 0 // Missing code HERE!
+                };
+
+            return View(vm);
         }
     }
 }
