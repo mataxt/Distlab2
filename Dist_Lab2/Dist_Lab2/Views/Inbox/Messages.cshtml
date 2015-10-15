@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Dist_Lab2.ViewModels.InboxTitles>
 @{
-    ViewBag.Title = "Message Page";
+    ViewBag.Title = "Inbox Page";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -8,9 +8,11 @@
 
 <hr />
 
+
 <table class="table">
     <tr>
-        <th></th>
+        <th>@Html.ActionLink("Mark as Read", null) |
+        @Html.ActionLink("Remove", null)</th>
         <th>
             @Html.DisplayNameFor(modelItem => modelItem.Title)
         </th>
@@ -20,20 +22,18 @@
         <th></th>
     </tr>
 
-    @foreach (var messages in Model)
+    @foreach (var message in Model)
     {
         <tr>
             <td >CHEKCOBKC HERE</td>
             <td>
-                @Html.DisplayFor(modelItem => messages.Title)
+                @Html.DisplayFor(modelItem => message.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => messages.Time)
+                @Html.DisplayFor(modelItem => message.Time)
             </td>
             <td>
-                @Html.ActionLink("Read", null) |
-                @Html.ActionLink("Mark as Read", null) |
-                @Html.ActionLink("Remove", null)
+                @Html.ActionLink("Read", "MessageContent", new { messageId = message.MessageId })
             </td>
         </tr>
     }

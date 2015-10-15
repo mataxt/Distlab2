@@ -10,7 +10,13 @@ namespace Dist_Lab2.ViewModels
 
     public class InboxTitles
     {
+        public int MessageId { get; set; }
         public string Title { get; set; }
         public DateTime Time { get; set; }
+    }
+
+    public class InboxMessageBody
+    {
+        public string Body { get; set; }
     }
 }

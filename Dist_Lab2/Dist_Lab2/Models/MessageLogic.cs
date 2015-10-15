@@ -43,14 +43,24 @@ namespace Dist_Lab2.Models
 
         public static List<TitleTimestamp> ListMessageTitles(string username)
         {
-            List<TitleTimestamp> msgTitles = new List<TitleTimestamp>();
+            var msgTitles = new List<TitleTimestamp>();
             using (var db = new ApplicationDbContext())
             {
-                // Get messages according to their User IDs
                 var sendersId = db.Users.Where(usr => usr.UserName == username).Select(u => u.Id).First();
-                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId).Select(n => new TitleTimestamp{Title = n.Title, TimeSent = n.TimeSent}).ToList());
+                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId).OrderByDescending(a => a.TimeSent).Select(n => new TitleTimestamp{MessageId = n.MessageId, Title = n.Title, TimeSent = n.TimeSent}).ToList());
             }
             return msgTitles;
+        }
+        public static string GetMessageBody(int? messageId)
+        {
+            string msgContent;
+            using (var db = new ApplicationDbContext())
+            {
+                msgContent = db.Messages.Find(messageId).Body;
+                db.Messages.Find(messageId).Status = "READ";
+                db.SaveChanges();
+            }
+            return msgContent;
         }
     }
 }

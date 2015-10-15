@@ -30,7 +30,19 @@ namespace Dist_Lab2.Controllers
             }
             var titles = MessageLogic.ListMessageTitles(username);
             var vm = new List<InboxTitles>();
-            titles.ToList().ForEach(t => vm.Add(new InboxTitles {Title = t.Title, Time = t.TimeSent}));
+            titles.ToList().ForEach(t => vm.Add(new InboxTitles {MessageId = t.MessageId, Title = t.Title, Time = t.TimeSent}));
+            return View(vm);
+
+        }
+
+        public ActionResult MessageContent(int? messageId)
+        {
+            if (messageId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var vm = new InboxMessageBody {Body = MessageLogic.GetMessageBody(messageId)};
+            
             return View(vm);
 
         }
