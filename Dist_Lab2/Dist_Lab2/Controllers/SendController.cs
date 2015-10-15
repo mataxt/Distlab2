@@ -19,7 +19,7 @@ namespace Dist_Lab2.Controllers
                users.ToList().Select(u => new SelectListItem { Value = u, Text = u })
             , "Value", "Text");
 
-            SendViewModels vm = new SendViewModels { Sender = User.Identity.GetUserName(), Receivers = receivers };
+            var vm = new SendViewModels { Sender = User.Identity.GetUserName(), Receivers = receivers };
 
             return View(vm);
         }

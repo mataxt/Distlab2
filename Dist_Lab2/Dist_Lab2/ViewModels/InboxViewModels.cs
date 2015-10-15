@@ -5,10 +5,12 @@ namespace Dist_Lab2.ViewModels
 {
     public class InboxViewModels
     {
-        public class InboxSendersViewModels
-        {
-            public string Senders { get; set; }
-            public List<string> SendersList { get; set; }
-        }
+        public List<string> Senders { get; set; }
+    }
+
+    public class InboxTitles
+    {
+        public string Title { get; set; }
+        public DateTime Time { get; set; }
     }
 }

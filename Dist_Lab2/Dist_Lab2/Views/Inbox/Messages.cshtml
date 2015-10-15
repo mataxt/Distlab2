@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Dist_Lab2.ViewModels.InboxTitles>
+@{
+    ViewBag.Title = "Message Page";
+}
+
+<h2>@ViewBag.Title.</h2>
+<h4>Check your inbox here</h4>
+
+<hr />
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.Time)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var messages in Model)
+    {
+        <tr>
+            <td >CHEKCOBKC HERE</td>
+            <td>
+                @Html.DisplayFor(modelItem => messages.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => messages.Time)
+            </td>
+            <td>
+                @Html.ActionLink("Read", null) |
+                @Html.ActionLink("Mark as Read", null) |
+                @Html.ActionLink("Remove", null)
+            </td>
+        </tr>
+    }
+</table>
