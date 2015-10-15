@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Dist_Lab2.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace Dist_Lab2.Controllers
 {
@@ -11,7 +9,13 @@ namespace Dist_Lab2.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            InboxViewModels.InboxSendersViewModels vm = new InboxViewModels.InboxSendersViewModels
+            {
+                Senders = "Sender",
+                SendersList = Models.MessageLogic.GetSenders(User.Identity.GetUserId())
+            };
+
+            return View(vm);
         }
     }
 }

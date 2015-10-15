@@ -12,8 +12,8 @@ namespace Dist_Lab2.Controllers
         {
             HomeViewModels vm = new HomeViewModels {
                 LoggedInAs = User.Identity.GetUserName(),
-                LastLogin = UserLogLogic.LastLoggedIn((string)Session["Email"]),
-                LoginAmount = UserLogLogic.LoggedLastMonth((string)Session["Email"]),
+                LastLogin = UserLogLogic.LastLoggedIn(User.Identity.GetUserName()),
+                LoginAmount = UserLogLogic.LoggedLastMonth(User.Identity.GetUserName()),
                 UnreadMessages = 0 // Missing code HERE!
                 };
 
