@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -8,12 +9,24 @@ namespace Dist_Lab2.ViewModels
     {
         [Required]
         public string Sender { get; set; }
+
         public IEnumerable<SelectListItem> Receivers { get; set; }
+
         [Required]
         public string Title { get; set; }
+
         [Required]
         public string Body { get; set; }
+
         [Required]
-        public List<string> ReceiversSelected { get; set; }
+        public ICollection<string> ReceiversSelected { get; set; }
+
+    }
+
+    public class SuccessfulViewModels
+    {
+        public int MessageNumber { get; set; }
+        public DateTime TimeSent { get; set; }
+        public string ReceiversSent { get; set; }
     }
 }

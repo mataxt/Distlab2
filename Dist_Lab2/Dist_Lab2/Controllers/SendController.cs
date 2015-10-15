@@ -3,6 +3,9 @@ using Dist_Lab2.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using System;
+using System.Diagnostics;
+using System.Text;
 
 namespace Dist_Lab2.Controllers
 {
@@ -26,19 +29,32 @@ namespace Dist_Lab2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var msg = new Message {
+                var msg = new Message
+                {
                     SenderId = User.Identity.GetUserName(),
                     ReceiversId = vm.ReceiversSelected,
+                    TimeSent = DateTime.Now,
                     Title = vm.Title,
-                    Body = vm.Body };
+                    Body = vm.Body,
+                    Status = "UNREAD"
+                };
                 MessageLogic.Send(msg);
+                var rc = new StringBuilder();
+                vm.ReceiversSelected.ToList().ForEach(l => rc.Append(l + ", "));
+                var receipt = new SuccessfulViewModels {
+                    MessageNumber = msg.MessageId,
+                    TimeSent = msg.TimeSent,
+                    ReceiversSent = rc.ToString()
+                };
+                return RedirectToAction("Successful", "Send", receipt);
             }
             return Index();
         }
 
-        public ActionResult Successful()
+        public ActionResult Successful(SuccessfulViewModels svm)
         {
-            return View();
+
+            return View(svm);
         }
     }
 }

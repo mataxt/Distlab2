@@ -9,8 +9,6 @@ namespace Dist_Lab2.Models
     {
         public static void Send(Message message)
         {
-            message.TimeSent = DateTime.Now;
-            message.Status = "UNREAD";
             using (var db = new ApplicationDbContext())
             {
                 // Get Senders ID from their Username
