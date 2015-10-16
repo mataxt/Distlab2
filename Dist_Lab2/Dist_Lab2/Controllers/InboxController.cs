@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -20,7 +21,7 @@ namespace Dist_Lab2.Controllers
                 ReadMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).ReadMessages,
                 RemovedMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).RemovedMessages,
                 Senders = MessageLogic.GetSenders(User.Identity.GetUserId())
-                
+
             };
 
             return View(vm);
@@ -34,8 +35,24 @@ namespace Dist_Lab2.Controllers
             }
             var titles = MessageLogic.ListMessageTitles(username);
             var vm = new List<InboxTitles>();
-            titles.ToList().ForEach(t => vm.Add(new InboxTitles {MessageId = t.MessageId, Title = t.Title, Time = t.TimeSent, Status = t.Status}));
+            titles.ToList().ForEach(t => vm.Add(
+                new InboxTitles
+                {
+                    MessageId = t.MessageId,
+                    Title = t.Title,
+                    Time = t.TimeSent,
+                    Status = t.Status,
+                    Selected = false
+                }));
             return View(vm);
+
+        }
+
+        [HttpPost]
+        public ActionResult Messages(IEnumerable<InboxTitles> selected)
+        {
+            selected?.ToList().ForEach(l => Debug.WriteLineIf(l != null, "HERE: " + l));
+            return RedirectToAction("Index", "Home");
 
         }
 
@@ -45,8 +62,8 @@ namespace Dist_Lab2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var vm = new InboxMessageBody {Title = MessageLogic.GetMessageTitle(messageId), Body = MessageLogic.GetMessageBody(messageId)};
-            
+            var vm = new InboxMessageBody { Title = MessageLogic.GetMessageTitle(messageId), Body = MessageLogic.GetMessageBody(messageId) };
+
             return View(vm);
 
         }

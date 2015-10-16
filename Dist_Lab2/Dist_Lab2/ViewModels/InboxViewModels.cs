@@ -17,6 +17,7 @@ namespace Dist_Lab2.ViewModels
         public string Title { get; set; }
         public DateTime Time { get; set; }
         public string Status { get; set; }
+        public bool Selected { get; set; }
     }
 
     public class InboxMessageBody
