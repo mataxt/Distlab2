@@ -14,7 +14,7 @@ namespace Dist_Lab2.Controllers
                 LoggedInAs = User.Identity.GetUserName(),
                 LastLogin = UserLogLogic.LastLoggedIn(User.Identity.GetUserName()),
                 LoginAmount = UserLogLogic.LoggedLastMonth(User.Identity.GetUserName()),
-                UnreadMessages = 0 // Missing code HERE!
+                UnreadMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).UnreadMessages
                 };
 
             return View(vm);

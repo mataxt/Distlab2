@@ -5,6 +5,9 @@ namespace Dist_Lab2.ViewModels
 {
     public class InboxViewModels
     {
+        public int TotalMessages { get; set; }
+        public int ReadMessages { get; set; }
+        public int RemovedMessages { get; set; }
         public List<string> Senders { get; set; }
     }
 
@@ -13,6 +16,7 @@ namespace Dist_Lab2.ViewModels
         public int MessageId { get; set; }
         public string Title { get; set; }
         public DateTime Time { get; set; }
+        public string Status { get; set; }
     }
 
     public class InboxMessageBody

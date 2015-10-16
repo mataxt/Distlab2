@@ -35,11 +35,14 @@
                 </div>
             </td>
             <td>
+                @if(message.Status.Equals("UNREAD"))
+                {
                 <div style="margin-top: -15px">
                     <h3>
                         *
                     </h3>
                 </div>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => message.Title)

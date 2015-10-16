@@ -47,18 +47,17 @@ namespace Dist_Lab2.Models
             using (var db = new ApplicationDbContext())
             {
                 msgTitle = db.Messages.Find(messageId).Title;
-                db.SaveChanges();
             }
             return msgTitle;
         }
 
-        public static List<TitleTimestamp> ListMessageTitles(string username)
+        public static List<MessageHeader> ListMessageTitles(string username)
         {
-            var msgTitles = new List<TitleTimestamp>();
+            var msgTitles = new List<MessageHeader>();
             using (var db = new ApplicationDbContext())
             {
                 var sendersId = db.Users.Where(usr => usr.UserName == username).Select(u => u.Id).First();
-                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId).OrderByDescending(a => a.TimeSent).Select(n => new TitleTimestamp{MessageId = n.MessageId, Title = n.Title, TimeSent = n.TimeSent}).ToList());
+                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId).OrderByDescending(a => a.TimeSent).Select(n => new MessageHeader{MessageId = n.MessageId, Title = n.Title, TimeSent = n.TimeSent, Status = n.Status}).ToList());
             }
             return msgTitles;
         }
@@ -72,6 +71,19 @@ namespace Dist_Lab2.Models
                 db.SaveChanges();
             }
             return msgBody;
+        }
+
+        public static MessageStatistics GetMessageStats(string userId)
+        {
+            MessageStatistics msgStats = new MessageStatistics();
+            using (var db = new ApplicationDbContext())
+            {
+                msgStats.TotalMessages = db.Messages.Count(msg => msg.Receivers.Any(usr => usr.Id == userId));
+                msgStats.UnreadMessages = db.Messages.Count(msg => msg.Status.Equals("UNREAD") && msg.Receivers.Any(usr => usr.Id == userId));
+                msgStats.ReadMessages = db.Messages.Count(msg => msg.Status.Equals("READ") && msg.Receivers.Any(usr => usr.Id == userId));
+                msgStats.RemovedMessages = db.Messages.Count(msg => msg.Status.Equals("REMOVED") && msg.Receivers.Any(usr => usr.Id == userId) );
+            }
+            return msgStats;
         }
     }
 }

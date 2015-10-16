@@ -16,7 +16,11 @@ namespace Dist_Lab2.Controllers
         {
             var vm = new InboxViewModels
             {
+                TotalMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).TotalMessages,
+                ReadMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).ReadMessages,
+                RemovedMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).RemovedMessages,
                 Senders = MessageLogic.GetSenders(User.Identity.GetUserId())
+                
             };
 
             return View(vm);
@@ -30,7 +34,7 @@ namespace Dist_Lab2.Controllers
             }
             var titles = MessageLogic.ListMessageTitles(username);
             var vm = new List<InboxTitles>();
-            titles.ToList().ForEach(t => vm.Add(new InboxTitles {MessageId = t.MessageId, Title = t.Title, Time = t.TimeSent}));
+            titles.ToList().ForEach(t => vm.Add(new InboxTitles {MessageId = t.MessageId, Title = t.Title, Time = t.TimeSent, Status = t.Status}));
             return View(vm);
 
         }
