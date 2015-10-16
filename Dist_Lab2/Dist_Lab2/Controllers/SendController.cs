@@ -53,7 +53,6 @@ namespace Dist_Lab2.Controllers
 
         public ActionResult Successful(SuccessfulViewModels svm)
         {
-
             return View(svm);
         }
     }
