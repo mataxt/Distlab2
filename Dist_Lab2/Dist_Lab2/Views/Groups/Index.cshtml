@@ -1,5 +1,4 @@
-﻿
-@model Dist_Lab2.ViewModels.GroupsViewModels
+﻿@model Dist_Lab2.ViewModels.GroupsViewModels
 @{
     ViewBag.Title = "Groups Page";
 }
@@ -17,25 +16,10 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <div class="col-md-10">
-                Html.DropDownListFor()
-                https://agilewarrior.wordpress.com/2012/12/13/how-to-simple-html-dropdownlistfor-mvc-net/
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.GroupsName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GroupsName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GroupsName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GroupsMember, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.GroupsMember, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GroupsMember, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -49,25 +33,27 @@
 
 <table class="table">
     <tr>
-        <th>
-            // Html.DisplayNameFor(model => model.GroupsName)
-        </th>
-        <th>
-            // Html.DisplayNameFor(model => model.GroupsMembers)
-        </th>
         <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupsMemberAmount)
+        </th>
     </tr>
 
     // foreach (var item in Model) {
     <tr>
         <td>
-            // Html.DisplayFor(modelItem => item.GroupsName)
+            /** If-statement here! **/
+            @Html.ActionLink("Join", "Join") |
+            @Html.ActionLink("Leave", "Leave")
         </td>
         <td>
-            // Html.DisplayFor(modelItem => item.GroupsMembers)
+            @Html.DisplayFor(modelItem => modelItem.GroupsName)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete")
+            @Html.DisplayFor(modelItem => modelItem.GroupsMemberAmount)
         </td>
     </tr>
     }
