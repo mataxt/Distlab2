@@ -51,8 +51,13 @@ namespace Dist_Lab2.Controllers
         [HttpPost]
         public ActionResult Messages(IEnumerable<InboxTitles> selected)
         {
-            selected?.ToList().ForEach(l => Debug.WriteLineIf(l != null, "HERE: " + l));
-            return RedirectToAction("Index", "Home");
+            if (selected != null)
+            {
+                Debug.WriteLine("NOT NULL ");
+
+            }
+            //selected?.ToList().ForEach(l => Debug.WriteLineIf(l != null, "HERE: " + l.MessageId + l + l.Selected));
+            return Messages("test@test.se");
 
         }
 
