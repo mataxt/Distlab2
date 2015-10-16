@@ -10,10 +10,10 @@ namespace Dist_Lab2.Controllers
     {
         public ActionResult Index()
         {
-            HomeViewModels vm = new HomeViewModels {
+            var vm = new HomeViewModels {
                 LoggedInAs = User.Identity.GetUserName(),
-                LastLogin = UserLogLogic.LastLoggedIn(User.Identity.GetUserName()),
-                LoginAmount = UserLogLogic.LoggedLastMonth(User.Identity.GetUserName()),
+                LastLogin = UserLogLogic.LastLoggedIn(User.Identity.GetUserId()),
+                LoginAmount = UserLogLogic.LoggedLastMonth(User.Identity.GetUserId()),
                 UnreadMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).UnreadMessages
                 };
 

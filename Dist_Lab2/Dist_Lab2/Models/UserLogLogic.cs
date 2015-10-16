@@ -9,19 +9,19 @@ namespace Dist_Lab2.Models
         {
             using (var db = new ApplicationDbContext())
             {
-                var log = new UserLogs{ UserEmail = email, LoggedAt = DateTime.Now};
+                var log = new UserLogs{ UserId = db.Users.Where(u => u.Email.Equals(email)).Select(i => i.Id).First(), LoggedAt = DateTime.Now};
                 db.UserLogs.Add(log);
                 db.SaveChanges();
             }
         }
 
-        public static DateTime LastLoggedIn(string email)
+        public static DateTime LastLoggedIn(string userId)
         {
             DateTime lastlog = DateTime.Now;
             using (var db = new ApplicationDbContext())
             {
                 var lastLogged =
-                    db.UserLogs.Where(l => l.UserEmail.Equals(email))
+                    db.UserLogs.Where(l => l.UserId.Equals(userId))
                         .OrderByDescending(l => l.LoggedAt)
                         .Select(l => l.LoggedAt).ToList().Skip(1).FirstOrDefault();
 
@@ -34,14 +34,14 @@ namespace Dist_Lab2.Models
                 return lastlog;
         }
 
-        public static int LoggedLastMonth(string email)
+        public static int LoggedLastMonth(string userId)
         {
             int amount;
             DateTime lastMonth = DateTime.Now.AddMonths(-1);
             using (var db = new ApplicationDbContext())
             {
                 var amountLogged =
-                    db.UserLogs.Where(l => l.UserEmail.Equals(email)&& 
+                    db.UserLogs.Where(l => l.UserId.Equals(userId) && 
                         l.LoggedAt >= lastMonth)
                         .OrderByDescending(l => l.LoggedAt)
                         .Select(l => l.LoggedAt).Count();

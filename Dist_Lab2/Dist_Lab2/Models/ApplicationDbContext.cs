@@ -27,8 +27,9 @@ namespace Dist_Lab2.Models
                     m.ToTable("MessageUser");
                 });
 
-           modelBuilder.Entity<UserLogs>().HasKey(t => new { t.UserEmail, t.LoggedAt});
-           modelBuilder.Entity<UserGroups>().HasKey(t => new { t.GroupId, t.GroupMembers});
+           modelBuilder.Entity<UserLogs>().HasKey(t => new { t.UserId, t.LoggedAt});
+           modelBuilder.Entity<UserGroups>().HasKey(t => new { t.GroupName, t.UserId});
+
         }
 
 

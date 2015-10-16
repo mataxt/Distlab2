@@ -1,9 +1,12 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Dist_Lab2.Models;
 using Dist_Lab2.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace Dist_Lab2.Controllers
 {
@@ -12,18 +15,27 @@ namespace Dist_Lab2.Controllers
     {
         public ActionResult Index()
         {
-            GroupsViewModels vm = new GroupsViewModels()
-            {
-                GroupsName = "Test",
-                GroupsMemberAmount = 0
-            };
-
+            var groups = UserGroupsLogic.GetGroups();
+            var vm = new List<GroupsViewModels>();
+            groups.ToList().ForEach(l => vm.Add(new GroupsViewModels {GroupName = l, GroupMemberAmount = UserGroupsLogic.GetMembersAmount(l)}));
             return View(vm);
         }
 
         [HttpPost]
         public ActionResult Index(GroupsViewModels vm)
         {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    UserGroupsLogic.JoinGroup(User.Identity.GetUserId(), vm.GroupName);
+                }
+                catch (DbUpdateException)
+                {
+                    return Index();
+                }
+                
+            }
             return Index();
         }
     }

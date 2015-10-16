@@ -1,6 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Dist_Lab2.Models
@@ -41,7 +40,7 @@ namespace Dist_Lab2.Models
             return senders;
         }
 
-        internal static string GetMessageTitle(int? messageId)
+        public static string GetMessageTitle(int? messageId)
         {
             string msgTitle;
             using (var db = new ApplicationDbContext())

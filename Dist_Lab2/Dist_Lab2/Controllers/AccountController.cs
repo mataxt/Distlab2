@@ -77,7 +77,6 @@ namespace Dist_Lab2.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    HttpContext.Session["Email"] = model.Email;
                     UserLogLogic.MarkLog(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
@@ -151,7 +150,7 @@ namespace Dist_Lab2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FullName = model.FullName };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded) 
                 {

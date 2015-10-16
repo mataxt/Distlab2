@@ -180,6 +180,7 @@
     <Compile Include="Models\MessageLogic.cs" />
     <Compile Include="Models\MessageStatistics.cs" />
     <Compile Include="Models\UserGroups.cs" />
+    <Compile Include="Models\UserGroupsLogic.cs" />
     <Compile Include="Models\UserLogic.cs" />
     <Compile Include="Models\UserLogLogic.cs" />
     <Compile Include="Migrations\Configuration.cs" />
