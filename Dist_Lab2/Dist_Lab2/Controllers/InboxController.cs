@@ -41,7 +41,7 @@ namespace Dist_Lab2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var vm = new InboxMessageBody {Body = MessageLogic.GetMessageBody(messageId)};
+            var vm = new InboxMessageBody {Title = MessageLogic.GetMessageTitle(messageId), Body = MessageLogic.GetMessageBody(messageId)};
             
             return View(vm);
 

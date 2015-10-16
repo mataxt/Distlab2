@@ -177,6 +177,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MessageLogic.cs" />
+    <Compile Include="Models\TitleTimestamp.cs" />
     <Compile Include="Models\UserGroups.cs" />
     <Compile Include="Models\UserLogic.cs" />
     <Compile Include="Models\UserLogLogic.cs" />
@@ -262,6 +263,8 @@
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -288,6 +291,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -325,6 +330,8 @@
     <Content Include="Views\Groups\Index.cshtml" />
     <Content Include="Views\Send\Index.cshtml" />
     <Content Include="Views\Send\Successful.cshtml" />
+    <Content Include="Views\Inbox\MessageContent.cshtml" />
+    <Content Include="Views\Inbox\Messages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

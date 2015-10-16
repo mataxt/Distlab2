@@ -41,6 +41,17 @@ namespace Dist_Lab2.Models
             return senders;
         }
 
+        internal static string GetMessageTitle(int? messageId)
+        {
+            string msgTitle;
+            using (var db = new ApplicationDbContext())
+            {
+                msgTitle = db.Messages.Find(messageId).Title;
+                db.SaveChanges();
+            }
+            return msgTitle;
+        }
+
         public static List<TitleTimestamp> ListMessageTitles(string username)
         {
             var msgTitles = new List<TitleTimestamp>();
@@ -53,14 +64,14 @@ namespace Dist_Lab2.Models
         }
         public static string GetMessageBody(int? messageId)
         {
-            string msgContent;
+            string msgBody;
             using (var db = new ApplicationDbContext())
             {
-                msgContent = db.Messages.Find(messageId).Body;
+                msgBody = db.Messages.Find(messageId).Body;
                 db.Messages.Find(messageId).Status = "READ";
                 db.SaveChanges();
             }
-            return msgContent;
+            return msgBody;
         }
     }
 }

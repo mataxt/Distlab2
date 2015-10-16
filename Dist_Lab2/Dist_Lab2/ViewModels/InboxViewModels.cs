@@ -17,6 +17,7 @@ namespace Dist_Lab2.ViewModels
 
     public class InboxMessageBody
     {
+        public string Title { get; set; }
         public string Body { get; set; }
     }
 }

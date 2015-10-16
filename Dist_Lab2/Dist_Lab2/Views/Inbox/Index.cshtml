@@ -16,14 +16,33 @@
         <th></th>
     </tr>
 
-@foreach (var sender in Model.Senders) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => sender)
-        </td>
-        <td>
-            @Html.ActionLink("View Messages", "Messages", new { username = sender })
-        </td>
-</tr>
-}
+    @foreach (var sender in Model.Senders)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => sender)
+            </td>
+            <td>
+                <strong>
+                    @Html.ActionLink("View Messages", "Messages", new {username = sender})
+                </strong>
+            </td>
+        </tr>
+    }
 </table>
+
+<hr/>
+
+<div class="col-md-4">
+    HEJ 1
+</div>
+
+<div class="col-md-4">
+    HEJ 2
+</div>
+
+<div class="col-md-4">
+    HEJ 3
+</div>
+
+<br />
