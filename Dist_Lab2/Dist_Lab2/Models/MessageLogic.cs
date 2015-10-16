@@ -57,10 +57,12 @@ namespace Dist_Lab2.Models
             using (var db = new ApplicationDbContext())
             {
                 var sendersId = db.Users.Where(usr => usr.UserName == username).Select(u => u.Id).First();
-                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId).OrderByDescending(a => a.TimeSent).Select(n => new MessageHeader{MessageId = n.MessageId, Title = n.Title, TimeSent = n.TimeSent, Status = n.Status}).ToList());
+                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId && !m.Status.Equals("REMOVED")).OrderByDescending(a => a.TimeSent).Select(n => new MessageHeader{MessageId = n.MessageId, Title = n.Title, TimeSent = n.TimeSent, Status = n.Status}).ToList());
             }
             return msgTitles;
         }
+
+
         public static string GetMessageBody(int? messageId)
         {
             string msgBody;
@@ -84,6 +86,23 @@ namespace Dist_Lab2.Models
                 msgStats.RemovedMessages = db.Messages.Count(msg => msg.Status.Equals("REMOVED") && msg.Receivers.Any(usr => usr.Id == userId) );
             }
             return msgStats;
+        }
+
+        public static void MarkedAsRead(IEnumerable<int> messageIds)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                messageIds.ToList().ForEach(m => db.Messages.Find(m).Status = "READ");
+                db.SaveChanges();
+            }
+        }
+        public static void RemoveMessage(IEnumerable<int> messageIds)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                messageIds.ToList().ForEach(m => db.Messages.Find(m).Status = "REMOVED");
+                db.SaveChanges();
+            }
         }
     }
 }

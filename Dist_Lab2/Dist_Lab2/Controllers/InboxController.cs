@@ -49,16 +49,18 @@ namespace Dist_Lab2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Messages(IEnumerable<InboxTitles> selected)
+        public ActionResult Messages(IList<InboxTitles> titlesSelected, string submit)
         {
-            if (selected != null)
+
+            var selectedList = titlesSelected.Where(m => m.Selected).Select(n => n.MessageId); 
+            if(submit.Equals("Read"))
+                MessageLogic.MarkedAsRead(selectedList);
+            else if (submit.Equals("Delete"))
             {
-                Debug.WriteLine("NOT NULL ");
-
+                MessageLogic.RemoveMessage(selectedList);
             }
-            //selected?.ToList().ForEach(l => Debug.WriteLineIf(l != null, "HERE: " + l.MessageId + l + l.Selected));
-            return Messages("test@test.se");
 
+            return RedirectToAction("Messages", "Inbox", new { username = User.Identity.GetUserName() });
         }
 
         public ActionResult MessageContent(int? messageId)

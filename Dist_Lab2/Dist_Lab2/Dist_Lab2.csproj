@@ -176,8 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MessageHeader.cs" />
     <Compile Include="Models\MessageLogic.cs" />
-    <Compile Include="Models\TitleTimestamp.cs" />
+    <Compile Include="Models\MessageStatistics.cs" />
     <Compile Include="Models\UserGroups.cs" />
     <Compile Include="Models\UserLogic.cs" />
     <Compile Include="Models\UserLogLogic.cs" />
