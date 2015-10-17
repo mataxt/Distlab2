@@ -5,5 +5,6 @@ namespace Dist_Lab2.ViewModels
     {
         public string GroupName { get; set; }
         public int GroupMemberAmount { get; set; }
+        public bool IsMember { get; set; }
     }
 }

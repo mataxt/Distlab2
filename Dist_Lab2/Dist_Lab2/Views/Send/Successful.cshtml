@@ -7,15 +7,12 @@
 <h4>Successfully sent a message</h4>
 
 <hr />
-@using (Html.BeginForm())
-{
     <h1>
         Message number @Html.DisplayFor(model => model.MessageNumber, new {htmlAttributes = new {@class = "form-control"}}) succesfully sent to
         <i>@Html.DisplayFor(model => model.ReceiversSent, new {htmlAttributes = new {@class = "form-control"}})</i>
         <br>
         @Html.DisplayFor(model => model.TimeSent, new {htmlAttributes = new {@class = "form-control"}})
     </h1>
-}
 
 <hr />
 

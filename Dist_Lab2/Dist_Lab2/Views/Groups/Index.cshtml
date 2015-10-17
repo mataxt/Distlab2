@@ -12,49 +12,58 @@
     <div class="form-horizontal">
         <h4>Check and create groups here</h4>
 
-        <hr />
+        <hr/>
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
         <div class="form-group">
-            @Html.LabelFor(model => model.First().GroupName, new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">
+                Group Name
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.First().GroupName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.First().GroupName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.First().GroupName, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.First().GroupName, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create group" class="btn btn-default" />
+                <input type="submit" name="submit" value="Create group" class="btn btn-default"/>
             </div>
         </div>
     </div>
+
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                Group Name
+            </th>
+            <th>
+                Members
+            </th>
+        </tr>
+
+        @for (var i = 1; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @if (Model.ElementAt(i).IsMember)
+                    {
+                       @Html.ActionLink("Leave", "Leave", new { grp = Model.ElementAt(i).GroupName })
+                    }
+                    else
+                    {
+                       @Html.ActionLink("Join","Join", new { grp = Model.ElementAt(i).GroupName})
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].GroupName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].GroupMemberAmount)
+                </td>
+            </tr>
+        }
+    </table>
 }
-
-<table class="table">
-    <tr>
-        <th></th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().GroupName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().GroupMemberAmount)
-        </th>
-    </tr>
-
-    @foreach (var item in Model) {
-    <tr>
-        <td>
-            /** If-statement here! **/
-            @Html.ActionLink("Join", "Join") |
-            @Html.ActionLink("Leave", "Leave")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GroupName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GroupMemberAmount)
-        </td>
-    </tr>
-    }
-</table>

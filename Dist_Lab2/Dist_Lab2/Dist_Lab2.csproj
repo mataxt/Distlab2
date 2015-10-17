@@ -334,6 +334,8 @@
     <Content Include="Views\Send\Successful.cshtml" />
     <Content Include="Views\Inbox\MessageContent.cshtml" />
     <Content Include="Views\Inbox\Messages.cshtml" />
+    <Content Include="Views\Groups\Join.cshtml" />
+    <Content Include="Views\Groups\Leave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
