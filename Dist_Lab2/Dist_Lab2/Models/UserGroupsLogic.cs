@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Dist_Lab2.Models
@@ -15,6 +13,16 @@ namespace Dist_Lab2.Models
                 grpName = db.UserGroups.Select(l => l.GroupName).Distinct().ToList();
             }
             return grpName;
+        }
+
+        public static List<string> GetMembersId(string groupName)
+        {
+            List<string> users;
+            using (var db = new ApplicationDbContext())
+            {
+                users = db.UserGroups.Where(g => g.GroupName.Equals(groupName)).Select(l => l.UserId).ToList();
+            }
+            return users;
         }
 
         public static int GetMembersAmount(string groupName)

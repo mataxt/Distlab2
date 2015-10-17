@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.Text;
+using WebGrease.Css.Extensions;
 
 namespace Dist_Lab2.Controllers
 {
@@ -15,11 +16,16 @@ namespace Dist_Lab2.Controllers
         public ActionResult Index()
         {
             var users = UserLogic.GetAllUsers();
-            var receivers = new SelectList(
+            var groups = UserGroupsLogic.GetGroups();
+
+            var receiversList = new SelectList(
                users.ToList().Select(u => new SelectListItem { Value = u, Text = u })
             , "Value", "Text");
+            var groupList = new SelectList(
+               groups.ToList().Select(u => new SelectListItem { Value = u, Text = u })
+            , "Value", "Text");
 
-            var vm = new SendViewModels { Sender = User.Identity.GetUserName(), Receivers = receivers };
+            var vm = new SendViewModels { Sender = User.Identity.GetUserName(), Receivers = receiversList, Groups = groupList };
 
             return View(vm);
         }
@@ -29,10 +35,16 @@ namespace Dist_Lab2.Controllers
         {
             if (ModelState.IsValid)
             {
+                var usersSelected = new List<string>() ;
+                usersSelected.AddRange(UserLogic.GetAllUserIds(vm.ReceiversSelected));
+                vm.GroupsSelected.ForEach(g => usersSelected.AddRange(UserGroupsLogic.GetMembersId(g)));
+                var distinctUsers = usersSelected.Distinct();
+                usersSelected = distinctUsers.ToList();
+
                 var msg = new Message
                 {
-                    SenderId = User.Identity.GetUserName(),
-                    ReceiversId = vm.ReceiversSelected,
+                    SenderId = User.Identity.GetUserId(),
+                    ReceiversId = usersSelected,
                     TimeSent = DateTime.Now,
                     Title = vm.Title,
                     Body = vm.Body,
@@ -40,7 +52,7 @@ namespace Dist_Lab2.Controllers
                 };
                 MessageLogic.Send(msg);
                 var rc = new StringBuilder();
-                vm.ReceiversSelected.ToList().ForEach(l => rc.Append(l + ", "));
+                usersSelected.ToList().ForEach(l => rc.Append(l + ", "));
                 var receipt = new SuccessfulViewModels {
                     MessageNumber = msg.MessageId,
                     TimeSent = msg.TimeSent,

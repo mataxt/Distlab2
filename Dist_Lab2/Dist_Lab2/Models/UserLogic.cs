@@ -1,7 +1,7 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using WebGrease.Css.Extensions;
 
 namespace Dist_Lab2.Models
 {
@@ -19,6 +19,17 @@ namespace Dist_Lab2.Models
             }
 
             return usernames;
+        }
+
+        public static List<string> GetAllUserIds(ICollection<string> users)
+        {
+            List<string> userIds = new List<string>();
+            using (var db = new ApplicationDbContext())
+            {
+                users.ForEach(u => userIds.Add(db.Users.Where(l => l.UserName.Equals(u)).Select(a => a.Id).First()));
+            }
+
+            return userIds;
         }
     }
 }

@@ -11,13 +11,14 @@ namespace Dist_Lab2.ViewModels
         public string Sender { get; set; }
 
         public IEnumerable<SelectListItem> Receivers { get; set; }
-
+        public IEnumerable<SelectListItem> Groups { get; set; }
         [Required]
         public string Title { get; set; }
 
         [Required]
         public string Body { get; set; }
 
+        public ICollection<string> GroupsSelected { get; set; }
         [Required]
         public ICollection<string> ReceiversSelected { get; set; }
 
