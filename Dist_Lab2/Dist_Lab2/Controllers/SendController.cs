@@ -41,6 +41,12 @@ namespace Dist_Lab2.Controllers
                 var distinctUsers = usersSelected.Distinct();
                 usersSelected = distinctUsers.ToList();
 
+                // User must have selected a Receiver (Users or Groups or Both)
+                if (usersSelected.Capacity == 0)
+                {
+                    return Index();
+                }
+
                 var msg = new Message
                 {
                     SenderId = User.Identity.GetUserId(),
@@ -52,7 +58,8 @@ namespace Dist_Lab2.Controllers
                 };
                 MessageLogic.Send(msg);
                 var rc = new StringBuilder();
-                usersSelected.ToList().ForEach(l => rc.Append(l + ", "));
+                vm.ReceiversSelected.ForEach(l => rc.Append(l + ", "));
+                vm.GroupsSelected.ForEach(l => rc.Append(l + ", "));
                 var receipt = new SuccessfulViewModels {
                     MessageNumber = msg.MessageId,
                     TimeSent = msg.TimeSent,

@@ -109,3 +109,6 @@ C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\b
 C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\obj\Debug\Dist_Lab2.Tests.csprojResolveAssemblyReference.cache
 C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\obj\Debug\Dist_Lab2.Tests.dll
 C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\obj\Debug\Dist_Lab2.Tests.pdb
+C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\bin\Debug\WebGrease.dll
+C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\bin\Debug\Antlr3.Runtime.dll
+C:\Users\mathi\Documents\GitHubVisualStudio\Distlab2\Dist_Lab2\Dist_Lab2.Tests\bin\Debug\Antlr3.Runtime.pdb
