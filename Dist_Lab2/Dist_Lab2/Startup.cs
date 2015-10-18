@@ -1,7 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using Dist_Lab2;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Dist_Lab2.Startup))]
+[assembly: OwinStartup(typeof (Startup))]
+
 namespace Dist_Lab2
 {
     public partial class Startup

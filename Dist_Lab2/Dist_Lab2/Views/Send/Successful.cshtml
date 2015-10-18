@@ -6,15 +6,15 @@
 <h2>@ViewBag.Title.</h2>
 <h4>Successfully sent a message</h4>
 
-<hr />
-    <h1>
-        Message number @Html.DisplayFor(model => model.MessageNumber, new {htmlAttributes = new {@class = "form-control"}}) succesfully sent to
-        <i>@Html.DisplayFor(model => model.ReceiversSent, new {htmlAttributes = new {@class = "form-control"}})</i>
-        <br>
-        @Html.DisplayFor(model => model.TimeSent, new {htmlAttributes = new {@class = "form-control"}})
-    </h1>
+<hr/>
+<h1>
+    Message number @Html.DisplayFor(model => model.MessageNumber, new {htmlAttributes = new {@class = "form-control"}}) succesfully sent to
+    <i>@Html.DisplayFor(model => model.ReceiversSent, new {htmlAttributes = new {@class = "form-control"}})</i>
+    <br>
+    @Html.DisplayFor(model => model.TimeSent, new {htmlAttributes = new {@class = "form-control"}})
+</h1>
 
-<hr />
+<hr/>
 
 <h4>
     <a href="#" onclick="history.back(); return false;">Click here to go back</a>

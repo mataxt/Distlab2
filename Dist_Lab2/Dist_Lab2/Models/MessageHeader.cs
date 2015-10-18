@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace Dist_Lab2.Models
 {

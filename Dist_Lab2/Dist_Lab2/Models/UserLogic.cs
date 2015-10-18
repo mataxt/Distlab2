@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using WebGrease.Css.Extensions;
 
@@ -23,7 +22,7 @@ namespace Dist_Lab2.Models
 
         public static List<string> GetAllUserIds(ICollection<string> users)
         {
-            List<string> userIds = new List<string>();
+            var userIds = new List<string>();
             using (var db = new ApplicationDbContext())
             {
                 users.ForEach(u => userIds.Add(db.Users.Where(l => l.UserName.Equals(u)).Select(a => a.Id).First()));

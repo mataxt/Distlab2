@@ -1,5 +1,4 @@
-﻿
-namespace Dist_Lab2.ViewModels
+﻿namespace Dist_Lab2.ViewModels
 {
     public class GroupsViewModels
     {

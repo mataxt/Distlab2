@@ -1,5 +1,4 @@
-﻿
-namespace Dist_Lab2.Models
+﻿namespace Dist_Lab2.Models
 {
     public class MessageStatistics
     {

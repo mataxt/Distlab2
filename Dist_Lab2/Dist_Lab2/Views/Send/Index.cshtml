@@ -5,19 +5,19 @@
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Send messages here</h4>
-        <hr />
+        <hr/>
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
         <div class="form-group">
-            @Html.LabelFor(model => model.Sender, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">     
-               @Html.TextBoxFor(model => model.Sender, new { @class = "form-control text-box single-line", @readonly = "readonly" })
+            @Html.LabelFor(model => model.Sender, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Sender, new {@class = "form-control text-box single-line", @readonly = "readonly"})
             </div>
         </div>
 
@@ -38,28 +38,29 @@
 
         <div class="form-group">
             <div class="control-label col-md-2">
-                <p><i>(Groups)</i>
+                <p>
+                    <i>(Groups)</i>
                 </p>
             </div>
             <div class="col-md-10">
-                @Html.ListBoxFor(model => model.GroupsSelected, Model.Groups, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Receivers, "", new { @class = "text-danger" })
+                @Html.ListBoxFor(model => model.GroupsSelected, Model.Groups, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Receivers, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Title, new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Title, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Title, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Body, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.Body, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"})
             </div>
         </div>
 

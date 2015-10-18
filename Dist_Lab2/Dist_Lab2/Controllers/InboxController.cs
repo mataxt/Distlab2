@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -21,7 +19,6 @@ namespace Dist_Lab2.Controllers
                 ReadMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).ReadMessages,
                 RemovedMessages = MessageLogic.GetMessageStats(User.Identity.GetUserId()).RemovedMessages,
                 Senders = MessageLogic.GetSenders(User.Identity.GetUserId())
-
             };
 
             return View(vm);
@@ -45,22 +42,20 @@ namespace Dist_Lab2.Controllers
                     Selected = false
                 }));
             return View(vm);
-
         }
 
         [HttpPost]
         public ActionResult Messages(IList<InboxTitles> titlesSelected, string submit)
         {
-
-            var selectedList = titlesSelected.Where(m => m.Selected).Select(n => n.MessageId); 
-            if(submit.Equals("Read"))
+            var selectedList = titlesSelected.Where(m => m.Selected).Select(n => n.MessageId);
+            if (submit.Equals("Read"))
                 MessageLogic.MarkedAsRead(selectedList);
             else if (submit.Equals("Delete"))
             {
                 MessageLogic.RemoveMessage(selectedList);
             }
 
-            return RedirectToAction("Messages", "Inbox", new { username = User.Identity.GetUserName() });
+            return RedirectToAction("Messages", "Inbox", new {username = User.Identity.GetUserName()});
         }
 
         public ActionResult MessageContent(int? messageId)
@@ -69,10 +64,13 @@ namespace Dist_Lab2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var vm = new InboxMessageBody { Title = MessageLogic.GetMessageTitle(messageId), Body = MessageLogic.GetMessageBody(messageId) };
+            var vm = new InboxMessageBody
+            {
+                Title = MessageLogic.GetMessageTitle(messageId),
+                Body = MessageLogic.GetMessageBody(messageId)
+            };
 
             return View(vm);
-
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Dist_Lab2.Controllers
         public ActionResult Index()
         {
             var groups = UserGroupsLogic.GetGroups();
-            var vm = new List<GroupsViewModels> { new GroupsViewModels { GroupName = "", GroupMemberAmount = 0 } };
+            var vm = new List<GroupsViewModels> {new GroupsViewModels {GroupName = "", GroupMemberAmount = 0}};
             groups.ToList().ForEach(l => vm.Add(
                 new GroupsViewModels
                 {
@@ -52,7 +52,7 @@ namespace Dist_Lab2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
+
             return View();
         }
 
@@ -71,5 +71,4 @@ namespace Dist_Lab2.Controllers
             return View();
         }
     }
-
 }

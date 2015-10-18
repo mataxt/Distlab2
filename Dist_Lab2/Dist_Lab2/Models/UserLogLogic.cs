@@ -9,7 +9,11 @@ namespace Dist_Lab2.Models
         {
             using (var db = new ApplicationDbContext())
             {
-                var log = new UserLogs{ UserId = db.Users.Where(u => u.Email.Equals(email)).Select(i => i.Id).First(), LoggedAt = DateTime.Now};
+                var log = new UserLogs
+                {
+                    UserId = db.Users.Where(u => u.Email.Equals(email)).Select(i => i.Id).First(),
+                    LoggedAt = DateTime.Now
+                };
                 db.UserLogs.Add(log);
                 db.SaveChanges();
             }
@@ -17,7 +21,7 @@ namespace Dist_Lab2.Models
 
         public static DateTime LastLoggedIn(string userId)
         {
-            DateTime lastlog = DateTime.Now;
+            var lastlog = DateTime.Now;
             using (var db = new ApplicationDbContext())
             {
                 var lastLogged =
@@ -28,21 +32,21 @@ namespace Dist_Lab2.Models
                 // Record ONLY If it's NOT the users first time, and has no previous logs
                 if (!lastLogged.ToString().Equals("0001-01-01 00:00:00"))
                 {
-                    lastlog = lastLogged;    
+                    lastlog = lastLogged;
                 }
             }
-                return lastlog;
+            return lastlog;
         }
 
         public static int LoggedLastMonth(string userId)
         {
             int amount;
-            DateTime lastMonth = DateTime.Now.AddMonths(-1);
+            var lastMonth = DateTime.Now.AddMonths(-1);
             using (var db = new ApplicationDbContext())
             {
                 var amountLogged =
-                    db.UserLogs.Where(l => l.UserId.Equals(userId) && 
-                        l.LoggedAt >= lastMonth)
+                    db.UserLogs.Where(l => l.UserId.Equals(userId) &&
+                                           l.LoggedAt >= lastMonth)
                         .OrderByDescending(l => l.LoggedAt)
                         .Select(l => l.LoggedAt).Count();
                 amount = amountLogged;

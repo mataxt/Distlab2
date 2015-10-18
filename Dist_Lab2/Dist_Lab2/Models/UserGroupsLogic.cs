@@ -44,6 +44,7 @@ namespace Dist_Lab2.Models
             }
             return exists;
         }
+
         public static bool IsMember(string userId, string groupName)
         {
             bool isMember;
@@ -54,7 +55,7 @@ namespace Dist_Lab2.Models
             return isMember;
         }
 
-        public static void JoinGroup(string userId,string groupName)
+        public static void JoinGroup(string userId, string groupName)
         {
             using (var db = new ApplicationDbContext())
             {

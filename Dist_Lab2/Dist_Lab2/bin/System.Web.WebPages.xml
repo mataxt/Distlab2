@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <doc>
   <assembly>
     <name>System.Web.WebPages</name>
@@ -12,7 +13,8 @@
       <returns>Returns a string that contains the encrypted token value in a hidden HTML field.</returns>
       <exception cref="T:System.ArgumentException">The current <see cref="T:System.Web.HttpContext" /> object is null.</exception>
     </member>
-    <member name="M:System.Web.Helpers.AntiForgery.GetHtml(System.Web.HttpContextBase,System.String,System.String,System.String)">
+    <member
+      name="M:System.Web.Helpers.AntiForgery.GetHtml(System.Web.HttpContextBase,System.String,System.String,System.String)">
       <summary>Adds an authenticating token to a form to help protect against request forgery and lets callers specify authentication details.</summary>
       <returns>Returns the encrypted token value in a hidden HTML field.</returns>
       <param name="httpContext">The HTTP context data for a request.</param>
@@ -20,7 +22,8 @@
       <param name="domain">The domain of a web application that a request is submitted from.</param>
       <param name="path">The virtual root path of a web application that a request is submitted from.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="httpContext" /> is null.</exception>
+        <paramref name="httpContext" /> is null.
+      </exception>
     </member>
     <member name="M:System.Web.Helpers.AntiForgery.GetTokens(System.String,System.String@,System.String@)">
       <summary>Gets the search tokens.</summary>
@@ -41,9 +44,15 @@
     <member name="M:System.Web.Helpers.AntiForgery.Validate(System.Web.HttpContextBase,System.String)">
       <summary>Validates that input data from an HTML form field comes from the user who submitted the data and lets callers specify additional validation details.</summary>
       <param name="httpContext">The HTTP context data for a request.</param>
-      <param name="salt">An optional string of random characters (such as Z*7g1&amp;p4) that is used to decrypt an authentication token created by the <see cref="T:System.Web.Helpers.AntiForgery" /> class. The default is null.</param>
+      <param name="salt">
+        An optional string of random characters (such as Z*7g1&amp;p4) that is used to decrypt an authentication token created by the
+        <see cref="T:System.Web.Helpers.AntiForgery" /> class. The default is null.
+      </param>
       <exception cref="T:System.ArgumentException">The current <see cref="T:System.Web.HttpContext" /> value is null.</exception>
-      <exception cref="T:System.Web.Helpers.HttpAntiForgeryException">The HTTP cookie token that accompanies a valid request is missing.-or-The form token is missing.-or-The form token value does not match the cookie token value.-or-The form token value does not match the cookie token value.-or-The <paramref name="salt" /> value supplied does not match the <paramref name="salt" /> value that was used to create the form token.</exception>
+      <exception cref="T:System.Web.Helpers.HttpAntiForgeryException">
+        The HTTP cookie token that accompanies a valid request is missing.-or-The form token is missing.-or-The form token value does not match the cookie token value.-or-The form token value does not match the cookie token value.-or-The
+        <paramref name="salt" /> value supplied does not match the <paramref name="salt" /> value that was used to create the form token.
+      </exception>
     </member>
     <member name="T:System.Web.Helpers.AntiForgeryConfig">
       <summary>Provides programmatic configuration for the anti-forgery token system.</summary>
@@ -74,12 +83,14 @@
     <member name="T:System.Web.Helpers.IAntiForgeryAdditionalDataProvider">
       <summary>Provides a way to include or validate custom data for anti-forgery tokens.</summary>
     </member>
-    <member name="M:System.Web.Helpers.IAntiForgeryAdditionalDataProvider.GetAdditionalData(System.Web.HttpContextBase)">
+    <member
+      name="M:System.Web.Helpers.IAntiForgeryAdditionalDataProvider.GetAdditionalData(System.Web.HttpContextBase)">
       <summary>Provides additional data to store for the anti-forgery tokens that are generated during this request.</summary>
       <returns>The supplemental data to embed in the anti-forgery token.</returns>
       <param name="context">Information about the current request.</param>
     </member>
-    <member name="M:System.Web.Helpers.IAntiForgeryAdditionalDataProvider.ValidateAdditionalData(System.Web.HttpContextBase,System.String)">
+    <member
+      name="M:System.Web.Helpers.IAntiForgeryAdditionalDataProvider.ValidateAdditionalData(System.Web.HttpContextBase,System.String)">
       <summary>Validates additional data that was embedded inside an incoming anti-forgery token.</summary>
       <returns>true if the data is valid, or false if the data is invalid.</returns>
       <param name="context">Information about the current request.</param>
@@ -93,7 +104,10 @@
       <returns>An unvalidated collection of form values.</returns>
     </member>
     <member name="P:System.Web.Helpers.UnvalidatedRequestValues.Item(System.String)">
-      <summary>Gets the specified unvalidated object from the collection of posted values in the <see cref="T:System.Web.HttpRequest" /> object.</summary>
+      <summary>
+        Gets the specified unvalidated object from the collection of posted values in the
+        <see cref="T:System.Web.HttpRequest" /> object.
+      </summary>
       <returns>The specified member, or null if the specified item is not found.</returns>
     </member>
     <member name="P:System.Web.Helpers.UnvalidatedRequestValues.QueryString">
@@ -129,14 +143,23 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
     <member name="M:System.Web.Mvc.HttpAntiForgeryException.#ctor">
-      <summary>This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.Mvc.HttpAntiForgeryException" /> class.</summary>
+      <summary>
+        This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.Mvc.HttpAntiForgeryException" /> class.
+      </summary>
     </member>
     <member name="M:System.Web.Mvc.HttpAntiForgeryException.#ctor(System.String)">
-      <summary>This member supports the .NET Framework infrastructure and is not intended to be used directly from your code. Initializes a new instance of the <see cref="T:System.Web.Mvc.HttpAntiForgeryException" /> class.</summary>
+      <summary>
+        This member supports the .NET Framework infrastructure and is not intended to be used directly from your code. Initializes a new instance of the
+        <see cref="T:System.Web.Mvc.HttpAntiForgeryException" /> class.
+      </summary>
       <param name="message">The containing message.</param>
     </member>
     <member name="M:System.Web.Mvc.HttpAntiForgeryException.#ctor(System.String,System.Exception)">
-      <summary>This member supports the .NET Framework infrastructure and is not intended to be used directly from your code. Initializes a new instance of the <see cref="T:System.Web.Mvc.HttpAntiForgeryException" /> class.</summary>
+      <summary>
+        This member supports the .NET Framework infrastructure and is not intended to be used directly from your code. Initializes a new instance of the
+        <see cref="T:System.Web.Mvc.HttpAntiForgeryException" /> class.
+      </summary>
       <param name="message">The message.</param>
       <param name="innerException">The inner exception.</param>
     </member>
@@ -165,14 +188,18 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
     <member name="M:System.Web.Mvc.ModelClientValidationRegexRule.#ctor(System.String,System.String)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code. Initializes a new instance of the <see cref="T:System.Web.Mvc.ModelClientValidationRegexRule" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code. Initializes a new instance of the
+        <see cref="T:System.Web.Mvc.ModelClientValidationRegexRule" /> class.
+      </summary>
       <param name="errorMessage">The exception message.</param>
       <param name="pattern">The pattern.</param>
     </member>
     <member name="T:System.Web.Mvc.ModelClientValidationRemoteRule">
       <summary>Represents the remote rule for the validation of the model client.</summary>
     </member>
-    <member name="M:System.Web.Mvc.ModelClientValidationRemoteRule.#ctor(System.String,System.String,System.String,System.String)">
+    <member
+      name="M:System.Web.Mvc.ModelClientValidationRemoteRule.#ctor(System.String,System.String,System.String,System.String)">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Mvc.ModelClientValidationRemoteRule" /> class.</summary>
       <param name="errorMessage">The error message.</param>
       <param name="url">The URL of the rule.</param>
@@ -183,7 +210,10 @@
       <summary>Represents the required rule for the validation of the model client.</summary>
     </member>
     <member name="M:System.Web.Mvc.ModelClientValidationRequiredRule.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.Web.Mvc.ModelClientValidationRequiredRule" /> class.</summary>
+      <summary>
+        Initializes a new instance of the <see cref="T:System.Web.Mvc.ModelClientValidationRequiredRule" />
+        class.
+      </summary>
       <param name="errorMessage">The error message </param>
     </member>
     <member name="T:System.Web.Mvc.ModelClientValidationRule">
@@ -204,20 +234,28 @@
     <member name="T:System.Web.Mvc.ModelClientValidationStringLengthRule">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Represents a length of the validation rule of the model client.</summary>
     </member>
-    <member name="M:System.Web.Mvc.ModelClientValidationStringLengthRule.#ctor(System.String,System.Int32,System.Int32)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.Mvc.ModelClientValidationStringLengthRule" /> class.</summary>
+    <member
+      name="M:System.Web.Mvc.ModelClientValidationStringLengthRule.#ctor(System.String,System.Int32,System.Int32)">
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.Mvc.ModelClientValidationStringLengthRule" /> class.
+      </summary>
       <param name="errorMessage">The error message.</param>
       <param name="minimumLength">The minimum length of the validation rule.</param>
       <param name="maximumLength">The maximum length of the validation rule.</param>
     </member>
     <member name="T:System.Web.Mvc.TagBuilder">
-      <summary>Contains classes and properties that are used to create HTML elements. This class is used to write helpers, such as those found in the <see cref="N:System.Web.Helpers" /> namespace.</summary>
+      <summary>
+        Contains classes and properties that are used to create HTML elements. This class is used to write helpers, such as those found in the
+        <see cref="N:System.Web.Helpers" /> namespace.
+      </summary>
     </member>
     <member name="M:System.Web.Mvc.TagBuilder.#ctor(System.String)">
       <summary>Creates a new tag that has the specified tag name.</summary>
       <param name="tagName">The tag name without the "&lt;", "/", or "&gt;" delimiters.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="tagName" /> is null or empty.</exception>
+        <paramref name="tagName" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.Mvc.TagBuilder.AddCssClass(System.String)">
       <summary>Adds a CSS class to the list of CSS classes in the tag.</summary>
@@ -229,16 +267,23 @@
     </member>
     <member name="M:System.Web.Mvc.TagBuilder.CreateSanitizedId(System.String)">
       <summary>Replaces each invalid character in the tag ID with a valid HTML character.</summary>
-      <returns>The sanitized tag ID, or null if <paramref name="originalId" /> is null or empty, or if <paramref name="originalId" /> does not begin with a letter.</returns>
+      <returns>
+        The sanitized tag ID, or null if <paramref name="originalId" /> is null or empty, or if
+        <paramref name="originalId" /> does not begin with a letter.
+      </returns>
       <param name="originalId">The ID that might contain characters to replace.</param>
     </member>
     <member name="M:System.Web.Mvc.TagBuilder.CreateSanitizedId(System.String,System.String)">
       <summary>Replaces each invalid character in the tag ID with the specified replacement string.</summary>
-      <returns>The sanitized tag ID, or null if <paramref name="originalId" /> is null or empty, or if <paramref name="originalId" /> does not begin with a letter.</returns>
+      <returns>
+        The sanitized tag ID, or null if <paramref name="originalId" /> is null or empty, or if
+        <paramref name="originalId" /> does not begin with a letter.
+      </returns>
       <param name="originalId">The ID that might contain characters to replace.</param>
       <param name="invalidCharReplacement">The replacement string.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="invalidCharReplacement" /> is null.</exception>
+        <paramref name="invalidCharReplacement" /> is null.
+      </exception>
     </member>
     <member name="M:System.Web.Mvc.TagBuilder.GenerateId(System.String)">
       <summary>Generates a sanitized ID attribute for the tag by using the specified name.</summary>
@@ -261,7 +306,10 @@
       <summary>Adds a new attribute or optionally replaces an existing attribute in the opening tag.</summary>
       <param name="key">The key for the attribute.</param>
       <param name="value">The value of the attribute.</param>
-      <param name="replaceExisting">true to replace an existing attribute if an attribute exists that has the specified <paramref name="key" /> value, or false to leave the original attribute unchanged.</param>
+      <param name="replaceExisting">
+        true to replace an existing attribute if an attribute exists that has the specified
+        <paramref name="key" /> value, or false to leave the original attribute unchanged.
+      </param>
     </member>
     <member name="M:System.Web.Mvc.TagBuilder.MergeAttributes``2(System.Collections.Generic.IDictionary{``0,``1})">
       <summary>Adds new attributes to the tag.</summary>
@@ -269,7 +317,8 @@
       <typeparam name="TKey">The type of the key object.</typeparam>
       <typeparam name="TValue">The type of the value object.</typeparam>
     </member>
-    <member name="M:System.Web.Mvc.TagBuilder.MergeAttributes``2(System.Collections.Generic.IDictionary{``0,``1},System.Boolean)">
+    <member
+      name="M:System.Web.Mvc.TagBuilder.MergeAttributes``2(System.Collections.Generic.IDictionary{``0,``1},System.Boolean)">
       <summary>Adds new attributes or optionally replaces existing attributes in the tag.</summary>
       <param name="attributes">The collection of attributes to add or replace.</param>
       <param name="replaceExisting">For each attribute in <paramref name="attributes" />, true to replace the attribute if an attribute already exists that has the same key, or false to leave the original attribute unchanged.</param>
@@ -310,8 +359,12 @@
     <member name="T:System.Web.Mvc.UnobtrusiveValidationAttributesGenerator">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
-    <member name="M:System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule},System.Collections.Generic.IDictionary{System.String,System.Object})">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the validation attributes from the structure or content of <see cref="T:System.Web.Mvc.UnobtrusiveValidationAttributesGenerator" />.</summary>
+    <member
+      name="M:System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(System.Collections.Generic.IEnumerable{System.Web.Mvc.ModelClientValidationRule},System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the validation attributes from the structure or content of
+        <see cref="T:System.Web.Mvc.UnobtrusiveValidationAttributesGenerator" />.
+      </summary>
       <param name="clientRules">The <see cref="T:System.Web.Mvc.ModelClientValidationRule" /> to be implemented.</param>
       <param name="results">The result of the validation.</param>
     </member>
@@ -323,22 +376,26 @@
       <param name="assembly">The assembly.</param>
       <param name="rootVirtualPath">The root virtual path.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="rootVirtualPath" /> is null or empty.</exception>
+        <paramref name="rootVirtualPath" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.ApplicationPart.ProcessVirtualPath(System.Reflection.Assembly,System.String,System.String)">
+    <member
+      name="M:System.Web.WebPages.ApplicationPart.ProcessVirtualPath(System.Reflection.Assembly,System.String,System.String)">
       <summary>Resolves a path to the specified assembly or resource within an assembly by using the specified base virtual path and specified virtual path.</summary>
       <returns>The path of the assembly or resource.</returns>
       <param name="assembly">The assembly.</param>
       <param name="baseVirtualPath">The base virtual path.</param>
       <param name="virtualPath">The virtual path.</param>
       <exception cref="T:System.InvalidOperationException">
-        <paramref name="assembly" /> is not registered.</exception>
+        <paramref name="assembly" /> is not registered.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.ApplicationPart.Register(System.Web.WebPages.ApplicationPart)">
       <summary>Adds an assembly and all web pages within the assembly to the list of available application parts.</summary>
       <param name="applicationPart">The application part.</param>
       <exception cref="T:System.InvalidOperationException">
-        <paramref name="applicationPart" /> is already registered.</exception>
+        <paramref name="applicationPart" /> is already registered.
+      </exception>
     </member>
     <member name="T:System.Web.WebPages.ApplicationStartPage">
       <summary>Provides objects and methods that are used to execute and render ASP.NET Web Pages application start pages (_AppStart.cshtml or _AppStart.vbhtml files).</summary>
@@ -391,18 +448,21 @@
     <member name="T:System.Web.WebPages.AttributeValue">
       <summary>Stores the value for an attribute.This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
-    <member name="M:System.Web.WebPages.AttributeValue.#ctor(System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.Object},System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.AttributeValue.#ctor(System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.Object},System.Boolean)">
       <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.AttributeValue" /> class.This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
       <param name="prefix">The namespace prefix for the attribute.</param>
       <param name="value">The value for the attribute.</param>
       <param name="literal">true to indicate that the value is a literal value; otherwise, false.</param>
     </member>
-    <member name="M:System.Web.WebPages.AttributeValue.FromTuple(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean})">
+    <member
+      name="M:System.Web.WebPages.AttributeValue.FromTuple(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean})">
       <summary>Creates an attribute value from the specified tuple object.</summary>
       <returns>The created attribute value.</returns>
       <param name="value">The tuple object from which to create from.</param>
     </member>
-    <member name="M:System.Web.WebPages.AttributeValue.FromTuple(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean})">
+    <member
+      name="M:System.Web.WebPages.AttributeValue.FromTuple(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean})">
       <summary>Creates an attribute value from the specified tuple object.</summary>
       <returns>The created attribute value.</returns>
       <param name="value">The tuple object from which to create from.</param>
@@ -411,12 +471,14 @@
       <summary>Gets or sets a value that indicates whether the value is a literal value.This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
       <returns>true if the value is a literal value; otherwise, false.</returns>
     </member>
-    <member name="M:System.Web.WebPages.AttributeValue.op_Implicit(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean})~System.Web.WebPages.AttributeValue">
+    <member
+      name="M:System.Web.WebPages.AttributeValue.op_Implicit(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean})~System.Web.WebPages.AttributeValue">
       <summary>Creates an attribute value from the specified tuple object.</summary>
       <returns>The created attribute value.</returns>
       <param name="value">The tuple object from which to create from.</param>
     </member>
-    <member name="M:System.Web.WebPages.AttributeValue.op_Implicit(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean})~System.Web.WebPages.AttributeValue">
+    <member
+      name="M:System.Web.WebPages.AttributeValue.op_Implicit(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean})~System.Web.WebPages.AttributeValue">
       <summary>Creates an attribute value from the specified tuple object.</summary>
       <returns>The created attribute value.</returns>
       <param name="value">The tuple object from which to create from.</param>
@@ -446,12 +508,14 @@
       <returns>The user agent string</returns>
       <param name="httpContext">The current context.</param>
     </member>
-    <member name="M:System.Web.WebPages.BrowserHelpers.GetVaryByCustomStringForOverriddenBrowser(System.Web.HttpContext)">
+    <member
+      name="M:System.Web.WebPages.BrowserHelpers.GetVaryByCustomStringForOverriddenBrowser(System.Web.HttpContext)">
       <summary>Gets a string that varies based on the type of the browser.</summary>
       <returns>A string that identifies the browser.</returns>
       <param name="httpContext">The current context.</param>
     </member>
-    <member name="M:System.Web.WebPages.BrowserHelpers.GetVaryByCustomStringForOverriddenBrowser(System.Web.HttpContextBase)">
+    <member
+      name="M:System.Web.WebPages.BrowserHelpers.GetVaryByCustomStringForOverriddenBrowser(System.Web.HttpContextBase)">
       <summary>Gets a string that varies based on the type of the browser. </summary>
       <returns>A string that identifies the browser.</returns>
       <param name="httpContext">The current context base.</param>
@@ -461,13 +525,19 @@
       <param name="httpContext">The current context.</param>
       <param name="userAgent">The user agent to use.</param>
     </member>
-    <member name="M:System.Web.WebPages.BrowserHelpers.SetOverriddenBrowser(System.Web.HttpContextBase,System.Web.WebPages.BrowserOverride)">
+    <member
+      name="M:System.Web.WebPages.BrowserHelpers.SetOverriddenBrowser(System.Web.HttpContextBase,System.Web.WebPages.BrowserOverride)">
       <summary>Overrides the request's actual user agent value using the specified browser override information.</summary>
       <param name="httpContext">The current context.</param>
       <param name="browserOverride">One of the enumeration values that represents the browser override information to use.</param>
     </member>
     <member name="T:System.Web.WebPages.BrowserOverride">
-      <summary>Specifies browser types that can be defined for the <see cref="M:System.Web.WebPages.BrowserHelpers.SetOverriddenBrowser(System.Web.HttpContextBase,System.Web.WebPages.BrowserOverride)" /> method.</summary>
+      <summary>
+        Specifies browser types that can be defined for the
+        <see
+          cref="M:System.Web.WebPages.BrowserHelpers.SetOverriddenBrowser(System.Web.HttpContextBase,System.Web.WebPages.BrowserOverride)" />
+        method.
+      </summary>
     </member>
     <member name="F:System.Web.WebPages.BrowserOverride.Desktop">
       <summary>Specifies a desktop browser.</summary>
@@ -479,14 +549,18 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.The current BrowserOverrideStore is used to get and set the user agent of a request.</summary>
     </member>
     <member name="M:System.Web.WebPages.BrowserOverrideStore.#ctor">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.BrowserOverrideStore" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.BrowserOverrideStore" /> class.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.BrowserOverrideStore.GetOverriddenUserAgent(System.Web.HttpContextBase)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Looks for a user agent by searching for the browser override cookie.</summary>
       <returns>The user agent.</returns>
       <param name="httpContext">The HTTP context.</param>
     </member>
-    <member name="M:System.Web.WebPages.BrowserOverrideStore.SetOverriddenUserAgent(System.Web.HttpContextBase,System.String)">
+    <member
+      name="M:System.Web.WebPages.BrowserOverrideStore.SetOverriddenUserAgent(System.Web.HttpContextBase,System.String)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Adds a browser override cookie with the set user agent to the response of the current request.</summary>
       <param name="httpContext">The HTTP context.</param>
       <param name="userAgent">The user agent.</param>
@@ -504,10 +578,16 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets overridden user agent for a request from a cookie. Creates a cookie to set the overridden user agent.</summary>
     </member>
     <member name="M:System.Web.WebPages.CookieBrowserOverrideStore.#ctor">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.CookieBrowserOverrideStore" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.CookieBrowserOverrideStore" /> class.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.CookieBrowserOverrideStore.#ctor(System.Int32)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.CookieBrowserOverrideStore" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.CookieBrowserOverrideStore" /> class.
+      </summary>
       <param name="daysToExpire">The days to expire.</param>
     </member>
     <member name="M:System.Web.WebPages.CookieBrowserOverrideStore.GetOverriddenUserAgent(System.Web.HttpContextBase)">
@@ -515,7 +595,8 @@
       <returns>The user agent.</returns>
       <param name="httpContext">The HTTP context.</param>
     </member>
-    <member name="M:System.Web.WebPages.CookieBrowserOverrideStore.SetOverriddenUserAgent(System.Web.HttpContextBase,System.String)">
+    <member
+      name="M:System.Web.WebPages.CookieBrowserOverrideStore.SetOverriddenUserAgent(System.Web.HttpContextBase,System.String)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Adds a browser override cookie with the set user agent to the response of the current request.</summary>
       <param name="httpContext">The HTTP context.</param>
       <param name="userAgent">The user agent.</param>
@@ -524,14 +605,23 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Represents the default display mode of the web pages.</summary>
     </member>
     <member name="M:System.Web.WebPages.DefaultDisplayMode.#ctor">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.DefaultDisplayMode" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.DefaultDisplayMode" /> class.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.DefaultDisplayMode.#ctor(System.String)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.DefaultDisplayMode" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.DefaultDisplayMode" /> class.
+      </summary>
       <param name="suffix">The suffix.</param>
     </member>
     <member name="M:System.Web.WebPages.DefaultDisplayMode.CanHandleContext(System.Web.HttpContextBase)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Indicates a value whether the <see cref="T:System.Web.HttpContextBase" /> can handle context.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Indicates a value whether the
+        <see cref="T:System.Web.HttpContextBase" /> can handle context.
+      </summary>
       <returns>true if the <see cref="T:System.Web.HttpContextBase" /> can handle context; otherwise, false.</returns>
       <param name="httpContext">The specified http context.</param>
     </member>
@@ -543,7 +633,8 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the display mode identifier of the web pages.</summary>
       <returns>The display mode identifier of the web pages.</returns>
     </member>
-    <member name="M:System.Web.WebPages.DefaultDisplayMode.GetDisplayInfo(System.Web.HttpContextBase,System.String,System.Func{System.String,System.Boolean})">
+    <member
+      name="M:System.Web.WebPages.DefaultDisplayMode.GetDisplayInfo(System.Web.HttpContextBase,System.String,System.Func{System.String,System.Boolean})">
       <summary>Retrieves the display information about an item in the result pane.</summary>
       <returns>The display information about an item in the result pane.</returns>
       <param name="httpContext">The http context.</param>
@@ -560,7 +651,10 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Represents a property’s display information.</summary>
     </member>
     <member name="M:System.Web.WebPages.DisplayInfo.#ctor(System.String,System.Web.WebPages.IDisplayMode)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.DisplayInfo" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.DisplayInfo" /> class.
+      </summary>
       <param name="filePath">The virtual path.</param>
       <param name="displayMode">The active display mode.</param>
     </member>
@@ -578,14 +672,19 @@
     <member name="F:System.Web.WebPages.DisplayModeProvider.DefaultDisplayModeId">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Defines the default display mode identifier.</summary>
     </member>
-    <member name="M:System.Web.WebPages.DisplayModeProvider.GetAvailableDisplayModesForContext(System.Web.HttpContextBase,System.Web.WebPages.IDisplayMode)">
+    <member
+      name="M:System.Web.WebPages.DisplayModeProvider.GetAvailableDisplayModesForContext(System.Web.HttpContextBase,System.Web.WebPages.IDisplayMode)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets a list of the available display modes for the context base.</summary>
       <returns>A list of the available display modes for the context base.</returns>
       <param name="httpContext">The http context base.</param>
       <param name="currentDisplayMode">The current display mode.</param>
     </member>
-    <member name="M:System.Web.WebPages.DisplayModeProvider.GetDisplayInfoForVirtualPath(System.String,System.Web.HttpContextBase,System.Func{System.String,System.Boolean},System.Web.WebPages.IDisplayMode)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the <see cref="T:System.Web.WebPages.DisplayInfo" /> for the virtual path.</summary>
+    <member
+      name="M:System.Web.WebPages.DisplayModeProvider.GetDisplayInfoForVirtualPath(System.String,System.Web.HttpContextBase,System.Func{System.String,System.Boolean},System.Web.WebPages.IDisplayMode)">
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the
+        <see cref="T:System.Web.WebPages.DisplayInfo" /> for the virtual path.
+      </summary>
       <returns>The <see cref="T:System.Web.WebPages.DisplayInfo" /> for the virtual path.</returns>
       <param name="virtualPath">The virtual path.</param>
       <param name="httpContext">The http context base.</param>
@@ -593,14 +692,20 @@
       <param name="currentDisplayMode">The current display mode.</param>
     </member>
     <member name="P:System.Web.WebPages.DisplayModeProvider.Instance">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the instance of the <see cref="T:System.Web.WebPages.DisplayModeProvider" />.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the instance of the
+        <see cref="T:System.Web.WebPages.DisplayModeProvider" />.
+      </summary>
       <returns>The instance of the <see cref="T:System.Web.WebPages.DisplayModeProvider" />.</returns>
     </member>
     <member name="F:System.Web.WebPages.DisplayModeProvider.MobileDisplayModeId">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Defines the mobile display mode identifier.</summary>
     </member>
     <member name="P:System.Web.WebPages.DisplayModeProvider.Modes">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets a list of modes of the <see cref="T:System.Web.WebPages.DisplayModeProvider" />.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets a list of modes of the
+        <see cref="T:System.Web.WebPages.DisplayModeProvider" />.
+      </summary>
       <returns>A list of modes of the <see cref="T:System.Web.WebPages.DisplayModeProvider" />.</returns>
     </member>
     <member name="P:System.Web.WebPages.DisplayModeProvider.RequireConsistentDisplayMode">
@@ -611,7 +716,10 @@
       <summary>Represents a base class for pages that is used when ASP.NET compiles a .cshtml or .vbhtml file and that exposes page-level and application-level properties and methods.</summary>
     </member>
     <member name="M:System.Web.WebPages.HelperPage.#ctor">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.HelperPage" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.HelperPage" /> class.
+      </summary>
     </member>
     <member name="P:System.Web.WebPages.HelperPage.App">
       <summary>Gets the application-state data as a <see cref="T:System.Dynamic.DynamicObject" /> object that callers can use to create and access custom application-scoped properties.</summary>
@@ -621,7 +729,8 @@
       <summary>Gets a reference to global application-state data that can be shared across sessions and requests in an ASP.NET application.</summary>
       <returns>The application-state data.</returns>
     </member>
-    <member name="M:System.Web.WebPages.HelperPage.BeginContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.HelperPage.BeginContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Puts all the helper statements into the context of the helper page.</summary>
       <param name="writer">The text writer.</param>
       <param name="virtualPath">The helper virtual path.</param>
@@ -629,7 +738,8 @@
       <param name="length">The length of the context.</param>
       <param name="isLiteral">true of the context has a literal attribute; otherwise, false.</param>
     </member>
-    <member name="M:System.Web.WebPages.HelperPage.BeginContext(System.String,System.Int32,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.HelperPage.BeginContext(System.String,System.Int32,System.Int32,System.Boolean)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Puts all the helper statements into the context of the helper page.</summary>
       <param name="virtualPath">The helper virtual path.</param>
       <param name="startPosition">The starting position.</param>
@@ -648,7 +758,8 @@
       <summary>Gets the current page for this helper page.</summary>
       <returns>The current page.</returns>
     </member>
-    <member name="M:System.Web.WebPages.HelperPage.EndContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.HelperPage.EndContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Indicates the end of context block.</summary>
       <param name="writer">The text writer.</param>
       <param name="virtualPath">The helper virtual path.</param>
@@ -733,7 +844,8 @@
       <summary>Gets the virtual path of the page.</summary>
       <returns>The virtual path.</returns>
     </member>
-    <member name="M:System.Web.WebPages.HelperPage.WriteAttributeTo(System.IO.TextWriter,System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])">
+    <member
+      name="M:System.Web.WebPages.HelperPage.WriteAttributeTo(System.IO.TextWriter,System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Writes an attribute associated with the helper.</summary>
       <param name="writer">The text writer.</param>
       <param name="name">The name of the attribute.</param>
@@ -746,7 +858,8 @@
       <param name="writer">The text writer.</param>
       <param name="value">The value of the object.</param>
     </member>
-    <member name="M:System.Web.WebPages.HelperPage.WriteLiteralTo(System.IO.TextWriter,System.Web.WebPages.HelperResult)">
+    <member
+      name="M:System.Web.WebPages.HelperPage.WriteLiteralTo(System.IO.TextWriter,System.Web.WebPages.HelperResult)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Writes a helper result object to the helper.</summary>
       <param name="writer">The text writer</param>
       <param name="value">The helper result.</param>
@@ -782,7 +895,8 @@
     <member name="M:System.Web.WebPages.HttpContextExtensions.RedirectLocal(System.Web.HttpContextBase,System.String)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
-    <member name="M:System.Web.WebPages.HttpContextExtensions.RegisterForDispose(System.Web.HttpContextBase,System.IDisposable)">
+    <member
+      name="M:System.Web.WebPages.HttpContextExtensions.RegisterForDispose(System.Web.HttpContextBase,System.IDisposable)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code..</summary>
     </member>
     <member name="T:System.Web.WebPages.IDisplayMode">
@@ -797,7 +911,8 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the display mode id for the web pages.</summary>
       <returns>The display mode id for the web pages.</returns>
     </member>
-    <member name="M:System.Web.WebPages.IDisplayMode.GetDisplayInfo(System.Web.HttpContextBase,System.String,System.Func{System.String,System.Boolean})">
+    <member
+      name="M:System.Web.WebPages.IDisplayMode.GetDisplayInfo(System.Web.HttpContextBase,System.String,System.Func{System.String,System.Boolean})">
       <summary>Returns this method to display all the information for the web pages.</summary>
       <returns>The method to display all the information for the web pages.</returns>
       <param name="httpContext">The HTTP context.</param>
@@ -885,12 +1000,14 @@
       <summary>When implemented in a derived class, gets a container for client validation for the required field.</summary>
       <returns>The container.</returns>
     </member>
-    <member name="M:System.Web.WebPages.RequestFieldValidatorBase.GetHttpContext(System.ComponentModel.DataAnnotations.ValidationContext)">
+    <member
+      name="M:System.Web.WebPages.RequestFieldValidatorBase.GetHttpContext(System.ComponentModel.DataAnnotations.ValidationContext)">
       <summary>Returns the HTTP context of the current request.</summary>
       <returns>The context.</returns>
       <param name="validationContext">The validation context.</param>
     </member>
-    <member name="M:System.Web.WebPages.RequestFieldValidatorBase.GetRequestValue(System.Web.HttpRequestBase,System.String)">
+    <member
+      name="M:System.Web.WebPages.RequestFieldValidatorBase.GetRequestValue(System.Web.HttpRequestBase,System.String)">
       <summary>Returns the value to validate.</summary>
       <returns>The value to validate.</returns>
       <param name="request">The current request.</param>
@@ -902,7 +1019,8 @@
       <param name="httpContext">The current context.</param>
       <param name="value">The value to validate.</param>
     </member>
-    <member name="M:System.Web.WebPages.RequestFieldValidatorBase.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+    <member
+      name="M:System.Web.WebPages.RequestFieldValidatorBase.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
       <summary>Performs the validation test.</summary>
       <returns>The result of the validation test.</returns>
       <param name="validationContext">The context.</param>
@@ -910,7 +1028,8 @@
     <member name="T:System.Web.WebPages.ResponseExtensions">
       <summary>Defines extension methods for the <see cref="T:System.Web.HttpResponseBase" /> base class.</summary>
     </member>
-    <member name="M:System.Web.WebPages.ResponseExtensions.OutputCache(System.Web.HttpResponseBase,System.Int32,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Web.HttpCacheability)">
+    <member
+      name="M:System.Web.WebPages.ResponseExtensions.OutputCache(System.Web.HttpResponseBase,System.Int32,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Web.HttpCacheability)">
       <summary>Configures the cache policy of an HTTP response instance.</summary>
       <param name="response">The HTTP response instance.</param>
       <param name="numberOfSeconds">The length of time, in seconds, before items expire from the cache.</param>
@@ -925,7 +1044,8 @@
       <param name="response">The HTTP response instance.</param>
       <param name="httpStatusCode">The HTTP status code.</param>
     </member>
-    <member name="M:System.Web.WebPages.ResponseExtensions.SetStatus(System.Web.HttpResponseBase,System.Net.HttpStatusCode)">
+    <member
+      name="M:System.Web.WebPages.ResponseExtensions.SetStatus(System.Web.HttpResponseBase,System.Net.HttpStatusCode)">
       <summary>Sets the HTTP status code of an HTTP response using the specified HTTP status code enumeration value.</summary>
       <param name="response">The HTTP response instance.</param>
       <param name="httpStatusCode">The HTTP status code</param>
@@ -935,7 +1055,8 @@
       <param name="response">The HTTP response instance.</param>
       <param name="data">An array that contains the bytes to write.</param>
     </member>
-    <member name="M:System.Web.WebPages.ResponseExtensions.WriteBinary(System.Web.HttpResponseBase,System.Byte[],System.String)">
+    <member
+      name="M:System.Web.WebPages.ResponseExtensions.WriteBinary(System.Web.HttpResponseBase,System.Byte[],System.String)">
       <summary>Writes a sequence of bytes that represent binary content of the specified MIME type to the output stream of an HTTP response.</summary>
       <param name="response">The receiving HTTP response instance.</param>
       <param name="data">An array that contains the bytes to write.</param>
@@ -959,24 +1080,38 @@
       <returns>The context of the <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.</returns>
     </member>
     <member name="M:System.Web.WebPages.StartPage.ExecutePageHierarchy">
-      <summary>Calls the methods that are used to execute the developer-written code in the _PageStart start page and in the <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.</summary>
+      <summary>
+        Calls the methods that are used to execute the developer-written code in the _PageStart start page and in the
+        <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.StartPage.GetOutputWriter">
       <summary>Returns the text writer instance that is used to render the page.</summary>
       <returns>The text writer.</returns>
     </member>
-    <member name="M:System.Web.WebPages.StartPage.GetStartPage(System.Web.WebPages.WebPageRenderingBase,System.String,System.Collections.Generic.IEnumerable{System.String})">
+    <member
+      name="M:System.Web.WebPages.StartPage.GetStartPage(System.Web.WebPages.WebPageRenderingBase,System.String,System.Collections.Generic.IEnumerable{System.String})">
       <summary>Returns the initialization page for the specified page.</summary>
-      <returns>The _AppStart page if the _AppStart page exists. If the _AppStart page cannot be found, returns the _PageStart page if a _PageStart page exists. If the _AppStart and _PageStart pages cannot be found, returns <paramref name="page" />.</returns>
+      <returns>
+        The _AppStart page if the _AppStart page exists. If the _AppStart page cannot be found, returns the _PageStart page if a _PageStart page exists. If the _AppStart and _PageStart pages cannot be found, returns
+        <paramref name="page" />.
+      </returns>
       <param name="page">The page.</param>
       <param name="fileName">The file name of the page.</param>
       <param name="supportedExtensions">The collection of file-name extensions that can contain ASP.NET Razor syntax, such as "cshtml" and "vbhtml".</param>
-      <exception cref="T:System.ArgumentNullException">Either <paramref name="page" /> or <paramref name="fileName" /> are null.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        Either <paramref name="page" /> or <paramref name="fileName" />
+        are null.
+      </exception>
       <exception cref="T:System.ArgumentException">
-        <paramref name="supportedExtensions" /> is null or empty.</exception>
+        <paramref name="supportedExtensions" /> is null or empty.
+      </exception>
     </member>
     <member name="P:System.Web.WebPages.StartPage.Layout">
-      <summary>Gets or sets the path of the layout page for the <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.</summary>
+      <summary>
+        Gets or sets the path of the layout page for the
+        <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.
+      </summary>
       <returns>The path of the layout page for the <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.</returns>
     </member>
     <member name="P:System.Web.WebPages.StartPage.Page">
@@ -985,7 +1120,10 @@
     </member>
     <member name="P:System.Web.WebPages.StartPage.PageData">
       <summary>Gets array-like access to <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page data that is shared between pages, layout pages, and partial pages.</summary>
-      <returns>An object that provides array-like access to <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page data.</returns>
+      <returns>
+        An object that provides array-like access to <see cref="P:System.Web.WebPages.StartPage.ChildPage" />
+        page data.
+      </returns>
     </member>
     <member name="M:System.Web.WebPages.StartPage.RenderPage(System.String,System.Object[])">
       <summary>Renders the <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.</summary>
@@ -994,14 +1132,20 @@
       <param name="data">Additional data that is used to render the page.</param>
     </member>
     <member name="M:System.Web.WebPages.StartPage.RunPage">
-      <summary>Executes the developer-written code in the <see cref="P:System.Web.WebPages.StartPage.ChildPage" /> page.</summary>
+      <summary>
+        Executes the developer-written code in the <see cref="P:System.Web.WebPages.StartPage.ChildPage" />
+        page.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.StartPage.Write(System.Object)">
       <summary>Writes the string representation of the specified object as an HTML-encoded string.</summary>
       <param name="value">The object to encode and write.</param>
     </member>
     <member name="M:System.Web.WebPages.StartPage.Write(System.Web.WebPages.HelperResult)">
-      <summary>Writes the string representation of the specified <see cref="T:System.Web.WebPages.HelperResult" /> object as an HTML-encoded string.</summary>
+      <summary>
+        Writes the string representation of the specified <see cref="T:System.Web.WebPages.HelperResult" />
+        object as an HTML-encoded string.
+      </summary>
       <param name="result">The helper result to encode and write.</param>
     </member>
     <member name="M:System.Web.WebPages.StartPage.WriteLiteral(System.Object)">
@@ -1127,7 +1271,10 @@
       <returns>The virtual path.</returns>
     </member>
     <member name="T:System.Web.WebPages.TemplateStack">
-      <summary>Represents a last-in-first-out (LIFO) collection of <see cref="T:System.Web.WebPages.ITemplateFile" /> template files.</summary>
+      <summary>
+        Represents a last-in-first-out (LIFO) collection of <see cref="T:System.Web.WebPages.ITemplateFile" />
+        template files.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.TemplateStack.GetCurrentTemplate(System.Web.HttpContextBase)">
       <summary>Returns the current template file from the specified HTTP context.</summary>
@@ -1139,22 +1286,29 @@
       <returns>The template file, removed from the top of the stack.</returns>
       <param name="httpContext">The HTTP context that contains the stack that stores the template files.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="httpContext" /> is null.</exception>
+        <paramref name="httpContext" /> is null.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.TemplateStack.Push(System.Web.HttpContextBase,System.Web.WebPages.ITemplateFile)">
+    <member
+      name="M:System.Web.WebPages.TemplateStack.Push(System.Web.HttpContextBase,System.Web.WebPages.ITemplateFile)">
       <summary>Inserts a template file at the top of the stack in the specified HTTP context.</summary>
       <param name="httpContext">The HTTP context that contains the stack that stores the template files.</param>
       <param name="templateFile">The template file to push onto the specified stack.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="httpContext" /> or <paramref name="templateFile" /> are null.</exception>
+        <paramref name="httpContext" /> or <paramref name="templateFile" /> are null.
+      </exception>
     </member>
     <member name="T:System.Web.WebPages.ValidationHelper">
       <summary>Implements validation for user input.</summary>
     </member>
-    <member name="M:System.Web.WebPages.ValidationHelper.Add(System.Collections.Generic.IEnumerable{System.String},System.Web.WebPages.IValidator[])">
+    <member
+      name="M:System.Web.WebPages.ValidationHelper.Add(System.Collections.Generic.IEnumerable{System.String},System.Web.WebPages.IValidator[])">
       <summary>Registers a list of user input elements for validation.</summary>
       <param name="fields">The names (value of the name attribute) of the user input elements to validate.</param>
-      <param name="validators">The type of validation to register for each user input element specified in <paramref name="fields" />.</param>
+      <param name="validators">
+        The type of validation to register for each user input element specified in
+        <paramref name="fields" />.
+      </param>
     </member>
     <member name="M:System.Web.WebPages.ValidationHelper.Add(System.String,System.Web.WebPages.IValidator[])">
       <summary>Registers a user input element for validation.</summary>
@@ -1216,7 +1370,11 @@
       <returns>The name.</returns>
     </member>
     <member name="T:System.Web.WebPages.Validator">
-      <summary>Defines validation tests that can be registered using the <see cref="M:System.Web.WebPages.ValidationHelper.Add(System.String,System.Web.WebPages.IValidator[])" /> method.</summary>
+      <summary>
+        Defines validation tests that can be registered using the
+        <see cref="M:System.Web.WebPages.ValidationHelper.Add(System.String,System.Web.WebPages.IValidator[])" />
+        method.
+      </summary>
     </member>
     <member name="M:System.Web.WebPages.Validator.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.Validator" /> class.</summary>
@@ -1293,14 +1451,18 @@
     <member name="M:System.Web.WebPages.VirtualPathFactoryManager.Exists(System.String)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
-    <member name="M:System.Web.WebPages.VirtualPathFactoryManager.RegisterVirtualPathFactory(System.Web.WebPages.IVirtualPathFactory)">
+    <member
+      name="M:System.Web.WebPages.VirtualPathFactoryManager.RegisterVirtualPathFactory(System.Web.WebPages.IVirtualPathFactory)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
     </member>
     <member name="T:System.Web.WebPages.WebPage">
       <summary>Represents an ASP.NET Razor page.</summary>
     </member>
     <member name="M:System.Web.WebPages.WebPage.#ctor">
-      <summary>Called from a derived class to create a new instance that is based on the <see cref="T:System.Web.WebPages.WebPage" /> class.</summary>
+      <summary>
+        Called from a derived class to create a new instance that is based on the
+        <see cref="T:System.Web.WebPages.WebPage" /> class.
+      </summary>
     </member>
     <member name="P:System.Web.WebPages.WebPage.Context">
       <summary>Gets or sets the <see cref="T:System.Web.HttpContextBase" /> object that is associated with a page.</summary>
@@ -1353,7 +1515,8 @@
       <returns>The new <see cref="T:System.Web.WebPages.WebPageBase" /> object.</returns>
       <param name="virtualPath">The virtual path to use to create the instance.</param>
     </member>
-    <member name="M:System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(System.String,System.Web.HttpContextBase,System.Func{System.String,System.Boolean},System.Web.WebPages.DisplayModeProvider,System.Web.WebPages.IDisplayMode)">
+    <member
+      name="M:System.Web.WebPages.WebPageBase.CreatePageFromVirtualPath(System.String,System.Web.HttpContextBase,System.Func{System.String,System.Boolean},System.Web.WebPages.DisplayModeProvider,System.Web.WebPages.IDisplayMode)">
       <summary>Attempts to create a WebPageBase instance from a virtualPath and wraps complex compiler exceptions with simpler messages</summary>
     </member>
     <member name="M:System.Web.WebPages.WebPageBase.DefineSection(System.String,System.Web.WebPages.SectionWriter)">
@@ -1364,12 +1527,14 @@
     <member name="M:System.Web.WebPages.WebPageBase.ExecutePageHierarchy">
       <summary>Executes the code in a set of dependent web pages.</summary>
     </member>
-    <member name="M:System.Web.WebPages.WebPageBase.ExecutePageHierarchy(System.Web.WebPages.WebPageContext,System.IO.TextWriter)">
+    <member
+      name="M:System.Web.WebPages.WebPageBase.ExecutePageHierarchy(System.Web.WebPages.WebPageContext,System.IO.TextWriter)">
       <summary>Executes the code in a set of dependent web pages by using the specified parameters.</summary>
       <param name="pageContext">The context data for the page.</param>
       <param name="writer">The writer to use to write the executed HTML.</param>
     </member>
-    <member name="M:System.Web.WebPages.WebPageBase.ExecutePageHierarchy(System.Web.WebPages.WebPageContext,System.IO.TextWriter,System.Web.WebPages.WebPageRenderingBase)">
+    <member
+      name="M:System.Web.WebPages.WebPageBase.ExecutePageHierarchy(System.Web.WebPages.WebPageContext,System.IO.TextWriter,System.Web.WebPages.WebPageRenderingBase)">
       <summary>Executes the code in a set of dependent web pages by using the specified context, writer, and start page.</summary>
       <param name="pageContext">The context data for the page.</param>
       <param name="writer">The writer to use to write the executed HTML.</param>
@@ -1408,11 +1573,21 @@
       <returns>A dictionary that contains page data.</returns>
     </member>
     <member name="M:System.Web.WebPages.WebPageBase.PopContext">
-      <summary>Returns and removes the context from the top of the <see cref="P:System.Web.WebPages.WebPageBase.OutputStack" /> instance.</summary>
+      <summary>
+        Returns and removes the context from the top of the
+        <see cref="P:System.Web.WebPages.WebPageBase.OutputStack" /> instance.
+      </summary>
     </member>
-    <member name="M:System.Web.WebPages.WebPageBase.PushContext(System.Web.WebPages.WebPageContext,System.IO.TextWriter)">
-      <summary>Inserts the specified context at the top of the <see cref="P:System.Web.WebPages.WebPageBase.OutputStack" /> instance.</summary>
-      <param name="pageContext">The page context to push onto the <see cref="P:System.Web.WebPages.WebPageBase.OutputStack" /> instance.</param>
+    <member
+      name="M:System.Web.WebPages.WebPageBase.PushContext(System.Web.WebPages.WebPageContext,System.IO.TextWriter)">
+      <summary>
+        Inserts the specified context at the top of the
+        <see cref="P:System.Web.WebPages.WebPageBase.OutputStack" /> instance.
+      </summary>
+      <param name="pageContext">
+        The page context to push onto the
+        <see cref="P:System.Web.WebPages.WebPageBase.OutputStack" /> instance.
+      </param>
       <param name="writer">The writer for the page context.</param>
     </member>
     <member name="M:System.Web.WebPages.WebPageBase.RenderBody">
@@ -1423,13 +1598,19 @@
       <summary>Renders the content of one page within another page.</summary>
       <returns>The HTML content to render.</returns>
       <param name="path">The path of the page to render.</param>
-      <param name="data">(Optional) An array of data to pass to the page being rendered. In the rendered page, these parameters can be accessed by using the <see cref="P:System.Web.WebPages.WebPageBase.PageData" /> property.</param>
+      <param name="data">
+        (Optional) An array of data to pass to the page being rendered. In the rendered page, these parameters can be accessed by using the
+        <see cref="P:System.Web.WebPages.WebPageBase.PageData" /> property.
+      </param>
     </member>
     <member name="M:System.Web.WebPages.WebPageBase.RenderSection(System.String)">
       <summary>In layout pages, renders the content of a named section.</summary>
       <returns>The HTML content to render.</returns>
       <param name="name">The section to render.</param>
-      <exception cref="T:System.Web.HttpException">The <paramref name="name" /> section was already rendered.-or-The <paramref name="name" /> section was marked as required but was not found.</exception>
+      <exception cref="T:System.Web.HttpException">
+        The <paramref name="name" /> section was already rendered.-or-The
+        <paramref name="name" /> section was marked as required but was not found.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.WebPageBase.RenderSection(System.String,System.Boolean)">
       <summary>In layout pages, renders the content of a named section and specifies whether the section is required.</summary>
@@ -1455,7 +1636,8 @@
     <member name="M:System.Web.WebPages.WebPageContext.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.WebPageContext" /> class.</summary>
     </member>
-    <member name="M:System.Web.WebPages.WebPageContext.#ctor(System.Web.HttpContextBase,System.Web.WebPages.WebPageRenderingBase,System.Object)">
+    <member
+      name="M:System.Web.WebPages.WebPageContext.#ctor(System.Web.HttpContextBase,System.Web.WebPages.WebPageRenderingBase,System.Object)">
       <summary>Initializes a new instance of the class by using the specified context, page, and model.</summary>
       <param name="context">The HTTP request context data to associate with the page context.</param>
       <param name="page">The page data to share between pages, layout pages, and partial pages.</param>
@@ -1486,17 +1668,29 @@
     <member name="P:System.Web.WebPages.WebPageExecutingBase.App"></member>
     <member name="P:System.Web.WebPages.WebPageExecutingBase.AppState"></member>
     <member name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.Int32,System.Int32,System.Boolean)"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.String,System.Int32,System.Int32,System.Boolean)"></member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)">
+    </member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)">
+    </member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.BeginContext(System.String,System.Int32,System.Int32,System.Boolean)">
+    </member>
     <member name="P:System.Web.WebPages.WebPageExecutingBase.Context">
       <summary>When overridden in a derived class, gets or sets the <see cref="T:System.Web.HttpContextBase" /> object that is associated with a page.</summary>
       <returns>The current context data.</returns>
     </member>
     <member name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.Int32,System.Int32,System.Boolean)"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.String,System.Int32,System.Int32,System.Boolean)"></member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)">
+    </member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.IO.TextWriter,System.String,System.Int32,System.Int32,System.Boolean)">
+    </member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.EndContext(System.String,System.Int32,System.Int32,System.Boolean)">
+    </member>
     <member name="M:System.Web.WebPages.WebPageExecutingBase.Execute"></member>
     <member name="M:System.Web.WebPages.WebPageExecutingBase.GetOutputWriter">
       <summary>Returns the text writer instance that is used to render the page.</summary>
@@ -1515,9 +1709,15 @@
       <summary>Writes the specified <see cref="T:System.Web.WebPages.HelperResult" /> object as an HTML-encoded string.</summary>
       <param name="result">The helper result to encode and write.</param>
     </member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.WriteAttribute(System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.WriteAttributeTo(System.IO.TextWriter,System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])"></member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.WriteAttributeTo(System.String,System.IO.TextWriter,System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])"></member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.WriteAttribute(System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])">
+    </member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.WriteAttributeTo(System.IO.TextWriter,System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])">
+    </member>
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.WriteAttributeTo(System.String,System.IO.TextWriter,System.String,System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.Instrumentation.PositionTagged{System.String},System.Web.WebPages.AttributeValue[])">
+    </member>
     <member name="M:System.Web.WebPages.WebPageExecutingBase.WriteLiteral(System.Object)">
       <summary>Writes the specified object without HTML encoding.</summary>
       <param name="value">The object to write.</param>
@@ -1532,7 +1732,8 @@
       <param name="writer">The text writer.</param>
       <param name="content">The object to encode and write.</param>
     </member>
-    <member name="M:System.Web.WebPages.WebPageExecutingBase.WriteTo(System.IO.TextWriter,System.Web.WebPages.HelperResult)">
+    <member
+      name="M:System.Web.WebPages.WebPageExecutingBase.WriteTo(System.IO.TextWriter,System.Web.WebPages.HelperResult)">
       <summary>Writes the specified <see cref="T:System.Web.WebPages.HelperResult" /> object as an HTML-encoded string to the specified text writer.</summary>
       <param name="writer">The text writer.</param>
       <param name="content">The helper result to encode and write.</param>
@@ -1544,7 +1745,8 @@
       <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> class by using the specified web page.</summary>
       <param name="webPage">The web page to process.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="webPage" /> is null.</exception>
+        <paramref name="webPage" /> is null.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.WebPageHttpHandler.CreateFromVirtualPath(System.String)">
       <summary>Creates a new <see cref="T:System.Web.IHttpHandler" /> handler object from the specified virtual path.</summary>
@@ -1556,11 +1758,20 @@
       <returns>true if web page response headers are disabled; otherwise, false.</returns>
     </member>
     <member name="M:System.Web.WebPages.WebPageHttpHandler.GetRegisteredExtensions">
-      <summary>Returns a list of file name extensions that the current <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance can process.</summary>
-      <returns>A read-only list of file name extensions that are processed by the current <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance.</returns>
+      <summary>
+        Returns a list of file name extensions that the current
+        <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance can process.
+      </summary>
+      <returns>
+        A read-only list of file name extensions that are processed by the current
+        <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance.
+      </returns>
     </member>
     <member name="P:System.Web.WebPages.WebPageHttpHandler.IsReusable">
-      <summary>Gets a value that indicates whether another request can use the <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance.</summary>
+      <summary>
+        Gets a value that indicates whether another request can use the
+        <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance.
+      </summary>
       <returns>true if the <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance is reusable; otherwise, false.</returns>
     </member>
     <member name="M:System.Web.WebPages.WebPageHttpHandler.ProcessRequest(System.Web.HttpContext)">
@@ -1568,7 +1779,10 @@
       <param name="context">The context to use when processing the web page.</param>
     </member>
     <member name="M:System.Web.WebPages.WebPageHttpHandler.RegisterExtension(System.String)">
-      <summary>Adds a file name extension to the list of extensions that are processed by the current <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance.</summary>
+      <summary>
+        Adds a file name extension to the list of extensions that are processed by the current
+        <see cref="T:System.Web.WebPages.WebPageHttpHandler" /> instance.
+      </summary>
       <param name="extension">The extension to add, without a leading period.</param>
     </member>
     <member name="F:System.Web.WebPages.WebPageHttpHandler.WebPagesVersionHeaderName">
@@ -1639,7 +1853,8 @@
       <returns>The HTML markup that represents the check box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Boolean)">
       <summary>Returns an HTML check box control that has the specified name and default checked status.</summary>
@@ -1647,16 +1862,19 @@
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="isChecked">true to indicate that the checked attribute is set to checked; otherwise, false.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML check box control that has the specified name, default checked status, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the check box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="isChecked">true to indicate that the checked attribute is set to checked; otherwise, false.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Boolean,System.Object)">
       <summary>Returns an HTML check box control that has the specified name, default checked status, and custom attributes defined by an attribute object.</summary>
@@ -1665,15 +1883,18 @@
       <param name="isChecked">true to indicate that the checked attribute is set to checked; otherwise, false.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML check box control that has the specified name and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the check box control.</returns>
       <param name="name"> The value to assign to the name attribute of the HTML control element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.CheckBox(System.String,System.Object)">
       <summary>Returns an HTML check box control that has the specified name and custom attributes defined by an attribute object.</summary>
@@ -1681,44 +1902,54 @@
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
       <summary>Returns an HTML drop-down list control that has the specified name and that contains the specified list items.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML drop-down list control that has the specified name and custom attributes defined by an attribute dictionary, and that contains the specified list items.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
       <summary>Returns an HTML drop-down list control that has the specified name and custom attributes defined by an attribute object, and that contains the specified list items.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
       <summary>Returns an HTML drop-down list control that has the specified name, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="defaultOption">The text to display for the default option in the list.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML drop-down list control that has the specified name and custom attributes defined by an attribute dictionary, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1726,9 +1957,11 @@
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
       <summary>Returns an HTML drop-down list control that has the specified name and custom attributes defined by an attribute object, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1736,9 +1969,11 @@
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML drop-down list control that has the specified name, custom attributes defined by an attribute dictionary, and default selection, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1747,9 +1982,11 @@
       <param name="selectedValue">The value that specifies the item in the list that is selected by default. The selected item is the first item in the list whose value matches the parameter (or whose text matches, if there is no value.) </param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.DropDownList(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Object)">
       <summary>Returns an HTML drop-down list control that has the specified name, custom attributes defined by an attribute object, and default selection, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the drop-down list control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1758,7 +1995,8 @@
       <param name="selectedValue">The value that specifies the item in the list that is selected by default. The item that is selected is the first item in the list that has a matching value, or that matches the items displayed text if the item has no value.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Encode(System.Object)">
       <summary>Returns an HTML-encoded string that represents the specified object by using a full encoding that is suitable for arbitrary HTML.</summary>
@@ -1775,7 +2013,8 @@
       <returns>The HTML markup that represents the hidden control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Hidden(System.String,System.Object)">
       <summary>Returns an HTML hidden control that has the specified name and value.</summary>
@@ -1783,16 +2022,19 @@
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.Hidden(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.Hidden(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML hidden control that has the specified name, value, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the hidden control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Hidden(System.String,System.Object,System.Object)">
       <summary>Returns an HTML hidden control that has the specified name, value, and custom attributes defined by an attribute object.</summary>
@@ -1801,7 +2043,8 @@
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="P:System.Web.WebPages.Html.HtmlHelper.IdAttributeDotReplacement">
       <summary>Gets or sets the character that is used to replace the dot (.) in the id attribute of rendered form controls.</summary>
@@ -1812,7 +2055,8 @@
       <returns>The HTML markup that represents the label.</returns>
       <param name="labelText">The text to display.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="labelText" /> is null or empty.</exception>
+        <paramref name="labelText" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Label(System.String,System.Object)">
       <summary>Returns an HTML label that displays the specified text and that has the specified custom attributes.</summary>
@@ -1820,7 +2064,8 @@
       <param name="labelText">The text to display.</param>
       <param name="attributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="labelText" /> is null or empty.</exception>
+        <paramref name="labelText" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Label(System.String,System.String)">
       <summary>Returns an HTML label that displays the specified text and that has the specified for attribute.</summary>
@@ -1828,16 +2073,19 @@
       <param name="labelText">The text to display.</param>
       <param name="labelFor">The value to assign to the for attribute of the HTML control element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="labelText" /> is null or empty.</exception>
+        <paramref name="labelText" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.Label(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.Label(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML label that displays the specified text, and that has the specified for attribute and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the label.</returns>
       <param name="labelText">The text to display.</param>
       <param name="labelFor">The value to assign to the for attribute of the HTML control element.</param>
       <param name="attributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="labelText" /> is null or empty.</exception>
+        <paramref name="labelText" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Label(System.String,System.String,System.Object)">
       <summary>Returns an HTML label that displays the specified text, and that has the specified for attribute and custom attributes defined by an attribute object.</summary>
@@ -1846,35 +2094,43 @@
       <param name="labelFor">The value to assign to the for attribute of the HTML control element.</param>
       <param name="attributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="labelText" /> is null or empty.</exception>
+        <paramref name="labelText" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
       <summary>Returns an HTML list box control that has the specified name and that contains the specified list items.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML list box control that has the specified name and custom attributes defined by an attribute dictionary, and that contains the specified list items.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
       <summary>Returns an HTML list box control that has the specified name and custom attributes defined by an attribute object, and that contains the specified list items.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean)">
       <summary>Returns an HTML list box control that has the specified name, size, list items, and default selections, and that specifies whether multiple selections are enabled.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1883,18 +2139,22 @@
       <param name="size">The value to assign to the size attribute of the element.</param>
       <param name="allowMultiple">true to indicate that the multiple selections are enabled; otherwise, false.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem})">
       <summary>Returns an HTML list box control that has the specified name, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
       <param name="defaultOption">The text to display for the default option in the list.</param>
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list box.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML list box control that has the specified name and custom attributes defined by an attribute dictionary, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1902,9 +2162,11 @@
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object)">
       <summary>Returns an HTML list box control that has the specified name and custom attributes defined by an attribute object, and that contains the specified list items and default item.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1912,9 +2174,11 @@
       <param name="selectList">A list of <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instances that are used to populate the list box.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML list box control that has the specified name and custom attributes defined by an attribute dictionary, and that contains the specified list items, default item, and selections.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1923,9 +2187,11 @@
       <param name="selectedValues">An object that specifies the items in the list that are selected by default. The selections are retrieved through reflection by examining the properties of the object. </param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean)">
       <summary>Returns an HTML list box control that has the specified name, size, items, default item, and selections, and that specifies whether multiple selections are enabled.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1935,9 +2201,11 @@
       <param name="size">The value to assign to the size attribute of the element.</param>
       <param name="allowMultiple">true to indicate that multiple selections are enabled; otherwise, false.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML list box control that has the specified name, size, custom attributes defined by an attribute dictionary, items, default item, and selections, and that specifies whether multiple selections are enabled.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1948,9 +2216,11 @@
       <param name="allowMultiple">true to indicate that multiple selections are enabled; otherwise, false.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean,System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Int32,System.Boolean,System.Object)">
       <summary>Returns an HTML list box control that has the specified name, size, custom attributes defined by an attribute object, items, default item, and selections, and that specifies whether multiple selections are enabled.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1961,9 +2231,11 @@
       <param name="allowMultiple">true to indicate that multiple selections are enabled; otherwise, false.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ListBox(System.String,System.String,System.Collections.Generic.IEnumerable{System.Web.WebPages.Html.SelectListItem},System.Object,System.Object)">
       <summary>Returns an HTML list box control that has the specified name, items, default item, and custom attributes defined by an attribute object, and selections.</summary>
       <returns>The HTML markup that represents the list box control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML select element.</param>
@@ -1972,7 +2244,8 @@
       <param name="selectedValues">An object that specifies the items in the list that are selected by default. The selections are retrieved through reflection by examining the properties of the object.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.ObjectToDictionary(System.Object)">
       <summary>Creates a dictionary from an object, by adding each public instance property as a key with its associated value to the dictionary. It will expose public properties from derived types as well. This is typically used with objects of an anonymous type.</summary>
@@ -1984,7 +2257,8 @@
       <returns>The HTML markup that represents the password control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Password(System.String,System.Object)">
       <summary>Returns an HTML password control that has the specified name and value.</summary>
@@ -1992,16 +2266,19 @@
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.Password(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.Password(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML password control that has the specified name, value, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the password control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Password(System.String,System.Object,System.Object)">
       <summary>Returns an HTML password control that has the specified name, value, and custom attributes defined by an attribute object.</summary>
@@ -2010,7 +2287,8 @@
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes"> An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object)">
       <summary>Returns an HTML radio button control that has the specified name and value.</summary>
@@ -2018,7 +2296,8 @@
       <param name="name">The value to assign to the name attribute of the HTML control element. The name attribute defines the group that the radio button belongs to.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Boolean)">
       <summary>Returns an HTML radio button control that has the specified name, value, and default selected status.</summary>
@@ -2027,9 +2306,11 @@
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="isChecked">true to indicate that the control is selected; otherwise, false.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML radio button control that has the specified name, value, default selected status, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the radio button control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element. The name attribute defines the group that the radio button belongs to.</param>
@@ -2037,9 +2318,11 @@
       <param name="isChecked">true to indicate that the control is selected; otherwise, false.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Boolean,System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Boolean,System.Object)">
       <summary>Returns an HTML radio button control that has the specified name, value, default selected status, and custom attributes defined by an attribute object.</summary>
       <returns>The HTML markup that represents the radio button control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element. The name attribute defines the group that the radio button belongs to.</param>
@@ -2047,16 +2330,19 @@
       <param name="isChecked">true to indicate that the control is selected; otherwise, false.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML radio button control that has the specified name, value, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the radio button control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element. The name attribute defines the group that the radio button belongs to.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.RadioButton(System.String,System.Object,System.Object)">
       <summary>Returns an HTML radio button control that has the specified name, value, and custom attributes defined by an attribute object.</summary>
@@ -2065,7 +2351,8 @@
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.Raw(System.Object)">
       <summary>Wraps HTML markup in an <see cref="T:System.Web.HtmlString" /> instance so that it is interpreted as HTML markup.</summary>
@@ -2082,15 +2369,18 @@
       <returns>The HTML markup that represents the text area control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML textarea element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the text area control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML textarea element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.Object)">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name and custom attributes defined by an attribute object.</summary>
@@ -2098,7 +2388,8 @@
       <param name="name">The value to assign to the name attribute of the HTML textarea element.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String)">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name and value.</summary>
@@ -2106,18 +2397,22 @@
       <param name="name">The value to assign to the name attribute of the HTML textrarea element.</param>
       <param name="value">The text to display.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name, value, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the text area control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML textarea element.</param>
       <param name="value">The text to display.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name, value, row attribute, col attribute, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the text area control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML textarea element.</param>
@@ -2126,9 +2421,11 @@
       <param name="columns">The value to assign to the cols attribute of the element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Int32,System.Int32,System.Object)">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Int32,System.Int32,System.Object)">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name, value, row attribute, col attribute, and custom attributes defined by an attribute object.</summary>
       <returns>The HTML markup that represents the text area control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML textarea element.</param>
@@ -2137,7 +2434,8 @@
       <param name="columns">The value to assign to the cols attribute of the element.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.TextArea(System.String,System.String,System.Object)">
       <summary>Returns an HTML multi-line text input (text area) control that has the specified name, value, and custom attributes defined by an attribute object.</summary>
@@ -2146,14 +2444,16 @@
       <param name="value">The text to display.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.TextBox(System.String)">
       <summary>Returns an HTML text control that has the specified name.</summary>
       <returns>The HTML markup that represents the text control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.TextBox(System.String,System.Object)">
       <summary>Returns an HTML text control that has the specified name and value.</summary>
@@ -2161,16 +2461,19 @@
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.TextBox(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.TextBox(System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML text control that has the specified name, value, and custom attributes defined by an attribute dictionary.</summary>
       <returns>The HTML markup that represents the text control.</returns>
       <param name="name">The value to assign to the name attribute of the HTML control element.</param>
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.TextBox(System.String,System.Object,System.Object)">
       <summary>Returns an HTML text control that has the specified name, value, and custom attributes defined by an attribute object.</summary>
@@ -2179,7 +2482,8 @@
       <param name="value">The value to assign to the value attribute of the element.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="P:System.Web.WebPages.Html.HtmlHelper.UnobtrusiveJavaScriptEnabled">
       <summary>Gets or sets a value that indicates whether the page uses unobtrusive JavaScript for Ajax functionality.</summary>
@@ -2198,15 +2502,18 @@
       <returns>If the value in the specified field is valid, null; otherwise, the HTML markup that represents the validation error message that is associated with the specified field.</returns>
       <param name="name">The name of the form field that was validated.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML span element that has the specified custom attributes defined by an attribute dictionary, and that contains the first validation error message for the specified form field.</summary>
       <returns>If the value in the specified field is valid, null; otherwise, the HTML markup that represents the validation error message that is associated with the specified field.</returns>
       <param name="name">The name of the form field that was validated.</param>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.Object)">
       <summary>Returns an HTML span element that has the specified custom attributes defined by an attribute object, and that contains the first validation error message for the specified form field.</summary>
@@ -2214,7 +2521,8 @@
       <param name="name">The name of the form field that was validated.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.String)">
       <summary>Returns an HTML span element that contains a validation error message for the specified form field.</summary>
@@ -2222,16 +2530,19 @@
       <param name="name">The name of the form field that was validated.</param>
       <param name="message">The validation error message to display. If null, the first validation error message that is associated with the specified form field is displayed.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML span element that has the specified custom attributes defined by an attribute dictionary, and that contains a validation error message for the specified form field.</summary>
       <returns>If the specified field is valid, null; otherwise, the HTML markup that represents a validation error message that is associated with the specified field.</returns>
       <param name="name">The name of the form field that was validated.</param>
       <param name="message">The validation error message to display. If null, the first validation error message that is associated with the specified form field is displayed.</param>
       <param name="htmlAttributes"> The names and values of custom attributes for the element.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationMessage(System.String,System.String,System.Object)">
       <summary>Returns an HTML span element that has the specified custom attributes defined by an attribute object, and that contains a validation error message for the specified form field.</summary>
@@ -2240,7 +2551,8 @@
       <param name="message">The validation error message to display. If null, the first validation error message that is associated with the specified form field is displayed.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
       <exception cref="T:Sytem.ArgumentException">
-        <paramref name="name" /> is null or empty.</exception>
+        <paramref name="name" /> is null or empty.
+      </exception>
     </member>
     <member name="P:System.Web.WebPages.Html.HtmlHelper.ValidationMessageCssClassName">
       <summary>Gets or sets the name of the CSS class that defines the appearance of validation error messages when validation fails.</summary>
@@ -2259,7 +2571,8 @@
       <returns>The HTML markup that represents the validation error messages.</returns>
       <param name="excludeFieldErrors">true to exclude field-level validation error messages from the list; false to include both model-level and field-level validation error messages.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationSummary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ValidationSummary(System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML div element that has the specified custom attributes defined by an attribute dictionary, and that contains an unordered list of all validation error messages that are in the model-state dictionary.</summary>
       <returns>The HTML markup that represents the validation error messages.</returns>
       <param name="htmlAttributes">The names and values of custom attributes for the element.</param>
@@ -2274,7 +2587,8 @@
       <returns>The HTML markup that represents the validation error messages.</returns>
       <param name="message">The message that comes before the list of validation error messages.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationSummary(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ValidationSummary(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML div element that has the specified custom attributes defined by an attribute dictionary, and that contains a summary message and an unordered list of validation error message from the model-state dictionary, optionally excluding field-level errors.</summary>
       <returns>The HTML markup that represents the validation error messages.</returns>
       <param name="message">The summary message that comes before the list of validation error messages.</param>
@@ -2288,7 +2602,8 @@
       <param name="excludeFieldErrors">true to exclude field-level validation error messages from the results; false to include and field-level validation error messages.</param>
       <param name="htmlAttributes">An object that contains custom attributes for the element. The attribute names and values are retrieved through reflection by examining the properties of the object.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.HtmlHelper.ValidationSummary(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Html.HtmlHelper.ValidationSummary(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
       <summary>Returns an HTML div element that has the specified custom attributes defined by an attribute dictionary, and that contains a summary message and an unordered list of all validation error message from the model-state dictionary.</summary>
       <returns>The HTML markup that represents the validation error messages.</returns>
       <param name="message">The message that comes before the list of validation error messages.</param>
@@ -2332,11 +2647,13 @@
       <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.Html.ModelStateDictionary" /> class by using values that are copied from the specified model-state dictionary.</summary>
       <param name="dictionary">The model-state dictionary that values are copied from.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.ModelStateDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState})">
+    <member
+      name="M:System.Web.WebPages.Html.ModelStateDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState})">
       <summary>Adds the specified item to the model-state dictionary.</summary>
       <param name="item">The item to add to the model-state dictionary.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.ModelStateDictionary.Add(System.String,System.Web.WebPages.Html.ModelState)">
+    <member
+      name="M:System.Web.WebPages.Html.ModelStateDictionary.Add(System.String,System.Web.WebPages.Html.ModelState)">
       <summary>Adds an item that has the specified key and value to the model-state dictionary.</summary>
       <param name="key">The key.</param>
       <param name="value">The value.</param>
@@ -2353,7 +2670,8 @@
     <member name="M:System.Web.WebPages.Html.ModelStateDictionary.Clear">
       <summary>Removes all items from the model-state dictionary.</summary>
     </member>
-    <member name="M:System.Web.WebPages.Html.ModelStateDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState})">
+    <member
+      name="M:System.Web.WebPages.Html.ModelStateDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState})">
       <summary>Determines whether the model-state dictionary contains the specified item.</summary>
       <returns>true if the model-state dictionary contains the specified item; otherwise, false.</returns>
       <param name="item">The item to look for.</param>
@@ -2363,7 +2681,8 @@
       <returns>true if the model-state dictionary contains the specified key; otherwise, false.</returns>
       <param name="key">The key to look for.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.ModelStateDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState}[],System.Int32)">
+    <member
+      name="M:System.Web.WebPages.Html.ModelStateDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState}[],System.Int32)">
       <summary>Copies the elements of the model-state dictionary to an array, starting at the specified index.</summary>
       <param name="array">The one-dimensional <see cref="T:System.Array" /> instance where the elements will be copied to.</param>
       <param name="arrayIndex">The index in <paramref name="array" /> at which copying begins.</param>
@@ -2389,7 +2708,8 @@
       <returns>true if no error messages are associated with the specified key, or the specified key does not exist; otherwise, false.</returns>
       <param name="key">The key.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="key" /> is null.</exception>
+        <paramref name="key" /> is null.
+      </exception>
     </member>
     <member name="P:System.Web.WebPages.Html.ModelStateDictionary.Item(System.String)">
       <summary>Gets or sets the model state that is associated with the specified key in the model-state dictionary.</summary>
@@ -2400,10 +2720,14 @@
       <returns>The list of keys in the dictionary.</returns>
     </member>
     <member name="M:System.Web.WebPages.Html.ModelStateDictionary.Merge(System.Web.WebPages.Html.ModelStateDictionary)">
-      <summary>Copies the values from the specified model-state dictionary into this <see cref="T:System.Web.WebPages.Html.ModelStateDictionary" /> instance, overwriting existing values when the keys are the same.</summary>
+      <summary>
+        Copies the values from the specified model-state dictionary into this
+        <see cref="T:System.Web.WebPages.Html.ModelStateDictionary" /> instance, overwriting existing values when the keys are the same.
+      </summary>
       <param name="dictionary">The model-state dictionary that values are copied from.</param>
     </member>
-    <member name="M:System.Web.WebPages.Html.ModelStateDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState})">
+    <member
+      name="M:System.Web.WebPages.Html.ModelStateDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Web.WebPages.Html.ModelState})">
       <summary>Removes the first occurrence of the specified item from the model-state dictionary.</summary>
       <returns>true if the item was successfully removed from the model-state dictionary; false if the item was not removed or if the item does not exist in the model-state dictionary.</returns>
       <param name="item">The item to remove.</param>
@@ -2422,11 +2746,15 @@
       <summary>Returns an enumerator that can be used to iterate through the model-state dictionary.</summary>
       <returns>An enumerator that can be used to iterate through the model-state dictionary.</returns>
     </member>
-    <member name="M:System.Web.WebPages.Html.ModelStateDictionary.TryGetValue(System.String,System.Web.WebPages.Html.ModelState@)">
+    <member
+      name="M:System.Web.WebPages.Html.ModelStateDictionary.TryGetValue(System.String,System.Web.WebPages.Html.ModelState@)">
       <summary>Gets the model-state value that is associated with the specified key.</summary>
       <returns>true if the model-state dictionary contains an element that has the specified key; otherwise, false.</returns>
       <param name="key">The key to get the value of.</param>
-      <param name="value">When this method returns, if the key is found, contains the model-state value that is associated with the specified key; otherwise, contains the default value for the <see cref="T:System.Web.WebPages.Html.ModelState" /> type. This parameter is passed uninitialized.</param>
+      <param name="value">
+        When this method returns, if the key is found, contains the model-state value that is associated with the specified key; otherwise, contains the default value for the
+        <see cref="T:System.Web.WebPages.Html.ModelState" /> type. This parameter is passed uninitialized.
+      </param>
     </member>
     <member name="P:System.Web.WebPages.Html.ModelStateDictionary.Values">
       <summary>Gets a list that contains the values in the model-state dictionary.</summary>
@@ -2443,24 +2771,37 @@
       <param name="item">The select list item to copy.</param>
     </member>
     <member name="P:System.Web.WebPages.Html.SelectListItem.Selected">
-      <summary>Gets or sets a value that indicates whether the <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instance is selected.</summary>
+      <summary>
+        Gets or sets a value that indicates whether the <see cref="T:System.Web.WebPages.Html.SelectListItem" />
+        instance is selected.
+      </summary>
       <returns>true if the select list item is selected; otherwise, false.</returns>
     </member>
     <member name="P:System.Web.WebPages.Html.SelectListItem.Text">
-      <summary>Gets or sets the text that is used to display the <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instance on a web page.</summary>
+      <summary>
+        Gets or sets the text that is used to display the
+        <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instance on a web page.
+      </summary>
       <returns>The text that is used to display the select list item.</returns>
     </member>
     <member name="P:System.Web.WebPages.Html.SelectListItem.Value">
-      <summary>Gets or sets the value of the HTML value attribute of the HTML option element that is associated with the <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instance.</summary>
+      <summary>
+        Gets or sets the value of the HTML value attribute of the HTML option element that is associated with the
+        <see cref="T:System.Web.WebPages.Html.SelectListItem" /> instance.
+      </summary>
       <returns>The value of the HTML value attribute that is associated with the select list item.</returns>
     </member>
     <member name="T:System.Web.WebPages.Instrumentation.InstrumentationService">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Represents a web pages instrumentation service.</summary>
     </member>
     <member name="M:System.Web.WebPages.Instrumentation.InstrumentationService.#ctor">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.Instrumentation.InstrumentationService" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.Instrumentation.InstrumentationService" /> class.
+      </summary>
     </member>
-    <member name="M:System.Web.WebPages.Instrumentation.InstrumentationService.BeginContext(System.Web.HttpContextBase,System.String,System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.Instrumentation.InstrumentationService.BeginContext(System.Web.HttpContextBase,System.String,System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Called before it renders the output for the specified context.</summary>
       <param name="context">The context.</param>
       <param name="virtualPath">The virtual path.</param>
@@ -2469,7 +2810,8 @@
       <param name="length">The length of the context.</param>
       <param name="isLiteral">Determines whether the context is literal.</param>
     </member>
-    <member name="M:System.Web.WebPages.Instrumentation.InstrumentationService.EndContext(System.Web.HttpContextBase,System.String,System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)">
+    <member
+      name="M:System.Web.WebPages.Instrumentation.InstrumentationService.EndContext(System.Web.HttpContextBase,System.String,System.IO.TextWriter,System.Int32,System.Int32,System.Boolean)">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Called after it renders the output for the specified context.</summary>
       <param name="context">The context.</param>
       <param name="virtualPath">The virtual path.</param>
@@ -2487,7 +2829,10 @@
       <typeparam name="T">The type of the position..</typeparam>
     </member>
     <member name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.#ctor(`0,System.Int32)">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> class.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> class.
+      </summary>
       <param name="value">The value of this current instance.</param>
       <param name="offset">The offset.</param>
     </member>
@@ -2500,35 +2845,60 @@
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets the hash code of the current instance.</summary>
       <returns>The hash code of the current instance.</returns>
     </member>
-    <member name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Equality(System.Web.WebPages.Instrumentation.PositionTagged{`0},System.Web.WebPages.Instrumentation.PositionTagged{`0})">
+    <member
+      name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Equality(System.Web.WebPages.Instrumentation.PositionTagged{`0},System.Web.WebPages.Instrumentation.PositionTagged{`0})">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Determines whether the two objects are equal.</summary>
       <returns>true if the two objects are equal; otherwise, false.</returns>
       <param name="left">The first object.</param>
       <param name="right">The second object.</param>
     </member>
-    <member name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Implicit(System.Tuple{`0,System.Int32})~System.Web.WebPages.Instrumentation.PositionTagged{`0}">
-      <summary>Converts the specified object to a <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> object.</summary>
-      <returns>The <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> that represents the converted <paramref name="value" />.</returns>
+    <member
+      name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Implicit(System.Tuple{`0,System.Int32})~System.Web.WebPages.Instrumentation.PositionTagged{`0}">
+      <summary>
+        Converts the specified object to a <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" />
+        object.
+      </summary>
+      <returns>
+        The <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> that represents the converted
+        <paramref name="value" />.
+      </returns>
       <param name="value">The object to convert.</param>
     </member>
-    <member name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Implicit(System.Web.WebPages.Instrumentation.PositionTagged{`0})~`0">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Converts the <paramref name="value" /> to a <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> object.</summary>
-      <returns>The <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> that represents the converted <paramref name="value" />.</returns>
+    <member
+      name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Implicit(System.Web.WebPages.Instrumentation.PositionTagged{`0})~`0">
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Converts the
+        <paramref name="value" /> to a <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> object.
+      </summary>
+      <returns>
+        The <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> that represents the converted
+        <paramref name="value" />.
+      </returns>
       <param name="value">The object to convert.</param>
     </member>
-    <member name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Inequality(System.Web.WebPages.Instrumentation.PositionTagged{`0},System.Web.WebPages.Instrumentation.PositionTagged{`0})">
+    <member
+      name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.op_Inequality(System.Web.WebPages.Instrumentation.PositionTagged{`0},System.Web.WebPages.Instrumentation.PositionTagged{`0})">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Determines whether the two objects are not equal.</summary>
       <returns>true if the two objects are not equal; otherwise, false.</returns>
       <param name="left">The first object.</param>
       <param name="right">The second object.</param>
     </member>
     <member name="P:System.Web.WebPages.Instrumentation.PositionTagged`1.Position">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets or sets the position associated with the <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" />.</summary>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets or sets the position associated with the
+        <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" />.
+      </summary>
       <returns>The position associated with the <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" />.</returns>
     </member>
     <member name="M:System.Web.WebPages.Instrumentation.PositionTagged`1.ToString">
-      <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Returns a string representation of the <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> object.</summary>
-      <returns>A string that represents the <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> object.</returns>
+      <summary>
+        This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Returns a string representation of the
+        <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" /> object.
+      </summary>
+      <returns>
+        A string that represents the <see cref="T:System.Web.WebPages.Instrumentation.PositionTagged`1" />
+        object.
+      </returns>
     </member>
     <member name="P:System.Web.WebPages.Instrumentation.PositionTagged`1.Value">
       <summary>This type/member supports the .NET Framework infrastructure and is not intended to be used directly from your code.Gets or sets the value of the current instance.</summary>
@@ -2538,7 +2908,10 @@
       <summary>Defines an ASP.NET request scope storage provider.</summary>
     </member>
     <member name="M:System.Web.WebPages.Scope.AspNetRequestScopeStorageProvider.#ctor">
-      <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.AspNetRequestScopeStorageProvider" /> class.</summary>
+      <summary>
+        Initializes a new instance of the
+        <see cref="T:System.Web.WebPages.Scope.AspNetRequestScopeStorageProvider" /> class.
+      </summary>
     </member>
     <member name="P:System.Web.WebPages.Scope.AspNetRequestScopeStorageProvider.ApplicationScope">
       <summary>Gets the dictionary to store data in the application scope.</summary>
@@ -2571,10 +2944,14 @@
       <summary>Defines a class that is used to contain storage for a transient scope.</summary>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorage.CreateTransientScope">
-      <summary>Returns a dictionary that is used to store data in a transient scope, based on the scope in the <see cref="P:System.Web.WebPages.Scope.ScopeStorage.CurrentScope" /> property.</summary>
+      <summary>
+        Returns a dictionary that is used to store data in a transient scope, based on the scope in the
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorage.CurrentScope" /> property.
+      </summary>
       <returns>The dictionary that stores transient scope data.</returns>
     </member>
-    <member name="M:System.Web.WebPages.Scope.ScopeStorage.CreateTransientScope(System.Collections.Generic.IDictionary{System.Object,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Scope.ScopeStorage.CreateTransientScope(System.Collections.Generic.IDictionary{System.Object,System.Object})">
       <summary>Returns a dictionary that is used to store data in a transient scope.</summary>
       <returns>The dictionary that stores transient scope data.</returns>
       <param name="context">The context.</param>
@@ -2595,60 +2972,113 @@
       <summary>Represents a collection of keys and values that are used to store data at different scope levels (local, global, and so on).</summary>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.#ctor">
-      <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> class.</summary>
+      <summary>
+        Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" />
+        class.
+      </summary>
     </member>
-    <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.#ctor(System.Collections.Generic.IDictionary{System.Object,System.Object})">
-      <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> class using the specified base scope.</summary>
+    <member
+      name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.#ctor(System.Collections.Generic.IDictionary{System.Object,System.Object})">
+      <summary>
+        Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" />
+        class using the specified base scope.
+      </summary>
       <param name="baseScope">The base scope.</param>
     </member>
-    <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Add(System.Collections.Generic.KeyValuePair{System.Object,System.Object})">
+    <member
+      name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Add(System.Collections.Generic.KeyValuePair{System.Object,System.Object})">
       <summary>Adds a key/value pair to the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object using the specified generic collection.</summary>
       <param name="item">The key/value pair.</param>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Add(System.Object,System.Object)">
-      <summary>Adds the specified key and specified value to the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object.</summary>
+      <summary>
+        Adds the specified key and specified value to the
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object.
+      </summary>
       <param name="key">The key.</param>
       <param name="value">The value.</param>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BackingStore">
-      <summary>Gets the dictionary that stores the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object data.</summary>
+      <summary>
+        Gets the dictionary that stores the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" />
+        object data.
+      </summary>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope">
       <summary>Gets the base scope for the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object.</summary>
       <returns>The base scope for the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object.</returns>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Clear">
-      <summary>Removes all keys and values from the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Removes all keys and values from the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
     </member>
-    <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Contains(System.Collections.Generic.KeyValuePair{System.Object,System.Object})">
-      <summary>Returns a value that indicates whether the specified key/value pair exists in either the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or in the <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object.</summary>
-      <returns>true if the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or the <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object contains an element that has the specified key/value pair; otherwise, false.</returns>
+    <member
+      name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Contains(System.Collections.Generic.KeyValuePair{System.Object,System.Object})">
+      <summary>
+        Returns a value that indicates whether the specified key/value pair exists in either the
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or in the
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object.
+      </summary>
+      <returns>
+        true if the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or the
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object contains an element that has the specified key/value pair; otherwise, false.
+      </returns>
       <param name="item">The key/value pair.</param>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.ContainsKey(System.Object)">
-      <summary>Returns a value that indicates whether the specified key exists in the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or in the <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object.</summary>
-      <returns>true if the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or the <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object contains an element that has the specified key; otherwise, false.</returns>
+      <summary>
+        Returns a value that indicates whether the specified key exists in the
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or in the
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object.
+      </summary>
+      <returns>
+        true if the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object or the
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object contains an element that has the specified key; otherwise, false.
+      </returns>
       <param name="key">The key.</param>
     </member>
-    <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.Object,System.Object}[],System.Int32)">
-      <summary>Copies all of the elements in the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object and the <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object to an <see cref="T:System.Array" /> object, starting at the specified index.</summary>
+    <member
+      name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.Object,System.Object}[],System.Int32)">
+      <summary>
+        Copies all of the elements in the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" />
+        object and the <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> object to an
+        <see cref="T:System.Array" /> object, starting at the specified index.
+      </summary>
       <param name="array">The array.</param>
       <param name="arrayIndex">The zero-based index in <paramref name="array" />.</param>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.Count">
-      <summary>Gets the number of key/value pairs that are in the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Gets the number of key/value pairs that are in the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <returns>The number of key/value pairs.</returns>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.GetEnumerator">
-      <summary>Returns an enumerator that can be used to iterate through concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Returns an enumerator that can be used to iterate through concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <returns>An <see cref="T:System.Collections.Generic.IEnumerator" /> object.</returns>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.GetItems">
-      <summary>Returns an enumerator that can be used to iterate through the distinct elements of concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Returns an enumerator that can be used to iterate through the distinct elements of concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <returns>An enumerator that contains distinct elements from the concatenated dictionary objects.</returns>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.IsReadOnly">
-      <summary>Gets a value that indicates whether the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object is read-only.</summary>
+      <summary>
+        Gets a value that indicates whether the
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object is read-only.
+      </summary>
       <returns>true if the <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> object is read-only; otherwise, false.</returns>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.Item(System.Object)">
@@ -2656,43 +3086,89 @@
       <returns>The element that has the specified key.</returns>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.Keys">
-      <summary>Gets a <see cref="T:System.Collections.Generic.List`1" /> object that contains the keys from the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Gets a <see cref="T:System.Collections.Generic.List`1" /> object that contains the keys from the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <returns>An object that contains that contains the keys.</returns>
     </member>
-    <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Remove(System.Collections.Generic.KeyValuePair{System.Object,System.Object})">
-      <summary>Removes the specified key/value pair from the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
-      <returns>true if the key/value pair is removed, or false if <paramref name="item" /> is not found in the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</returns>
+    <member
+      name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Remove(System.Collections.Generic.KeyValuePair{System.Object,System.Object})">
+      <summary>
+        Removes the specified key/value pair from the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
+      <returns>
+        true if the key/value pair is removed, or false if <paramref name="item" /> is not found in the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </returns>
       <param name="item">The key/value pair.</param>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.Remove(System.Object)">
-      <summary>Removes the value that has the specified key from the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
-      <returns>true if the key/value pair is removed, or false if <paramref name="key" /> is not found in the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</returns>
+      <summary>
+        Removes the value that has the specified key from the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
+      <returns>
+        true if the key/value pair is removed, or false if <paramref name="key" /> is not found in the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </returns>
       <param name="key">The key.</param>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.SetValue(System.Object,System.Object)">
-      <summary>Sets a value using the specified key in the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Sets a value using the specified key in the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <param name="key">The key.</param>
       <param name="value">The value.</param>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.System#Collections#IEnumerable#GetEnumerator">
-      <summary>Returns an enumerator for the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Returns an enumerator for the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <returns>The enumerator.</returns>
     </member>
     <member name="M:System.Web.WebPages.Scope.ScopeStorageDictionary.TryGetValue(System.Object,System.Object@)">
-      <summary>Gets the value that is associated with the specified key from the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
-      <returns>true if the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects contain an element that has the specified key; otherwise, false.</returns>
+      <summary>
+        Gets the value that is associated with the specified key from the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
+      <returns>
+        true if the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects contain an element that has the specified key; otherwise, false.
+      </returns>
       <param name="key">The key.</param>
-      <param name="value">When this method returns, if the key is found, contains the value that is associated with the specified key; otherwise, the default value for the type of the <paramref name="value" /> parameter. This parameter is passed uninitialized.</param>
+      <param name="value">
+        When this method returns, if the key is found, contains the value that is associated with the specified key; otherwise, the default value for the type of the
+        <paramref name="value" /> parameter. This parameter is passed uninitialized.
+      </param>
     </member>
     <member name="P:System.Web.WebPages.Scope.ScopeStorageDictionary.Values">
-      <summary>Gets a <see cref="T:System.Collections.Generic.List`1" /> object that contains the values from the concatenated <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.</summary>
+      <summary>
+        Gets a <see cref="T:System.Collections.Generic.List`1" /> object that contains the values from the concatenated
+        <see cref="T:System.Web.WebPages.Scope.ScopeStorageDictionary" /> and
+        <see cref="P:System.Web.WebPages.Scope.ScopeStorageDictionary.BaseScope" /> objects.
+      </summary>
       <returns>The object that contains the values.</returns>
     </member>
     <member name="T:System.Web.WebPages.Scope.StaticScopeStorageProvider">
       <summary>Provides scoped access to static data.</summary>
     </member>
     <member name="M:System.Web.WebPages.Scope.StaticScopeStorageProvider.#ctor">
-      <summary>Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.StaticScopeStorageProvider" /> class.</summary>
+      <summary>
+        Initializes a new instance of the <see cref="T:System.Web.WebPages.Scope.StaticScopeStorageProvider" />
+        class.
+      </summary>
     </member>
     <member name="P:System.Web.WebPages.Scope.StaticScopeStorageProvider.CurrentScope">
       <summary>Gets or sets a dictionary that stores current data under a static context.</summary>

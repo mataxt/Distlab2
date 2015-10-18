@@ -5,10 +5,13 @@
 
 <div class="jumbotron">
     <center>
-        <h1><strong>Home</strong></h1>
-        <p class="lead">Welcome back,
+        <h1>
+            <strong>Home</strong>
+        </h1>
+        <p class="lead">
+            Welcome back,
             <i>
-                @Html.DisplayFor(model => model.LoggedInAs, new { @class = "control-label col-md-2" })!
+                @Html.DisplayFor(model => model.LoggedInAs, new {@class = "control-label col-md-2"})!
             </i>
         </p>
     </center>
@@ -24,7 +27,7 @@
             <h3>Logins in the past month</h3>
             @Html.DisplayFor(model => model.LoginAmount)
         </div>
-    </center> 
+    </center>
 </div>
 <div class="row">
     <div class="col-md-12">

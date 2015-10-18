@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using WebGrease.Css.Extensions;
 
@@ -31,8 +30,14 @@ namespace Dist_Lab2.Models
             using (var db = new ApplicationDbContext())
             {
                 // Get messages according to their User IDs
-                var sendersId = db.Messages.Where(msg => msg.Receivers.Any(usr => usr.Id == userId)).Select(msg => msg.SenderId).ToList();
-                senders = sendersId.Select(usr => db.Users.Where(u => u.Id == usr).Select(u => u.UserName).First()).Distinct().ToList();
+                var sendersId =
+                    db.Messages.Where(msg => msg.Receivers.Any(usr => usr.Id == userId))
+                        .Select(msg => msg.SenderId)
+                        .ToList();
+                senders =
+                    sendersId.Select(usr => db.Users.Where(u => u.Id == usr).Select(u => u.UserName).First())
+                        .Distinct()
+                        .ToList();
             }
             return senders;
         }
@@ -53,7 +58,19 @@ namespace Dist_Lab2.Models
             using (var db = new ApplicationDbContext())
             {
                 var sendersId = db.Users.Where(usr => usr.UserName == username).Select(u => u.Id).First();
-                msgTitles.AddRange(db.Messages.Where(m => m.SenderId == sendersId && !m.Status.Equals("REMOVED")).OrderByDescending(a => a.TimeSent).Select(n => new MessageHeader{MessageId = n.MessageId, Title = n.Title, TimeSent = n.TimeSent, Status = n.Status}).ToList());
+                msgTitles.AddRange(
+                    db.Messages.Where(m => m.SenderId == sendersId && !m.Status.Equals("REMOVED"))
+                        .OrderByDescending(a => a.TimeSent)
+                        .Select(
+                            n =>
+                                new MessageHeader
+                                {
+                                    MessageId = n.MessageId,
+                                    Title = n.Title,
+                                    TimeSent = n.TimeSent,
+                                    Status = n.Status
+                                })
+                        .ToList());
             }
             return msgTitles;
         }
@@ -73,13 +90,16 @@ namespace Dist_Lab2.Models
 
         public static MessageStatistics GetMessageStats(string userId)
         {
-            MessageStatistics msgStats = new MessageStatistics();
+            var msgStats = new MessageStatistics();
             using (var db = new ApplicationDbContext())
             {
                 msgStats.TotalMessages = db.Messages.Count(msg => msg.Receivers.Any(usr => usr.Id == userId));
-                msgStats.UnreadMessages = db.Messages.Count(msg => msg.Status.Equals("UNREAD") && msg.Receivers.Any(usr => usr.Id == userId));
-                msgStats.ReadMessages = db.Messages.Count(msg => msg.Status.Equals("READ") && msg.Receivers.Any(usr => usr.Id == userId));
-                msgStats.RemovedMessages = db.Messages.Count(msg => msg.Status.Equals("REMOVED") && msg.Receivers.Any(usr => usr.Id == userId) );
+                msgStats.UnreadMessages =
+                    db.Messages.Count(msg => msg.Status.Equals("UNREAD") && msg.Receivers.Any(usr => usr.Id == userId));
+                msgStats.ReadMessages =
+                    db.Messages.Count(msg => msg.Status.Equals("READ") && msg.Receivers.Any(usr => usr.Id == userId));
+                msgStats.RemovedMessages =
+                    db.Messages.Count(msg => msg.Status.Equals("REMOVED") && msg.Receivers.Any(usr => usr.Id == userId));
             }
             return msgStats;
         }
@@ -92,6 +112,7 @@ namespace Dist_Lab2.Models
                 db.SaveChanges();
             }
         }
+
         public static void RemoveMessage(IEnumerable<int> messageIds)
         {
             using (var db = new ApplicationDbContext())

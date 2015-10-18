@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <doc>
   <assembly>
     <name>System.Web.Optimization</name>
@@ -12,27 +13,45 @@
     </member>
     <member name="M:System.Web.Optimization.Bundle.#ctor(System.String)">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.Bundle" /> class.</summary>
-      <param name="virtualPath">The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" /> from within a view or Web page.</param>
+      <param name="virtualPath">
+        The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" />
+        from within a view or Web page.
+      </param>
     </member>
     <member name="M:System.Web.Optimization.Bundle.#ctor(System.String,System.String)">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.Bundle" /> class.</summary>
-      <param name="virtualPath">The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" /> from within a view or Web page.</param>
+      <param name="virtualPath">
+        The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" />
+        from within a view or Web page.
+      </param>
       <param name="cdnPath">An alternate url for the bundle when it is stored in a content delivery network.</param>
     </member>
-    <member name="M:System.Web.Optimization.Bundle.#ctor(System.String,System.String,System.Web.Optimization.IBundleTransform[])">
+    <member
+      name="M:System.Web.Optimization.Bundle.#ctor(System.String,System.String,System.Web.Optimization.IBundleTransform[])">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.Bundle" /> class.</summary>
-      <param name="virtualPath">The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" /> from within a view or Web page.</param>
+      <param name="virtualPath">
+        The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" />
+        from within a view or Web page.
+      </param>
       <param name="cdnPath">An alternate url for the bundle when it is stored in a content delivery network.</param>
       <param name="transforms">A list of <see cref="T:System.Web.Optimization.IBundleTransform" /> objects which process the contents of the bundle in the order which they are added.</param>
     </member>
     <member name="M:System.Web.Optimization.Bundle.#ctor(System.String,System.Web.Optimization.IBundleTransform[])">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.Bundle" /> class.</summary>
-      <param name="virtualPath">The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" /> from within a view or Web page.</param>
+      <param name="virtualPath">
+        The virtual path used to reference the <see cref="T:System.Web.Optimization.Bundle" />
+        from within a view or Web page.
+      </param>
       <param name="transforms">A list of <see cref="T:System.Web.Optimization.IBundleTransform" /> objects which process the contents of the bundle in the order which they are added.</param>
     </member>
-    <member name="M:System.Web.Optimization.Bundle.ApplyTransforms(System.Web.Optimization.BundleContext,System.String,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.Bundle.ApplyTransforms(System.Web.Optimization.BundleContext,System.String,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="P:System.Web.Optimization.Bundle.Builder">
-      <summary>Builds the bundle content from the individual files included in the <see cref="T:System.Web.Optimization.Bundle" /> object.</summary>
+      <summary>
+        Builds the bundle content from the individual files included in the
+        <see cref="T:System.Web.Optimization.Bundle" /> object.
+      </summary>
       <returns>The object used to build the bundle content.</returns>
     </member>
     <member name="M:System.Web.Optimization.Bundle.CacheLookup(System.Web.Optimization.BundleContext)">
@@ -53,7 +72,10 @@
       <returns>By default, if <see cref="P:System.Web.Optimization.Bundle.ConcatenationToken" /> is not specified, the Web optimization framework inserts a new line.</returns>
     </member>
     <member name="P:System.Web.Optimization.Bundle.EnableFileExtensionReplacements">
-      <summary>Specifies whether to use the <see cref="P:System.Web.Optimization.BundleCollection.FileExtensionReplacementList" />.</summary>
+      <summary>
+        Specifies whether to use the
+        <see cref="P:System.Web.Optimization.BundleCollection.FileExtensionReplacementList" />.
+      </summary>
       <returns>true if the <see cref="P:System.Web.Optimization.BundleCollection.FileExtensionReplacementList" /> is used; otherwise, false.</returns>
     </member>
     <member name="M:System.Web.Optimization.Bundle.EnumerateFiles(System.Web.Optimization.BundleContext)">
@@ -84,7 +106,10 @@
       <returns>The <see cref="T:System.Web.Optimization.Bundle" /> object itself for use in subsequent method chaining.</returns>
       <param name="directoryVirtualPath">The virtual path to the directory from which to search for files.</param>
       <param name="searchPattern">The search pattern to use in selecting files to add to the bundle.</param>
-      <param name="searchSubdirectories">Specifies whether to recursively search subdirectories of <paramref name="directoryVirtualPath" />.</param>
+      <param name="searchSubdirectories">
+        Specifies whether to recursively search subdirectories of
+        <paramref name="directoryVirtualPath" />.
+      </param>
     </member>
     <member name="P:System.Web.Optimization.Bundle.Orderer">
       <summary>Determines the order of files in a bundle.</summary>
@@ -98,7 +123,9 @@
       <summary>Transforms the contents of a bundle.</summary>
       <returns>The list of transforms for the bundle.</returns>
     </member>
-    <member name="M:System.Web.Optimization.Bundle.UpdateCache(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)"></member>
+    <member
+      name="M:System.Web.Optimization.Bundle.UpdateCache(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
+    </member>
     <member name="T:System.Web.Optimization.BundleCollection">
       <summary>Contains and manages the set of registered <see cref="T:System.Web.Optimization.Bundle" /> objects in an ASP.NET application.</summary>
     </member>
@@ -109,15 +136,18 @@
       <summary>Adds a bundle to the collection.</summary>
       <param name="bundle">The bundle to add.</param>
     </member>
-    <member name="M:System.Web.Optimization.BundleCollection.AddDefaultFileExtensionReplacements(System.Web.Optimization.FileExtensionReplacementList)">
+    <member
+      name="M:System.Web.Optimization.BundleCollection.AddDefaultFileExtensionReplacements(System.Web.Optimization.FileExtensionReplacementList)">
       <summary>Adds the default file extension replacements for common conventions.</summary>
       <param name="list">The list to populate with default values.</param>
     </member>
-    <member name="M:System.Web.Optimization.BundleCollection.AddDefaultFileOrderings(System.Collections.Generic.IList{System.Web.Optimization.BundleFileSetOrdering})">
+    <member
+      name="M:System.Web.Optimization.BundleCollection.AddDefaultFileOrderings(System.Collections.Generic.IList{System.Web.Optimization.BundleFileSetOrdering})">
       <summary>Adds default file order specifications to use with bundles in the collection.</summary>
       <param name="list">The list to populate with default values.</param>
     </member>
-    <member name="M:System.Web.Optimization.BundleCollection.AddDefaultIgnorePatterns(System.Web.Optimization.IgnoreList)">
+    <member
+      name="M:System.Web.Optimization.BundleCollection.AddDefaultIgnorePatterns(System.Web.Optimization.IgnoreList)">
       <summary>Adds the default file ignore patterns.</summary>
       <param name="ignoreList">The ignore list to populate with default values.</param>
     </member>
@@ -185,13 +215,17 @@
       <returns>An <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the collection.</returns>
     </member>
     <member name="P:System.Web.Optimization.BundleCollection.UseCdn">
-      <summary>Gets or sets whether the collection will try to use <see cref="P:System.Web.Optimization.Bundle.CdnPath" /> if specified.</summary>
+      <summary>
+        Gets or sets whether the collection will try to use
+        <see cref="P:System.Web.Optimization.Bundle.CdnPath" /> if specified.
+      </summary>
       <returns>true if the collection will try to use Bundle.CdnPath if specified; Otherwise, false.</returns>
     </member>
     <member name="T:System.Web.Optimization.BundleContext">
       <summary>Encapsulates the info needed to process a bundle request</summary>
     </member>
-    <member name="M:System.Web.Optimization.BundleContext.#ctor(System.Web.HttpContextBase,System.Web.Optimization.BundleCollection,System.String)">
+    <member
+      name="M:System.Web.Optimization.BundleContext.#ctor(System.Web.HttpContextBase,System.Web.Optimization.BundleCollection,System.String)">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.BundleContext" /> class.</summary>
       <param name="context">The context.</param>
       <param name="collection">The collection of bundles.</param>
@@ -210,8 +244,14 @@
       <returns>true if instrumentation output is requested; otherwise, false.</returns>
     </member>
     <member name="P:System.Web.Optimization.BundleContext.EnableOptimizations">
-      <summary>Gets or sets whether optimizations are enabled via <see cref="P:System.Web.Optimization.BundleTable.EnableOptimizations" />.</summary>
-      <returns>true if optimizations are enabled via <see cref="P:System.Web.Optimization.BundleTable.EnableOptimizations" />; otherwise, false.</returns>
+      <summary>
+        Gets or sets whether optimizations are enabled via
+        <see cref="P:System.Web.Optimization.BundleTable.EnableOptimizations" />.
+      </summary>
+      <returns>
+        true if optimizations are enabled via
+        <see cref="P:System.Web.Optimization.BundleTable.EnableOptimizations" />; otherwise, false.
+      </returns>
     </member>
     <member name="P:System.Web.Optimization.BundleContext.HttpContext">
       <summary>Gets or sets the HTTP context associated with the bundle context.</summary>
@@ -245,7 +285,9 @@
     </member>
     <member name="T:System.Web.Optimization.BundleFile"></member>
     <member name="M:System.Web.Optimization.BundleFile.#ctor(System.String,System.Web.Hosting.VirtualFile)"></member>
-    <member name="M:System.Web.Optimization.BundleFile.#ctor(System.String,System.Web.Hosting.VirtualFile,System.Collections.Generic.IList{System.Web.Optimization.IItemTransform})"></member>
+    <member
+      name="M:System.Web.Optimization.BundleFile.#ctor(System.String,System.Web.Hosting.VirtualFile,System.Collections.Generic.IList{System.Web.Optimization.IItemTransform})">
+    </member>
     <member name="M:System.Web.Optimization.BundleFile.ApplyTransforms"></member>
     <member name="P:System.Web.Optimization.BundleFile.IncludedVirtualPath"></member>
     <member name="P:System.Web.Optimization.BundleFile.Transforms"></member>
@@ -266,11 +308,20 @@
       <returns>The name used to help identify the file ordering.</returns>
     </member>
     <member name="T:System.Web.Optimization.BundleManifest">
-      <summary> Represents the XML configuration to configure the <see cref="P:System.Web.Optimization.BundleTable.Bundles" /> bundle collection. </summary>
+      <summary>
+        Represents the XML configuration to configure the
+        <see cref="P:System.Web.Optimization.BundleTable.Bundles" /> bundle collection.
+      </summary>
     </member>
     <member name="P:System.Web.Optimization.BundleManifest.BundleManifestPath">
-      <summary>Gets or sets the path to the bundle manifest file that sets up the <see cref="T:System.Web.Optimization.BundleCollection" />.</summary>
-      <returns>The path to the bundle manifest file that sets up the <see cref="T:System.Web.Optimization.BundleCollection" />.</returns>
+      <summary>
+        Gets or sets the path to the bundle manifest file that sets up the
+        <see cref="T:System.Web.Optimization.BundleCollection" />.
+      </summary>
+      <returns>
+        The path to the bundle manifest file that sets up the
+        <see cref="T:System.Web.Optimization.BundleCollection" />.
+      </returns>
     </member>
     <member name="M:System.Web.Optimization.BundleManifest.ReadBundleManifest">
       <summary>Reads the bundle manifest using the default bundle configuration.</summary>
@@ -319,13 +370,17 @@
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.BundleResolver" /> class with the specified bundle.</summary>
       <param name="bundles">The bundles of objects.</param>
     </member>
-    <member name="M:System.Web.Optimization.BundleResolver.#ctor(System.Web.Optimization.BundleCollection,System.Web.HttpContextBase)">
+    <member
+      name="M:System.Web.Optimization.BundleResolver.#ctor(System.Web.Optimization.BundleCollection,System.Web.HttpContextBase)">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.BundleResolver" /> class with the specified bundle and context.</summary>
       <param name="bundles">The bundles of object.</param>
       <param name="context">The HttpContextBase.</param>
     </member>
     <member name="P:System.Web.Optimization.BundleResolver.Current">
-      <summary>Gets or sets the ScriptManager that reflects against <see cref="P:System.Web.Optimization.BundleResolver.Current" />.</summary>
+      <summary>
+        Gets or sets the ScriptManager that reflects against
+        <see cref="P:System.Web.Optimization.BundleResolver.Current" />.
+      </summary>
       <returns>The ScriptManager that reflects against <see cref="P:System.Web.Optimization.BundleResolver.Current" />.</returns>
     </member>
     <member name="M:System.Web.Optimization.BundleResolver.GetBundleContents(System.String)">
@@ -349,7 +404,9 @@
     <member name="M:System.Web.Optimization.BundleResponse.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.BundleResponse" /> class.</summary>
     </member>
-    <member name="M:System.Web.Optimization.BundleResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.BundleResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="P:System.Web.Optimization.BundleResponse.Cacheability">
       <summary>Gets or sets a value that is used to set the Cache-Control HTTP header.</summary>
       <returns>A value that is used to set the Cache-Control HTTP header.</returns>
@@ -387,7 +444,8 @@
     <member name="M:System.Web.Optimization.CssMinify.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.CssMinify" /> class.</summary>
     </member>
-    <member name="M:System.Web.Optimization.CssMinify.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
+    <member
+      name="M:System.Web.Optimization.CssMinify.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
       <summary> Transforms the bundle contents by applying CSS minification. </summary>
       <param name="context">The bundle context.</param>
       <param name="response">The bundle response object</param>
@@ -401,14 +459,21 @@
     <member name="M:System.Web.Optimization.DefaultBundleBuilder.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.DefaultBundleBuilder" /> class.</summary>
     </member>
-    <member name="M:System.Web.Optimization.DefaultBundleBuilder.BuildBundleContent(System.Web.Optimization.Bundle,System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.DefaultBundleBuilder.BuildBundleContent(System.Web.Optimization.Bundle,System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="T:System.Web.Optimization.DefaultBundleOrderer">
-      <summary>Default <see cref="T:System.Web.Optimization.IBundleOrderer" /> which orders files in a bundled using <see cref="P:System.Web.Optimization.BundleCollection.FileSetOrderList" />.</summary>
+      <summary>
+        Default <see cref="T:System.Web.Optimization.IBundleOrderer" /> which orders files in a bundled using
+        <see cref="P:System.Web.Optimization.BundleCollection.FileSetOrderList" />.
+      </summary>
     </member>
     <member name="M:System.Web.Optimization.DefaultBundleOrderer.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.DefaultBundleOrderer" /> class.</summary>
     </member>
-    <member name="M:System.Web.Optimization.DefaultBundleOrderer.OrderFiles(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.DefaultBundleOrderer.OrderFiles(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="T:System.Web.Optimization.DynamicFolderBundle">
       <summary>Represents a <see cref="T:System.Web.Optimization.Bundle" /> object that ASP.NET creates from a folder that contains files of the same type.</summary>
     </member>
@@ -423,14 +488,16 @@
       <param name="searchPattern">The search pattern.</param>
       <param name="searchSubdirectories">The search subdirectories.</param>
     </member>
-    <member name="M:System.Web.Optimization.DynamicFolderBundle.#ctor(System.String,System.String,System.Boolean,System.Web.Optimization.IBundleTransform[])">
+    <member
+      name="M:System.Web.Optimization.DynamicFolderBundle.#ctor(System.String,System.String,System.Boolean,System.Web.Optimization.IBundleTransform[])">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.DynamicFolderBundle" /> class.</summary>
       <param name="pathSuffix">The path suffix.</param>
       <param name="searchPattern">The search pattern.</param>
       <param name="searchSubdirectories">The search subdirectories.</param>
       <param name="transforms">The transform parameter.</param>
     </member>
-    <member name="M:System.Web.Optimization.DynamicFolderBundle.#ctor(System.String,System.String,System.Web.Optimization.IBundleTransform[])">
+    <member
+      name="M:System.Web.Optimization.DynamicFolderBundle.#ctor(System.String,System.String,System.Web.Optimization.IBundleTransform[])">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.DynamicFolderBundle" /> class.</summary>
       <param name="pathSuffix">The path suffix.</param>
       <param name="searchPattern">The search pattern.</param>
@@ -454,33 +521,50 @@
       <returns>true if the search pattern is applied to subdirectories; otherwise, false.</returns>
     </member>
     <member name="T:System.Web.Optimization.FileExtensionReplacementList">
-      <summary>A set of file extensions that will be used to select different files based on the <see cref="T:System.Web.Optimization.OptimizationMode" />.</summary>
+      <summary>
+        A set of file extensions that will be used to select different files based on the
+        <see cref="T:System.Web.Optimization.OptimizationMode" />.
+      </summary>
     </member>
     <member name="M:System.Web.Optimization.FileExtensionReplacementList.#ctor">
-      <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.FileExtensionReplacementList" /> class.</summary>
+      <summary>
+        Initializes a new instance of the <see cref="T:System.Web.Optimization.FileExtensionReplacementList" />
+        class.
+      </summary>
     </member>
     <member name="M:System.Web.Optimization.FileExtensionReplacementList.Add(System.String)">
-      <summary>Adds a file extension which will be applied regardless of <see cref="T:System.Web.Optimization.OptimizationMode" />.</summary>
+      <summary>
+        Adds a file extension which will be applied regardless of
+        <see cref="T:System.Web.Optimization.OptimizationMode" />.
+      </summary>
       <param name="extension">File extension string.</param>
     </member>
-    <member name="M:System.Web.Optimization.FileExtensionReplacementList.Add(System.String,System.Web.Optimization.OptimizationMode)">
+    <member
+      name="M:System.Web.Optimization.FileExtensionReplacementList.Add(System.String,System.Web.Optimization.OptimizationMode)">
       <summary>Add a file extension for a specified <see cref="T:System.Web.Optimization.OptimizationMode" />.</summary>
       <param name="extension">File extension string.</param>
       <param name="mode">
-        <see cref="T:System.Web.Optimization.OptimizationMode" /> in which to apply the file extension replacement.</param>
+        <see cref="T:System.Web.Optimization.OptimizationMode" /> in which to apply the file extension replacement.
+      </param>
     </member>
     <member name="M:System.Web.Optimization.FileExtensionReplacementList.Clear">
       <summary>Clears file extension replacements.</summary>
     </member>
-    <member name="M:System.Web.Optimization.FileExtensionReplacementList.ReplaceFileExtensions(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.FileExtensionReplacementList.ReplaceFileExtensions(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="T:System.Web.Optimization.IBundleBuilder">
       <summary>Specifies the building of the bundle from the individual file contents.</summary>
     </member>
-    <member name="M:System.Web.Optimization.IBundleBuilder.BuildBundleContent(System.Web.Optimization.Bundle,System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.IBundleBuilder.BuildBundleContent(System.Web.Optimization.Bundle,System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="T:System.Web.Optimization.IBundleOrderer">
       <summary>Defines methods for ordering files within a <see cref="T:System.Web.Optimization.Bundle" />.</summary>
     </member>
-    <member name="M:System.Web.Optimization.IBundleOrderer.OrderFiles(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.IBundleOrderer.OrderFiles(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="T:System.Web.Optimization.IBundleResolver">
       <summary>Represents an interface used to query the BundleCollection for metadata.</summary>
     </member>
@@ -500,9 +584,13 @@
       <param name="virtualPath">The virtual path.</param>
     </member>
     <member name="T:System.Web.Optimization.IBundleTransform">
-      <summary>Defines a method that transforms the files in a <see cref="T:System.Web.Optimization.BundleResponse" /> object.</summary>
+      <summary>
+        Defines a method that transforms the files in a <see cref="T:System.Web.Optimization.BundleResponse" />
+        object.
+      </summary>
     </member>
-    <member name="M:System.Web.Optimization.IBundleTransform.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
+    <member
+      name="M:System.Web.Optimization.IBundleTransform.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
       <summary>Transforms the content in the <see cref="T:System.Web.Optimization.BundleResponse" /> object.</summary>
       <param name="context">The bundle context.</param>
       <param name="response">The bundle response.</param>
@@ -516,17 +604,26 @@
     <member name="M:System.Web.Optimization.IgnoreList.Clear">
       <summary>Clears entire ignore list.</summary>
     </member>
-    <member name="M:System.Web.Optimization.IgnoreList.FilterIgnoredFiles(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})"></member>
+    <member
+      name="M:System.Web.Optimization.IgnoreList.FilterIgnoredFiles(System.Web.Optimization.BundleContext,System.Collections.Generic.IEnumerable{System.Web.Optimization.BundleFile})">
+    </member>
     <member name="M:System.Web.Optimization.IgnoreList.Ignore(System.String)">
-      <summary>Ignores the specified pattern regardless of the value set in <see cref="P:System.Web.Optimization.BundleTable.EnableOptimizations" />.</summary>
+      <summary>
+        Ignores the specified pattern regardless of the value set in
+        <see cref="P:System.Web.Optimization.BundleTable.EnableOptimizations" />.
+      </summary>
       <param name="item">The ignore pattern.</param>
     </member>
     <member name="M:System.Web.Optimization.IgnoreList.Ignore(System.String,System.Web.Optimization.OptimizationMode)">
-      <summary>Ignores the specified pattern when in the appropriate <see cref="T:System.Web.Optimization.OptimizationMode" />.</summary>
+      <summary>
+        Ignores the specified pattern when in the appropriate
+        <see cref="T:System.Web.Optimization.OptimizationMode" />.
+      </summary>
       <param name="pattern">The ignore pattern.</param>
       <param name="mode">The <see cref="T:System.Web.Optimization.OptimizationMode" /> in which to apply the ignore pattern.</param>
     </member>
-    <member name="M:System.Web.Optimization.IgnoreList.ShouldIgnore(System.Web.Optimization.BundleContext,System.String)">
+    <member
+      name="M:System.Web.Optimization.IgnoreList.ShouldIgnore(System.Web.Optimization.BundleContext,System.String)">
       <summary>Determines whether a file should be ignored based on the ignore list.</summary>
       <returns>true if the filename matches a pattern in the <see cref="T:System.Web.Optimization.IgnoreList" />; otherwise, false.</returns>
       <param name="context">The <see cref="T:System.Web.Optimization.BundleContext" /> object that contains state for both the framework configuration and the HTTP request.</param>
@@ -540,7 +637,8 @@
     <member name="M:System.Web.Optimization.JsMinify.#ctor">
       <summary>Initializes a new instance of the <see cref="T:System.Web.Optimization.JsMinify" /> class.</summary>
     </member>
-    <member name="M:System.Web.Optimization.JsMinify.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
+    <member
+      name="M:System.Web.Optimization.JsMinify.Process(System.Web.Optimization.BundleContext,System.Web.Optimization.BundleResponse)">
       <summary>Transforms the bundle contents by applying javascript minification.</summary>
       <param name="context">The context associated with the bundle.</param>
       <param name="response">The <see cref="T:System.Web.Optimization.BundleResponse" />.</param>
@@ -568,8 +666,14 @@
       <returns>The physical file path.</returns>
     </member>
     <member name="P:System.Web.Optimization.OptimizationSettings.BundleManifestPath">
-      <summary>The path to the bundle manifest file that sets up the <see cref="T:System.Web.Optimization.BundleCollection" />.</summary>
-      <returns>The path to the bundle manifest file that sets up the <see cref="T:System.Web.Optimization.BundleCollection" />.</returns>
+      <summary>
+        The path to the bundle manifest file that sets up the
+        <see cref="T:System.Web.Optimization.BundleCollection" />.
+      </summary>
+      <returns>
+        The path to the bundle manifest file that sets up the
+        <see cref="T:System.Web.Optimization.BundleCollection" />.
+      </returns>
     </member>
     <member name="P:System.Web.Optimization.OptimizationSettings.BundleSetupMethod">
       <summary>Gets or sets a callback function which is invoked after the bundle manifest is loaded to allow further customization of the bundle collection.</summary>
@@ -580,7 +684,8 @@
       <summary>Represents a standalone class for generating bundle responses outside of ASP.NET</summary>
     </member>
     <member name="M:System.Web.Optimization.Optimizer.BuildAllBundles(System.Web.Optimization.OptimizationSettings)"></member>
-    <member name="M:System.Web.Optimization.Optimizer.BuildBundle(System.String,System.Web.Optimization.OptimizationSettings)">
+    <member
+      name="M:System.Web.Optimization.Optimizer.BuildBundle(System.String,System.Web.Optimization.OptimizationSettings)">
       <summary>Builds a <see cref="T:System.Web.Optimization.BundleResponse" /> object from the declarations found in a bundle manifest file.</summary>
       <returns>The bundle response for specified <paramref name="bundlePath" />.</returns>
       <param name="bundlePath">The path to the bundle being requested.</param>

@@ -50,11 +50,11 @@
                 <td>
                     @if (Model.ElementAt(i).IsMember)
                     {
-                       @Html.ActionLink("Leave", "Leave", new { grp = Model.ElementAt(i).GroupName })
+                        @Html.ActionLink("Leave", "Leave", new {grp = Model.ElementAt(i).GroupName})
                     }
                     else
                     {
-                       @Html.ActionLink("Join","Join", new { grp = Model.ElementAt(i).GroupName})
+                        @Html.ActionLink("Join", "Join", new {grp = Model.ElementAt(i).GroupName})
                     }
                 </td>
                 <td>
