@@ -19,14 +19,10 @@ namespace Dist_Lab2.Models
         [DataType(DataType.Date)]
         public DateTime TimeSent { get; set; }
 
-        [Required]
-        public string Status { get; set; }
-
         //Navigation property
         public string SenderId { get; set; }
         public virtual ApplicationUser Sender { get; set; }
         //Navigation property
-        public ICollection<string> ReceiversId { get; set; }
-        public virtual ICollection<ApplicationUser> Receivers { get; set; }
+        public virtual ICollection<MessageUser> MessageUser { get; set; }
     }
 }

@@ -55,13 +55,11 @@ namespace Dist_Lab2.Controllers
                 var msg = new Message
                 {
                     SenderId = User.Identity.GetUserId(),
-                    ReceiversId = usersSelected,
                     TimeSent = DateTime.Now,
                     Title = vm.Title,
-                    Body = vm.Body,
-                    Status = "UNREAD"
+                    Body = vm.Body
                 };
-                MessageLogic.Send(msg);
+                MessageLogic.Send(msg, usersSelected);
                 var rc = new StringBuilder();
                 vm.ReceiversSelected.ForEach(l => rc.Append(l + ", "));
                 vm.GroupsSelected.ForEach(l => rc.Append(l + ", "));

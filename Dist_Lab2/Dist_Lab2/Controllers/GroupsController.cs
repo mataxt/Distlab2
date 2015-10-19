@@ -30,7 +30,7 @@ namespace Dist_Lab2.Controllers
         [HttpPost]
         public ActionResult Index(GroupsViewModels vm, string submit)
         {
-            if (submit != null)
+            if (submit != null && ModelState.IsValid)
             {
                 if (!UserGroupsLogic.GroupExists(vm.GroupName))
                 {

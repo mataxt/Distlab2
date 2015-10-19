@@ -6,12 +6,11 @@ namespace Dist_Lab2.Models
 {
     public class MessageLogic
     {
-        public static void Send(Message message)
+        public static void Send(Message message,List<string> receivers)
         {
             using (var db = new ApplicationDbContext())
             {
-                message.Receivers = new List<ApplicationUser>();
-                message.ReceiversId.ForEach(uId => message.Receivers.Add(db.Users.First(u => u.Id == uId)));
+                receivers.ForEach(uId => db.MessagesSent.Add(new MessageUser { Message = message, User = db.Users.First(d=> d.Id == uId), Status = "UNREAD"}));
                 db.Messages.Add(message);
                 db.SaveChanges();
             }
@@ -24,7 +23,7 @@ namespace Dist_Lab2.Models
             {
                 // Get messages according to their User IDs
                 var sendersId =
-                    db.Messages.Where(msg => msg.Receivers.Any(usr => usr.Id == userId))
+                    db.Messages.Where(msg => db.MessagesSent.Any(usr => usr.UserId == userId && !usr.Status.Equals("REMOVED")))
                         .Select(msg => msg.SenderId)
                         .ToList();
                 senders =
@@ -45,14 +44,15 @@ namespace Dist_Lab2.Models
             return msgTitle;
         }
 
-        public static List<MessageHeader> ListMessageTitles(string username)
+        public static List<MessageHeader> ListMessageTitles(string userId, string sender)
         {
             var msgTitles = new List<MessageHeader>();
             using (var db = new ApplicationDbContext())
             {
-                var sendersId = db.Users.Where(usr => usr.UserName == username).Select(u => u.Id).First();
+                var sendersId = db.Users.Where(usr => usr.UserName == sender).Select(u => u.Id).First();
                 msgTitles.AddRange(
-                    db.Messages.Where(m => m.SenderId == sendersId && !m.Status.Equals("REMOVED"))
+                    db.Messages.Where(m => m.SenderId == sendersId &&
+                            db.MessagesSent.Any(d => d.MessageId.Equals(m.MessageId)&& d.UserId.Equals(userId) && !d.Status.Equals("REMOVED")))
                         .OrderByDescending(a => a.TimeSent)
                         .Select(
                             n =>
@@ -61,21 +61,22 @@ namespace Dist_Lab2.Models
                                     MessageId = n.MessageId,
                                     Title = n.Title,
                                     TimeSent = n.TimeSent,
-                                    Status = n.Status
                                 })
                         .ToList());
+                msgTitles.ForEach(t => t.Status = db.MessagesSent.First(d => d.MessageId.Equals(t.MessageId) && d.UserId.Equals(userId)).Status);
             }
+          
             return msgTitles;
         }
 
 
-        public static string GetMessageBody(int? messageId)
+        public static string GetMessageBody(string userId, int? messageId)
         {
             string msgBody;
             using (var db = new ApplicationDbContext())
             {
                 msgBody = db.Messages.Find(messageId).Body;
-                db.Messages.Find(messageId).Status = "READ";
+                db.MessagesSent.First(u => u.MessageId == messageId && u.UserId == userId).Status = "READ";
                 db.SaveChanges();
             }
             return msgBody;
@@ -86,31 +87,31 @@ namespace Dist_Lab2.Models
             var msgStats = new MessageStatistics();
             using (var db = new ApplicationDbContext())
             {
-                msgStats.TotalMessages = db.Messages.Count(msg => msg.Receivers.Any(usr => usr.Id == userId));
+                msgStats.TotalMessages = db.Messages.Count(msg => db.MessagesSent.Any(usr => usr.UserId == userId));
                 msgStats.UnreadMessages =
-                    db.Messages.Count(msg => msg.Status.Equals("UNREAD") && msg.Receivers.Any(usr => usr.Id == userId));
+                    db.MessagesSent.Count(msg => msg.Status.Equals("UNREAD") && msg.UserId.Equals(userId));
                 msgStats.ReadMessages =
-                    db.Messages.Count(msg => msg.Status.Equals("READ") && msg.Receivers.Any(usr => usr.Id == userId));
+                    db.MessagesSent.Count(msg => msg.Status.Equals("READ") && msg.UserId.Equals(userId));
                 msgStats.RemovedMessages =
-                    db.Messages.Count(msg => msg.Status.Equals("REMOVED") && msg.Receivers.Any(usr => usr.Id == userId));
+                    db.MessagesSent.Count(msg => msg.Status.Equals("REMOVED") && msg.UserId.Equals(userId));
             }
             return msgStats;
         }
 
-        public static void MarkedAsRead(IEnumerable<int> messageIds)
+        public static void MarkedAsRead(string userId, IEnumerable<int> messageIds)
         {
             using (var db = new ApplicationDbContext())
             {
-                messageIds.ToList().ForEach(m => db.Messages.Find(m).Status = "READ");
+                messageIds.ForEach(m => db.MessagesSent.First(u => u.MessageId.Equals(m) && u.UserId.Equals(userId)).Status = "READ");
                 db.SaveChanges();
             }
         }
 
-        public static void RemoveMessage(IEnumerable<int> messageIds)
+        public static void RemoveMessage(string userId, IEnumerable<int> messageIds)
         {
             using (var db = new ApplicationDbContext())
             {
-                messageIds.ToList().ForEach(m => db.Messages.Find(m).Status = "REMOVED");
+                messageIds.ForEach(m => db.MessagesSent.First(u => u.MessageId.Equals(m) && u.UserId.Equals(userId)).Status = "REMOVED");
                 db.SaveChanges();
             }
         }

@@ -179,6 +179,7 @@
     <Compile Include="Models\MessageHeader.cs" />
     <Compile Include="Models\MessageLogic.cs" />
     <Compile Include="Models\MessageStatistics.cs" />
+    <Compile Include="Models\MessageUser.cs" />
     <Compile Include="Models\UserGroups.cs" />
     <Compile Include="Models\UserGroupsLogic.cs" />
     <Compile Include="Models\UserLogic.cs" />

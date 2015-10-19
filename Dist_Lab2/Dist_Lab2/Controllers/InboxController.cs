@@ -30,7 +30,7 @@ namespace Dist_Lab2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var titles = MessageLogic.ListMessageTitles(username);
+            var titles = MessageLogic.ListMessageTitles(User.Identity.GetUserId(),username);
             var vm = new List<InboxTitles>();
             titles.ToList().ForEach(t => vm.Add(
                 new InboxTitles
@@ -49,10 +49,10 @@ namespace Dist_Lab2.Controllers
         {
             var selectedList = titlesSelected.Where(m => m.Selected).Select(n => n.MessageId);
             if (submit.Equals("Read"))
-                MessageLogic.MarkedAsRead(selectedList);
+                MessageLogic.MarkedAsRead(User.Identity.GetUserId(), selectedList);
             else if (submit.Equals("Delete"))
             {
-                MessageLogic.RemoveMessage(selectedList);
+                MessageLogic.RemoveMessage(User.Identity.GetUserId(), selectedList);
             }
 
             return RedirectToAction("Messages", "Inbox", new {username = User.Identity.GetUserName()});
@@ -67,7 +67,7 @@ namespace Dist_Lab2.Controllers
             var vm = new InboxMessageBody
             {
                 Title = MessageLogic.GetMessageTitle(messageId),
-                Body = MessageLogic.GetMessageBody(messageId)
+                Body = MessageLogic.GetMessageBody(User.Identity.GetUserId(), messageId)
             };
 
             return View(vm);
