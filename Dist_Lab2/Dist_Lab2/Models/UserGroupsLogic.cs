@@ -68,7 +68,7 @@ namespace Dist_Lab2.Models
             }
         }
 
-        internal static void LeaveGroup(string userId, string groupName)
+        public static void LeaveGroup(string userId, string groupName)
         {
             using (var db = new ApplicationDbContext())
             {
