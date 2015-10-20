@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Linq;
-
+/// <summary>
+/// This class manages anything that has to do with
+/// logging the users connection with the system
+/// </summary>
 namespace Dist_Lab2.Models
 {
     public class UserLogLogic

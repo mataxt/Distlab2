@@ -23,7 +23,7 @@ namespace Dist_Lab2.Models
             {
                 // Get messages according to their User IDs
                 var sendersId =
-                    db.Messages.Where(msg => db.MessagesSent.Any(usr => usr.UserId == userId && !usr.Status.Equals("REMOVED")))
+                    db.Messages.Where(m => db.MessagesSent.Any(usr => usr.UserId.Equals(userId) && !usr.Status.Equals("REMOVED") && m.MessageId.Equals(usr.MessageId)))
                         .Select(msg => msg.SenderId)
                         .ToList();
                 senders =
@@ -87,7 +87,7 @@ namespace Dist_Lab2.Models
             var msgStats = new MessageStatistics();
             using (var db = new ApplicationDbContext())
             {
-                msgStats.TotalMessages = db.Messages.Count(msg => db.MessagesSent.Any(usr => usr.UserId == userId));
+                msgStats.TotalMessages = db.MessagesSent.Count(usr => usr.UserId.Equals(userId));
                 msgStats.UnreadMessages =
                     db.MessagesSent.Count(msg => msg.Status.Equals("UNREAD") && msg.UserId.Equals(userId));
                 msgStats.ReadMessages =

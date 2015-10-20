@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+/// <summary>
+/// This is the context class of the project
+/// </summary>
 namespace Dist_Lab2.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -18,14 +20,6 @@ namespace Dist_Lab2.Models
         {
 
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<MessageUser>()
-            //    .Map(m =>
-            //    {
-            //        m.MapLeftKey("MessageId");
-            //        m.MapRightKey("UserId");
-            //        m.ToTable("MessageUser");
-
-            //    });
             modelBuilder.Entity<UserLogs>().HasKey(t => new {t.UserId, t.LoggedAt});
             modelBuilder.Entity<UserGroups>().HasKey(t => new {t.GroupName, t.UserId});
         }

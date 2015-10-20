@@ -55,7 +55,9 @@ namespace Dist_Lab2.Controllers
                 MessageLogic.RemoveMessage(User.Identity.GetUserId(), selectedList);
             }
 
-            return RedirectToAction("Messages", "Inbox", new {username = User.Identity.GetUserName()});
+            Response.Redirect(Request.RawUrl);
+
+            return Index();
         }
 
         public ActionResult MessageContent(int? messageId)

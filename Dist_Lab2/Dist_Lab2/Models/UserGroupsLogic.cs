@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
+/// <summary>
+/// This class is responsible for methods concerning usergroups which requires 
+/// a database connection
+/// </summary>
 namespace Dist_Lab2.Models
 {
     public class UserGroupsLogic

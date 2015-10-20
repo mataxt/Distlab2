@@ -1,4 +1,7 @@
-﻿namespace Dist_Lab2.Models
+﻿/// <summary>
+/// This model is used to list statistics about the users messages.
+/// </summary>
+namespace Dist_Lab2.Models
 {
     public class MessageStatistics
     {
